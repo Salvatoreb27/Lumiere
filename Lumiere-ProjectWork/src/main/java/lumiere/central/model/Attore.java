@@ -32,6 +32,4 @@ public class Attore implements Serializable {
 	@ManyToMany(mappedBy = "attori") 
 	private Set<Film> films = new HashSet<>();
 
-	@ManyToMany
-	private List <Film> Films;
 }
