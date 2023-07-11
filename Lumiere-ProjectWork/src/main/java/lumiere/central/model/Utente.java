@@ -17,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -54,6 +55,7 @@ public class Utente implements Serializable {
 		@Column(name = "attivo", nullable = false)
 		private boolean attivo;
 		
+		//Associazione uno a molti tra utente e amico
 		@OneToMany(mappedBy = "sourcePerson")
 		private List<Amico> friendships = new ArrayList<>();
 		
@@ -61,6 +63,7 @@ public class Utente implements Serializable {
 //		@OneToMany(mappedBy = "targetPerson")
 //		private List<Friendship> requestedFriendships = new ArrayList<Friendship>();
 		
+		//Associazione tra ruoli e utenti
 		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 		@JoinTable(name = "ruolo_utente",
 		joinColumns = {
@@ -72,6 +75,12 @@ public class Utente implements Serializable {
 		referencedColumnName = "id") 
 		})
 		private Set<Ruolo> ruoli = new HashSet<>();
+		
+		//Associazione tra pagamenti e utente
+		@ManyToOne(fetch = FetchType.LAZY)
+		@JoinColumn(name = "id_utente",
+		referencedColumnName = "id_pagamento") 
+		private Utente utente;
 		
 		
 

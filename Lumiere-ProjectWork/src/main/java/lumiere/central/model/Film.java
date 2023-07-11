@@ -48,6 +48,7 @@ public class Film implements Serializable {
 	@Column(name = "autore", length = 50, nullable = false)
 	private String lingua;
 
+	
 	//Associazione molti a molti tra attori e film
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_attore",
@@ -61,6 +62,7 @@ public class Film implements Serializable {
 	})
 	private Set<Attore> attori = new HashSet<>();
 
+	
 	//Associazione molti a molti tra attori e generi
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_genere",
@@ -74,10 +76,12 @@ public class Film implements Serializable {
 	})
 	private Set<Genere> generi = new HashSet<>();
 
+	
 	//Associazione uno a molti tra film e recensioni
 	@OneToMany(mappedBy = "films", 
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Recensione> recensioni = new HashSet<>();
+	
 	
 	//Associazione uno a molti tra film e visualizzazioni
 		@OneToMany(mappedBy = "films", 
