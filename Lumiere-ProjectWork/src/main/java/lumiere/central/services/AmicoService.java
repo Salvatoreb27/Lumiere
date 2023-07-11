@@ -12,8 +12,6 @@ public interface AmicoService {
 	Amico getAmico(Long id);
 	//inserimento di un nuovo amico
 	Long addAmico(Amico amico);
-	//modifica di un amico esistente
-	Amico updateAmico(Amico amico, Long id);
 	//cancellazione di un amico esistente
 	boolean deleteAmico(Long id);
 	
