@@ -1,5 +1,9 @@
 package lumiere.central.repository;
 
-public interface RecensioneRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import lumiere.central.model.Recensione;
+
+public interface RecensioneRepository extends JpaRepository <Recensione, Integer> {
 
 }
