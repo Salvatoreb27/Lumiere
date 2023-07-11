@@ -73,6 +73,13 @@ public class Utente implements Serializable {
 		})
 		private Set<Ruolo> ruoli = new HashSet<>();
 		
+		@OneToMany(mappedBy = "utenti")
+		private List<Recensione> recensioni = new ArrayList<>();
+		
+		@OneToMany(mappedBy = "utenti")
+		private List<Visualizzazione> Visualizzazioni = new ArrayList<>();
+		
+		
 		
 
 		
