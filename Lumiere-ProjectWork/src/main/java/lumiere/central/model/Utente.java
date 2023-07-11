@@ -82,6 +82,11 @@ public class Utente implements Serializable {
 		referencedColumnName = "id_pagamento") 
 		private Utente utente;
 		
+		@OneToMany(mappedBy = "utenti")
+		private List<Recensione> recensioni = new ArrayList<>();
+		
+		@OneToMany(mappedBy = "utenti")
+		private List<Visualizzazione> Visualizzazioni = new ArrayList<>();
 		
 
 		

@@ -24,9 +24,9 @@ public class Amico implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "person_id")
 	private Utente sourcePerson;
-//	@ManyToOne
-//	@JoinColumn(name = "friend_id")
-//	private Utente targetPerson;
+	@ManyToOne
+	@JoinColumn(name = "friend_id")
+	private Utente targetPerson;
 	
 	// ... altri campi e metodi
 	
