@@ -31,5 +31,49 @@ public class Pagamento implements Serializable {
 	@OneToMany(mappedBy = "pagamenti",
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Utente> utenti = new HashSet<>();
+
+	public Pagamento(Long id, String tipo, Set<Utente> utenti) {
+		super();
+		Id = id;
+		this.tipo = tipo;
+		this.utenti = utenti;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public Set<Utente> getUtenti() {
+		return utenti;
+	}
+
+	public void setUtenti(Set<Utente> utenti) {
+		this.utenti = utenti;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "Pagamento [Id=" + Id + ", tipo=" + tipo + ", utenti=" + utenti + ", getId()=" + getId() + ", getTipo()="
+				+ getTipo() + ", getUtenti()=" + getUtenti() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
 	
+	
+
 }
