@@ -11,7 +11,7 @@ public interface FilmService {
 		//visualizzazione di un film specifico
 		Film getFilm(Long id);
 		//inserimento di un nuovo film
-		Integer addFilm(Film film);
+		Long addFilm(Film film);
 		//modifica di un film esistente
 		Film updateFilm(Film film, Long id);
 		//cancellazione di un film esistente

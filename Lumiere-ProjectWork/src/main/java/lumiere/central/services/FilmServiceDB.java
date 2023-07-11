@@ -22,29 +22,46 @@ public class FilmServiceDB implements FilmService{
 
 	@Override
 	public Film getFilm(Long id) {
-			Optional<Film> a = filmrepository.findById(id);
-			if (a.isPresent()) {
-				return a.get();
+			Optional<Film> f = filmrepository.findById(id);
+			if (f.isPresent()) {
+				return f.get();
 			}
 			return null;
 	}
 
 		
 	@Override
-	public Integer addFilm(Film film) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long addFilm(Film film) {
+		Film f = filmrepository.save(film);
+		return f.getId();
 	}
 
 	@Override
 	public Film updateFilm(Film film, Long id) {
-		// TODO Auto-generated method stub
+		if (filmrepository.existsById(id)) {
+			Film f = filmrepository.findById(id).get(); //film sul DB
+			f.setTitolo(film.getTitolo());
+			f.setRegista(film.getRegista());
+			f.setAnno(film.getAnno());
+			f.setDurata(film.getDurata());
+			f.setPaese(film.getPaese());
+			f.setLingua(film.getLingua());
+			f.setAttori(film.getAttori());
+			f.setGeneri(film.getGeneri());
+			f.setRecensioni(film.getRecensioni());
+			f.setVisualizzazioni(film.getVisualizzazioni());
+			filmrepository.save(f);
+			return f;
+		}
 		return null;
 	}
 
 	@Override
 	public boolean deleteFilm(Long id) {
-		// TODO Auto-generated method stub
+		if (filmrepository.existsById(id)) {
+			filmrepository.deleteById(id);
+			return true;
+		}
 		return false;
 	}
 
