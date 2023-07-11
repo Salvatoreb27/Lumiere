@@ -11,16 +11,16 @@ import lumiere.central.repository.RuoloRepository;
 public class RuoloServiceDB implements RuoloService{
 	
 	@Autowired 
-	private RuoloRepository ruolirepository;
+	private RuoloRepository ruolorepository;
 
 	@Override
 	public List<Ruolo> getRuoli() {
-		return (List<Ruolo>) ruolirepository.findAll();
+		return (List<Ruolo>) ruolorepository.findAll();
 	}
 
 	@Override
 	public Ruolo getRuolo(Long id) {
-		Optional<Ruolo> r = ruolirepository.findById(id);
+		Optional<Ruolo> r = ruolorepository.findById(id);
 		if (r.isPresent()) {
 			return r.get();
 		}
@@ -29,17 +29,17 @@ public class RuoloServiceDB implements RuoloService{
 
 	@Override
 	public Long addRuolo(Ruolo ruolo) {
-		Ruolo r = ruolirepository.save(ruolo);
+		Ruolo r = ruolorepository.save(ruolo);
 		return r.getId();
 	}
 
 	@Override
 	public Ruolo updateRuolo(Ruolo ruolo, Long id) {
-			if (ruolirepository.existsById(id)) {
-				Ruolo r = ruolirepository.findById(id).get();
+			if (ruolorepository.existsById(id)) {
+				Ruolo r = ruolorepository.findById(id).get();
 				r.setNome(ruolo.getNome());
 				r.setUtenti(ruolo.getUtenti());
-				ruolirepository.save(r);
+				ruolorepository.save(r);
 				return r;
 			}
 			return null;
@@ -48,8 +48,8 @@ public class RuoloServiceDB implements RuoloService{
 	@Override
 	public boolean deleteRuolo(Long id) {
 		
-		if (ruolirepository.existsById(id)) {
-			ruolirepository.deleteById(id);
+		if (ruolorepository.existsById(id)) {
+			ruolorepository.deleteById(id);
 			return true;
 		}
 		return false;
