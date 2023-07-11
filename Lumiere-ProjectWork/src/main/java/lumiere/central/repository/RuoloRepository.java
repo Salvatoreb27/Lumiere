@@ -1,5 +1,9 @@
 package lumiere.central.repository;
 
-public interface RuoloRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import lumiere.central.model.Ruolo;
+
+public interface RuoloRepository extends JpaRepository <Ruolo, Integer>{
 
 }

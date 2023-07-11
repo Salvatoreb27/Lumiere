@@ -1,5 +1,9 @@
 package lumiere.central.repository;
 
-public interface VisualizzazioneRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import lumiere.central.model.Visualizzazione;
+
+public interface VisualizzazioneRepository extends JpaRepository <Visualizzazione, Integer> {
 
 }

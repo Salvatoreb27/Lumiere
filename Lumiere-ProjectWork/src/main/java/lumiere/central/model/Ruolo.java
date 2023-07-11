@@ -33,16 +33,4 @@ public class Ruolo implements Serializable {
 	@ManyToMany(mappedBy = "ruoli") 
 	private Set<Utente> utenti = new HashSet<>();
 
-	/*Associazione molti a molti tra ruolo e utente
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-	@JoinTable(name = "ruolo_utente",
-	joinColumns = {
-	@JoinColumn(name = "id_utente", 
-	referencedColumnName = "id")
-	},
-	inverseJoinColumns = {
-	@JoinColumn(name = "id_ruolo", 
-	referencedColumnName = "id") 
-	})
-	private Set<Ruolo> ruoli = new HashSet<>();*/
 }
