@@ -26,6 +26,7 @@ public class Genere implements Serializable {
 	@Column(name = "nome", nullable = false)
 	private String nome;
 	
+	//Associazione molti a molti tra generi e film
 	@ManyToMany(mappedBy = "generi") 
 	private Set<Film> films = new HashSet<>();
 
