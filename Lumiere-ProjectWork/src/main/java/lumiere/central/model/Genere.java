@@ -20,7 +20,7 @@ public class Genere implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_genere")
 	private Long Id;
 	
 	@Column(name = "nome", nullable = false)

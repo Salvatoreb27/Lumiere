@@ -22,7 +22,7 @@ public class Pagamento implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_pagamento")
 	private Long Id;
 
 	@Column(name = "tipo", nullable = false)

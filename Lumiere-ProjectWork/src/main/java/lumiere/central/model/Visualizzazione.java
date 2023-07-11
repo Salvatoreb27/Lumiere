@@ -20,7 +20,7 @@ public class Visualizzazione implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_visualizzazione")
 	private Long Id;
 	
 	//java.sql.Date = non fornisce l'orario esatto, mentre java.util.Date sì

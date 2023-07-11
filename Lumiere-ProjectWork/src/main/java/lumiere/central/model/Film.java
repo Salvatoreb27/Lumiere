@@ -27,7 +27,7 @@ public class Film implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_film")
 	private Long Id;
 
 	@Column(name = "titolo", length = 100, nullable = false)
@@ -39,13 +39,13 @@ public class Film implements Serializable {
 	@Column(name = "durata", nullable = false)
 	private Time durata;
 
-	@Column(name = "autore", length = 100, nullable = false)
+	@Column(name = "regista", length = 100, nullable = false)
 	private String regista;
 
-	@Column(name = "autore", length = 50, nullable = false)
+	@Column(name = "paese", length = 50, nullable = false)
 	private String paese;
 
-	@Column(name = "autore", length = 50, nullable = false)
+	@Column(name = "lingua", length = 50, nullable = false)
 	private String lingua;
 
 	
@@ -53,12 +53,12 @@ public class Film implements Serializable {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_attore",
 	joinColumns = {
-			@JoinColumn(name = "id_film", 
-					referencedColumnName = "id")
+			@JoinColumn(name = "id_attore", 
+					referencedColumnName = "id_film")
 	},
 	inverseJoinColumns = {
-			@JoinColumn(name = "id_attore", 
-					referencedColumnName = "id") 
+			@JoinColumn(name = "id_film", 
+					referencedColumnName = "id_attore") 
 	})
 	private Set<Attore> attori = new HashSet<>();
 
@@ -67,12 +67,12 @@ public class Film implements Serializable {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_genere",
 	joinColumns = {
-			@JoinColumn(name = "id_film", 
-					referencedColumnName = "id")
+			@JoinColumn(name = "id_genere", 
+					referencedColumnName = "id_film")
 	},
 	inverseJoinColumns = {
-			@JoinColumn(name = "id_genere", 
-					referencedColumnName = "id") 
+			@JoinColumn(name = "id_film", 
+					referencedColumnName = "id_genere") 
 	})
 	private Set<Genere> generi = new HashSet<>();
 

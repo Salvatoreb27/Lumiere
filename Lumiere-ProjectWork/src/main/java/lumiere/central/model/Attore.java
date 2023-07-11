@@ -23,7 +23,7 @@ public class Attore implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_attore")
 	private Long Id;
 	
 	@Column(name = "nome", nullable = false)
