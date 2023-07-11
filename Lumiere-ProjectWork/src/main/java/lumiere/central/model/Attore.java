@@ -29,6 +29,7 @@ public class Attore implements Serializable {
 	@Column(name = "nome", nullable = false)
 	private String nome;
 	
+	//Associazione molti a molti tra attori e film
 	@ManyToMany(mappedBy = "attori") 
 	private Set<Film> films = new HashSet<>();
 

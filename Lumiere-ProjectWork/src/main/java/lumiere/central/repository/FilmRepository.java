@@ -1,5 +1,9 @@
 package lumiere.central.repository;
 
-public interface FilmRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import lumiere.central.model.Film;
+
+public interface FilmRepository extends JpaRepository <Film, Integer> {
 
 }

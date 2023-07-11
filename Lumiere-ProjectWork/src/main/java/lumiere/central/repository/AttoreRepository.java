@@ -1,5 +1,9 @@
 package lumiere.central.repository;
 
-public interface AttoreRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import lumiere.central.model.Attore;
+
+public interface AttoreRepository extends JpaRepository <Attore, Integer> {
 
 }
