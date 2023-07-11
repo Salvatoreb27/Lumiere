@@ -17,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -27,7 +28,7 @@ public class Utente implements Serializable {
 	private static final long serialVersionUID = 2218373969423919482L;
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "id")
+		@Column(name = "id_utente")
 		private Long Id;
 		
 		@Column(name = "nickname", nullable = false)
@@ -54,6 +55,7 @@ public class Utente implements Serializable {
 		@Column(name = "attivo", nullable = false)
 		private boolean attivo;
 		
+		//Associazione uno a molti tra utente e amico
 		@OneToMany(mappedBy = "sourcePerson")
 		private List<Amico> friendships = new ArrayList<>();
 		
@@ -61,18 +63,30 @@ public class Utente implements Serializable {
 //		@OneToMany(mappedBy = "targetPerson")
 //		private List<Friendship> requestedFriendships = new ArrayList<Friendship>();
 		
+		//Associazione tra ruoli e utenti
 		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 		@JoinTable(name = "ruolo_utente",
 		joinColumns = {
-		@JoinColumn(name = "id_utente", 
-		referencedColumnName = "id")
+		@JoinColumn(name = "id_ruolo", 
+		referencedColumnName = "id_utente")
 		},
 		inverseJoinColumns = {
-		@JoinColumn(name = "id_ruolo", 
-		referencedColumnName = "id") 
+		@JoinColumn(name = "id_utente", 
+		referencedColumnName = "id_ruolo") 
 		})
 		private Set<Ruolo> ruoli = new HashSet<>();
 		
+		//Associazione tra pagamenti e utente
+		@ManyToOne(fetch = FetchType.LAZY)
+		@JoinColumn(name = "id_utenti",
+		referencedColumnName = "id_pagamento") 
+		private Pagamento pagamenti;
+		
+		@OneToMany(mappedBy = "utenti")
+		private List<Recensione> recensioni = new ArrayList<>();
+		
+		@OneToMany(mappedBy = "utenti")
+		private List<Visualizzazione> Visualizzazioni = new ArrayList<>();
 		
 
 		

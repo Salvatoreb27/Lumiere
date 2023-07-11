@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import lumiere.central.model.Visualizzazione;
 
-public interface VisualizzazioneRepository extends JpaRepository <Visualizzazione, Integer> {
+public interface VisualizzazioneRepository extends JpaRepository <Visualizzazione, Long> {
 
 }

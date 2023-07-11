@@ -25,7 +25,7 @@ public class Recensione implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id_recensione")
 	private Long Id;
 	
 	@Column(name = "data", nullable = false)
@@ -40,8 +40,6 @@ public class Recensione implements Serializable {
 	@Column(name = "pubblico", nullable = false)
 	private Boolean pubblico;
 	
-	
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_film", 
 	referencedColumnName = "id_film") 
