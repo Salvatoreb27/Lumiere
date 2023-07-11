@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import lumiere.central.model.Utente;
 
-public interface UtenteRepository extends JpaRepository <Utente, Integer> {
+public interface UtenteRepository extends JpaRepository <Utente, Long> {
 
 }
