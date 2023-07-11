@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lumiere.central.model.Film;
 import lumiere.central.model.Genere;
 import lumiere.central.repository.GenereRepository;
 
@@ -39,7 +38,7 @@ public class GenereServiceDB implements GenereService {
 	@Override
 	public Genere updateGenere(Genere genere, Long id) {
 		if (genererepository.existsById(id)) {
-			Genere g = genererepository.findById(id).get(); //film sul DB
+			Genere g = genererepository.findById(id).get(); //genere sul DB
 			g.setNome(genere.getNome());
 			genererepository.save(g);
 			return g;

@@ -33,4 +33,47 @@ public class Attore implements Serializable {
 	@ManyToMany(mappedBy = "attori") 
 	private Set<Film> films = new HashSet<>();
 
+	public Attore() {
+		super();
+	}
+
+	public Attore(Long id, String nome, Set<Film> films) {
+		super();
+		Id = id;
+		this.nome = nome;
+		this.films = films;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Set<Film> getFilms() {
+		return films;
+	}
+
+	public void setFilms(Set<Film> films) {
+		this.films = films;
+	}
+
+	@Override
+	public String toString() {
+		return "Attore [Id=" + Id + ", nome=" + nome + ", films=" + films + "]";
+	}
+	
+	
+
+	
 }
