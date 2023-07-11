@@ -64,5 +64,9 @@ public class Ruolo implements Serializable {
 		this.utenti = utenti;
 	}
 
+	@Override
+	public String toString() {
+		return "Ruolo [Id=" + Id + ", nome=" + nome + ", utenti=" + utenti + "]";
+	}
 	
 }
