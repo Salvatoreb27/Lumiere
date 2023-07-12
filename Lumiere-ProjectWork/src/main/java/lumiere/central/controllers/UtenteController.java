@@ -58,13 +58,13 @@ public class UtenteController {
 		return utente;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/utentefunct/save") 
 	public Long saveUtente(@RequestBody Utente utente) {
 		Long idUtente = utenteService.addUtente(utente);
 		return idUtente;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/utentefunct/update/{id}")
 	public Utente updateUtenteById(@PathVariable Long id, @RequestBody Utente utente) {
 		Utente f = utenteService.updateUtente(utente, id);
 		if (f == null) {
@@ -73,7 +73,7 @@ public class UtenteController {
 		return f;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/utentefunct/delete/{id}")
 	public boolean deleteUtenteById(@PathVariable Long id) {
 		boolean b = utenteService.deleteUtente(id);
 		if (b == false) {

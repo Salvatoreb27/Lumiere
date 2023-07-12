@@ -40,6 +40,10 @@ public class FilmController {
 			filmDTO.setId(film.getId());
 			filmDTO.setTitolo(film.getTitolo());
 			filmDTO.setAnno(film.getAnno());
+			filmDTO.setDurata(film.getDurata());
+			filmDTO.setRegista(film.getRegista());
+			filmDTO.setPaese(film.getPaese());
+			filmDTO.setLingua(film.getLingua());
 			filmsDTO.add(filmDTO);
 		}
 		return filmsDTO;
@@ -54,13 +58,13 @@ public class FilmController {
 		return film;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/filmfunct/save") 
 	public Long saveFilm(@RequestBody Film film) {
 		Long idFilm = filmService.addFilm(film);
 		return idFilm;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/filmfunct/update/{id}")
 	public Film updateFilmById(@PathVariable Long id, @RequestBody Film film) {
 		Film f = filmService.updateFilm(film, id);
 		if (f == null) {
@@ -69,7 +73,7 @@ public class FilmController {
 		return f;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/filmfunct/delete/{id}")
 	public boolean deleteFilmById(@PathVariable Long id) {
 		boolean b = filmService.deleteFilm(id);
 		if (b == false) {
@@ -77,6 +81,7 @@ public class FilmController {
 		} 
 		return true;
 	}
+
 }
 
 

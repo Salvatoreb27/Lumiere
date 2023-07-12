@@ -40,13 +40,13 @@ public class AmicoController {
 		return amico;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/amicofunct/save") 
 	public Long saveAmico(@RequestBody Amico amico) {
 		Long idAmico = amicoService.addAmico(amico);
 		return idAmico;
 	}
 	
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/amicofunct/delete/{id}")
 	public boolean deleteAmicoById(@PathVariable Long id) {
 		boolean b = amicoService.deleteAmico(id);
 		if (b == false) {

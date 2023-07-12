@@ -40,13 +40,13 @@ public class GenereController {
 		return genere;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/generefunct/save") 
 	public Long saveGenere(@RequestBody Genere genere) {
 		Long idGenere = genereService.addGenere(genere);
 		return idGenere;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/generefunct/update/{id}")
 	public Genere updateGenereById(@PathVariable Long id, @RequestBody Genere genere) {
 		Genere a = genereService.updateGenere(genere, id);
 		if (a == null) {
@@ -55,7 +55,7 @@ public class GenereController {
 		return a;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/generefunct/delete/{id}")
 	public boolean deleteGenereById(@PathVariable Long id) {
 		boolean b = genereService.deleteGenere(id);
 		if (b == false) {

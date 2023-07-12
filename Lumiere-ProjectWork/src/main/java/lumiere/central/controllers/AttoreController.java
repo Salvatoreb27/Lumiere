@@ -41,13 +41,13 @@ public class AttoreController {
 		return attore;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/attorefunct/save") 
 	public Long saveAttore(@RequestBody Attore attore) {
 		Long idAttore = attoreService.addAttore(attore);
 		return idAttore;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/attorefunct/update/{id}")
 	public Attore updateAttoreById(@PathVariable Long id, @RequestBody Attore attore) {
 		Attore a = attoreService.updateAttore(attore, id);
 		if (a == null) {
@@ -56,7 +56,7 @@ public class AttoreController {
 		return a;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/attorefunct/delete/{id}")
 	public boolean deleteAttoreById(@PathVariable Long id) {
 		boolean b = attoreService.deleteAttore(id);
 		if (b == false) {

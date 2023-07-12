@@ -40,13 +40,13 @@ public class RuoloController {
 		return ruolo;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/ruolofunct/save") 
 	public Long saveRuolo(@RequestBody Ruolo ruolo) {
 		Long idRuolo = ruoloService.addRuolo(ruolo);
 		return idRuolo;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/ruolofunct/update/{id}")
 	public Ruolo updateRuoloById(@PathVariable Long id, @RequestBody Ruolo ruolo) {
 		Ruolo a = ruoloService.updateRuolo(ruolo, id);
 		if (a == null) {
@@ -55,7 +55,7 @@ public class RuoloController {
 		return a;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/ruolofunct/delete/{id}")
 	public boolean deleteRuoloById(@PathVariable Long id) {
 		boolean b = ruoloService.deleteRuolo(id);
 		if (b == false) {
