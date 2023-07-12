@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import lumiere.central.model.Recensione;
 import lumiere.central.repository.RecensioneRepository;
 
+@Service
 public class RecensioneServicesDB implements RecensioneService{
 	
 	@Autowired 

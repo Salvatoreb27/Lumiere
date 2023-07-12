@@ -48,9 +48,6 @@ public class AdminController {
 	private GenereService genereService; 
 	
 	@Autowired
-	private PagamentoService pagamentoService;
-	
-	@Autowired
 	private UtenteService utenteService; 
 	
 	@Autowired
