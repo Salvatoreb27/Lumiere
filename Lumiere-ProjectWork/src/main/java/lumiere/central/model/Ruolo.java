@@ -33,6 +33,11 @@ public class Ruolo implements Serializable {
 	@ManyToMany(mappedBy = "ruoli") 
 	private Set<Utente> utenti = new HashSet<>();
 
+	
+	public Ruolo() {
+		super();
+	}
+
 	public Ruolo(Long id, String nome, Set<Utente> utenti) {
 		super();
 		Id = id;

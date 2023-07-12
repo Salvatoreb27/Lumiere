@@ -242,5 +242,8 @@ public class Utente implements Serializable {
 					+ ", pagamenti=" + pagamenti + ", recensioni=" + recensioni + ", Visualizzazioni=" + Visualizzazioni
 					+ "]";
 		}
+		public void addRuolo(Ruolo ruolo) {
+			ruoli.add(ruolo);
+		}
 		
 }

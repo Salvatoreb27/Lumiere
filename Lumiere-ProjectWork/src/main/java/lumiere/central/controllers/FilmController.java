@@ -58,30 +58,6 @@ public class FilmController {
 		return film;
 	}
 
-	@PostMapping("/filmfunct/save") 
-	public Long saveFilm(@RequestBody Film film) {
-		Long idFilm = filmService.addFilm(film);
-		return idFilm;
-	}
-	
-	@PutMapping("/filmfunct/update/{id}")
-	public Film updateFilmById(@PathVariable Long id, @RequestBody Film film) {
-		Film f = filmService.updateFilm(film, id);
-		if (f == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Film non trovato");
-		}
-		return f;
-	}
-
-	@DeleteMapping("/filmfunct/delete/{id}")
-	public boolean deleteFilmById(@PathVariable Long id) {
-		boolean b = filmService.deleteFilm(id);
-		if (b == false) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Film non trovato");
-		} 
-		return true;
-	}
-
 }
 
 

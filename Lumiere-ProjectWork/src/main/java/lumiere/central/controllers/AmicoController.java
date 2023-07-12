@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
 
 import lumiere.central.model.Amico;
 import lumiere.central.services.AmicoService;
@@ -28,9 +30,17 @@ public class AmicoController {
 	private AmicoService amicoService; 
 	
 	@GetMapping("/all")
-	public List<Amico> getAllAmici() {
-		return amicoService.getAmici();
+	public String showAllAmici(Model model) {
+		//richiede servizio a AmicoService
+		List<Amico> amici = amicoService.getAmici();
+		
+		String title = "amici";
+		model.addAttribute("message", title);
+		model.addAttribute("amici", amici);
+
+		return "amici";
 	}
+	
 	@GetMapping("/{id}")
 	public Amico getAmicoById(@PathVariable Long id) {
 		Amico amico = amicoService.getAmico(id);
@@ -40,20 +50,6 @@ public class AmicoController {
 		return amico;
 	}
 
-	@PostMapping("/amicofunct/save") 
-	public Long saveAmico(@RequestBody Amico amico) {
-		Long idAmico = amicoService.addAmico(amico);
-		return idAmico;
-	}
-	
-	@DeleteMapping("/amicofunct/delete/{id}")
-	public boolean deleteAmicoById(@PathVariable Long id) {
-		boolean b = amicoService.deleteAmico(id);
-		if (b == false) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Amico non trovato");
-		} 
-		return true;
-	}
 }
 
 
