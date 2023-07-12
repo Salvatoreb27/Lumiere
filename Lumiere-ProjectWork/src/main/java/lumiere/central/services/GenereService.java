@@ -7,7 +7,7 @@ import lumiere.central.model.Genere;
 public interface GenereService {
 
 	//visualizzazione di tutti i generi
-	List<Genere> getGenres();
+	List<Genere> getGeneri();
 	//visualizzazione di un genere specifico
 	Genere getGenere(Long id);
 	//inserimento di un nuovo genere

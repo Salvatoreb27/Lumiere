@@ -16,7 +16,7 @@ public class GenereServiceDB implements GenereService {
 	private GenereRepository genererepository;
 	
 	@Override
-	public List<Genere> getGenres() {
+	public List<Genere> getGeneri() {
 		return (List<Genere>) genererepository.findAll();
 	}
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lumiere.central.model.Amico;
+import lumiere.central.model.Attore;
 import lumiere.central.repository.AmicoRepository;
 
 @Service
