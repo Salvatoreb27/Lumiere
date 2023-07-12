@@ -57,26 +57,6 @@ public class AdminController {
 	@Autowired
 	private VisualizzazioneService visualizzazioneService; 
 	
-	@GetMapping("/films/all")
-	/*public List<Film> getAllFilms() {
-		return filmService.getFilms();
-	}*/
-	public List <FilmDTO> getAllFilms() {
-		List <Film> films = filmService.getFilms();
-		List <FilmDTO> filmsDTO = new ArrayList <>();
-		for (Film film: films) {
-			FilmDTO filmDTO = new FilmDTO();
-			filmDTO.setId(film.getId());
-			filmDTO.setTitolo(film.getTitolo());
-			filmDTO.setAnno(film.getAnno());
-			filmDTO.setDurata(film.getDurata());
-			filmDTO.setRegista(film.getRegista());
-			filmDTO.setPaese(film.getPaese());
-			filmDTO.setLingua(film.getLingua());
-			filmsDTO.add(filmDTO);
-		}
-		return filmsDTO;
-	}
 	
 //Cancellazione di film --> Admin
 	@DeleteMapping("/film/delete/{id}")
