@@ -57,7 +57,7 @@ public class AdminController {
 	@Autowired
 	private VisualizzazioneService visualizzazioneService; 
 	
-	@GetMapping("/films/all")
+	@GetMapping("/films")
 	/*public List<Film> getAllFilms() {
 		return filmService.getFilms();
 	}*/
@@ -66,7 +66,6 @@ public class AdminController {
 		List <FilmDTO> filmsDTO = new ArrayList <>();
 		for (Film film: films) {
 			FilmDTO filmDTO = new FilmDTO();
-			filmDTO.setId(film.getId());
 			filmDTO.setTitolo(film.getTitolo());
 			filmDTO.setAnno(film.getAnno());
 			filmDTO.setDurata(film.getDurata());
@@ -94,8 +93,10 @@ public class AdminController {
 	//Aggiunta di film ---> Admin
 	@PostMapping("/film/addFilm") 
 	public Long saveFilm(@RequestBody Film film) {
-		Long idFilm = filmService.addFilm(film);
-		return idFilm;
+//		Long idFilm = filmService.addFilm(film);
+		System.err.println(film);
+//		return idFilm;
+		return 0L;
 	}
 	
 	//@Secured("ROLE_ADMIN")

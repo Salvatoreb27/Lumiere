@@ -37,7 +37,6 @@ public class FilmController {
 		List <FilmDTO> filmsDTO = new ArrayList <>();
 		for (Film film: films) {
 			FilmDTO filmDTO = new FilmDTO();
-			filmDTO.setId(film.getId());
 			filmDTO.setTitolo(film.getTitolo());
 			filmDTO.setAnno(film.getAnno());
 			filmDTO.setDurata(film.getDurata());

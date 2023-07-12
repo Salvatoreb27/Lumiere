@@ -15,19 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-/*
- * https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html
- * https://www.appsdeveloperblog.com/migrating-from-deprecated-websecurityconfigureradapter/
- * https://www.danvega.dev/blog/2022/12/01/spring-security-6/
- * https://reflectoring.io/spring-security
- * https://docs.spring.io/spring-security/reference/servlet/authorization/authorize-http-requests.html#authorize-requests
- * https://www.baeldung.com/spring-security-session
- * https://www.devxperiences.com/pzwp1/2023/01/31/spring-boot-security-configuration-practically-explained-part6-a-deep-intro-to-filter-token-based-security/
- * https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/form.html
- * https://www.codeburps.com/post/spring-boot-form-login
- * https://youtu.be/FLxDnRQonUA
- * https://howtodoinjava.com/spring-security/spring-boot-role-based-authorization/
- */
 
 @Configuration
 @EnableWebSecurity
@@ -60,11 +47,11 @@ public class SecurityConfig {
 				//.requestMatchers("/user/**").hasRole("USER")
 				//.anyRequest().authenticated()
 				)
-		.formLogin(form -> form
-				.loginPage("/utenti/login")
-				//.defaultSuccessUrl("/home")
-				.permitAll()
-				)
+//		.formLogin(form -> form
+//				.loginPage("/utenti/login")
+//				//.defaultSuccessUrl("/home")
+//				.permitAll()
+//				)
 		.sessionManagement((session) -> session
 				.sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
 		return http.build();
