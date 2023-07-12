@@ -1,0 +1,54 @@
+
+html,body, main{
+    background-color: #393E46;
+    font-family: 'Poppins', sans-serif;  
+} 
+
+main{
+    background-color: #393E46;
+}
+
+.container-fluid{
+    background-color: #222831;
+}
+
+#titolo-logo{
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    color: #FFD369;
+}
+
+#img-logo{
+    margin-right: 12px;
+}
+
+.btn.btn-outline-success{
+    background-color: #FFD369;
+    font-weight: 600;
+    color: #222831;
+    border-color: whitesmoke;
+}
+
+.btn.btn-outline-success:hover{
+    background-color: #393E46;
+    color: #FFD369;
+    border-color: #FFD369;
+
+}
+
+.carousel-inner{
+   padding-left: 3em;
+   padding-right: 3em;
+}
+
+.carousel-img{
+    display: flex;
+    justify-content: center;
+    width: 1024px;
+}
+
+ .carousel-title{
+    padding: 2rem;
+    font-size: 3.5rem;
+}
