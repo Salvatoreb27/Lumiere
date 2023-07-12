@@ -34,8 +34,9 @@ public class Film implements Serializable {
 	@Column(name = "titolo", length = 100, nullable = false)
 	private String titolo;
 	
-	@Column(name = "copertina", nullable = true)
-	private Image copertina;
+//	@Column(name = "copertina", nullable = true)
+//	@Lob
+//	private Image copertina;
 
 	@Column(name = "anno", nullable = false)
 	private Date anno;
@@ -103,7 +104,7 @@ public class Film implements Serializable {
 			super();
 			Id = id;
 			this.titolo = titolo;
-			this.copertina = copertina;
+//			this.copertina = copertina;
 			this.anno = anno;
 			this.durata = durata;
 			this.regista = regista;
@@ -134,13 +135,13 @@ public class Film implements Serializable {
 			this.titolo = titolo;
 		}
 		
-		public Image getCopertina() {
-			return copertina;
-		}
-
-		public void setCopertina(Image copertina) {
-			this.copertina = copertina;
-		}
+//		public Image getCopertina() {
+//			return copertina;
+//		}
+//
+//		public void setCopertina(Image copertina) {
+//			this.copertina = copertina;
+//		}
 
 		public Date getAnno() {
 			return anno;
