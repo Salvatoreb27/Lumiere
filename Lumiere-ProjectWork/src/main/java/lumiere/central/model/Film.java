@@ -1,7 +1,8 @@
 package lumiere.central.model;
 
-import java.awt.Image;
+
 import java.io.Serializable;
+import java.sql.Blob;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.HashSet;
@@ -16,6 +17,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -34,9 +36,9 @@ public class Film implements Serializable {
 	@Column(name = "titolo", length = 100, nullable = false)
 	private String titolo;
 	
-//	@Column(name = "copertina", nullable = true)
-//	@Lob
-//	private Image copertina;
+	@Lob
+	@Column(name = "copertina", nullable = true)
+	private Blob copertina;
 
 	@Column(name = "anno", nullable = false)
 	private Date anno;
@@ -98,13 +100,13 @@ public class Film implements Serializable {
 			super();
 		}
 
-		public Film(Long id, String titolo, Image copertina, Date anno, Time durata, String regista, String paese,
+		public Film(Long id, String titolo, Blob copertina, Date anno, Time durata, String regista, String paese,
 				String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
 				Set<Visualizzazione> visualizzazioni) {
 			super();
 			Id = id;
 			this.titolo = titolo;
-//			this.copertina = copertina;
+			this.copertina = copertina;
 			this.anno = anno;
 			this.durata = durata;
 			this.regista = regista;
@@ -135,13 +137,13 @@ public class Film implements Serializable {
 			this.titolo = titolo;
 		}
 		
-//		public Image getCopertina() {
-//			return copertina;
-//		}
-//
-//		public void setCopertina(Image copertina) {
-//			this.copertina = copertina;
-//		}
+		public Blob getCopertina() {
+			return copertina;
+		}
+
+		public void setCopertina(Blob copertina) {
+			this.copertina = copertina;
+		}
 
 		public Date getAnno() {
 			return anno;
