@@ -40,27 +40,11 @@ public class VisualizzazioneController {
 		return visualizzazione;
 	}
 
-	@PostMapping("/user/save") 
+	@PostMapping("/visualizzazione/addVisualizzazione") 
 	public Long saveVisualizzazione(@RequestBody Visualizzazione visualizzazione) {
 		Long idVisualizzazione = visualizzazioneService.addVisualizzazione(visualizzazione);
 		return idVisualizzazione;
 	}
 	
-	@PutMapping("/user/update/{id}")
-	public Visualizzazione updateVisualizzazioneById(@PathVariable Long id, @RequestBody Visualizzazione visualizzazione) {
-		Visualizzazione a = visualizzazioneService.updateVisualizzazione(visualizzazione, id);
-		if (a == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Visualizzazione non trovato");
-		}
-		return a;
-	}
-
-	@DeleteMapping("/user/delete/{id}")
-	public boolean deleteVisualizzazioneById(@PathVariable Long id) {
-		boolean b = visualizzazioneService.deleteVisualizzazione(id);
-		if (b == false) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Visualizzazione non trovato");
-		} 
-		return true;
-	}
+	
 }

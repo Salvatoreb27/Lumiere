@@ -53,14 +53,13 @@ public class RecensioneController {
 		}
 		return recensione;
 	}
-
-	@PostMapping("/user/save") 
+	@PostMapping("/recensione/addRecensione") 
 	public Long saveRecensione(@RequestBody Recensione recensione) {
 		Long idRecensione = recensioneService.addRecensione(recensione);
 		return idRecensione;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/recensione/update/{id}")
 	public Recensione updateRecensioneById(@PathVariable Long id, @RequestBody Recensione recensione) {
 		Recensione f = recensioneService.updateRecensione(recensione, id);
 		if (f == null) {
@@ -69,7 +68,7 @@ public class RecensioneController {
 		return f;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/recensione/delete/{id}")
 	public boolean deleteRecensioneById(@PathVariable Long id) {
 		boolean b = recensioneService.deleteRecensione(id);
 		if (b == false) {
@@ -77,4 +76,5 @@ public class RecensioneController {
 		} 
 		return true;
 	}
+
 }

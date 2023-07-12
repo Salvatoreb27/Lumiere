@@ -40,13 +40,13 @@ public class PagamentoController {
 		return pagamento;
 	}
 
-	@PostMapping("/user/save") 
-	public Long savePagamento(@RequestBody Pagamento pagamento) {
+	@PostMapping("/makePagamento") 
+	public Long makePagamento(@RequestBody Pagamento pagamento) {
 		Long idPagamento = pagamentoService.addPagamento(pagamento);
 		return idPagamento;
 	}
 	
-	@PutMapping("/user/update/{id}")
+	@PutMapping("/update/{id}")
 	public Pagamento updatePagamentoById(@PathVariable Long id, @RequestBody Pagamento pagamento) {
 		Pagamento a = pagamentoService.updatePagamento(pagamento, id);
 		if (a == null) {
@@ -55,7 +55,7 @@ public class PagamentoController {
 		return a;
 	}
 
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public boolean deletePagamentoById(@PathVariable Long id) {
 		boolean b = pagamentoService.deletePagamento(id);
 		if (b == false) {

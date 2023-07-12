@@ -40,27 +40,4 @@ public class GenereController {
 		return genere;
 	}
 
-	@PostMapping("/user/save") 
-	public Long saveGenere(@RequestBody Genere genere) {
-		Long idGenere = genereService.addGenere(genere);
-		return idGenere;
-	}
-	
-	@PutMapping("/user/update/{id}")
-	public Genere updateGenereById(@PathVariable Long id, @RequestBody Genere genere) {
-		Genere a = genereService.updateGenere(genere, id);
-		if (a == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Genere non trovato");
-		}
-		return a;
-	}
-
-	@DeleteMapping("/user/delete/{id}")
-	public boolean deleteGenereById(@PathVariable Long id) {
-		boolean b = genereService.deleteGenere(id);
-		if (b == false) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Genere non trovato");
-		} 
-		return true;
-	}
 }
