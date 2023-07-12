@@ -2,7 +2,7 @@
 function visualizzaCarouselFilms(){
 	console.log("visualizzazione");
 	console
-	fetch("http://localhost:8080/lumiere/films")
+	fetch("http://localhost:8080/lumiere/films/all")
 	.then(res => res.json())
 	.then(listaFilms => 
 	{
@@ -34,7 +34,7 @@ function addFilm(){
 	var newFilm = {"titolo": "Il pollo Mannaro", "anno": "2023,11,20", "durata": "6,30,50", "regista": "Salvatore Di Francia", "paese": "italia", "lingua": "italiano", "attori": "Salvatore Buono, Jack il pollo", "generi": "horror, action", "recensioni": null, "visualizzazioni": null };
 	console.log(newFilm.value)
 
-	fetch("http://localhost:8080/lumiere/films",{
+	fetch("http://localhost:8080/admin/films/all",{
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json"
