@@ -87,7 +87,160 @@ public class Utente implements Serializable {
 		
 		@OneToMany(mappedBy = "utenti")
 		private List<Visualizzazione> Visualizzazioni = new ArrayList<>();
-		
 
+		public Utente() {
+			super();
+		}
+		
+		public Utente(String nickname, String nome, String cognome, Date dataDiNascita, String email, String password) {
+			super();
+			this.nickname = nickname;
+			this.nome = nome;
+			this.cognome = cognome;
+			this.dataDiNascita = dataDiNascita;
+			this.email = email;
+			this.password = password;
+		}
+
+		public Utente(Long id, String nickname, String nome, String cognome, Date dataDiNascita, String email,
+				String password, String telefono, boolean attivo, List<Amico> friendships, Set<Ruolo> ruoli,
+				Pagamento pagamenti, List<Recensione> recensioni, List<Visualizzazione> visualizzazioni) {
+			super();
+			Id = id;
+			this.nickname = nickname;
+			this.nome = nome;
+			this.cognome = cognome;
+			this.dataDiNascita = dataDiNascita;
+			this.email = email;
+			this.password = password;
+			this.telefono = telefono;
+			this.attivo = attivo;
+			this.friendships = friendships;
+			this.ruoli = ruoli;
+			this.pagamenti = pagamenti;
+			this.recensioni = recensioni;
+			Visualizzazioni = visualizzazioni;
+		}
+
+		public Long getId() {
+			return Id;
+		}
+
+		public void setId(Long id) {
+			Id = id;
+		}
+
+		public String getNickname() {
+			return nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public String getCognome() {
+			return cognome;
+		}
+
+		public void setCognome(String cognome) {
+			this.cognome = cognome;
+		}
+
+		public Date getDataDiNascita() {
+			return dataDiNascita;
+		}
+
+		public void setDataDiNascita(Date dataDiNascita) {
+			this.dataDiNascita = dataDiNascita;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getPassword() {
+			return password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public String getTelefono() {
+			return telefono;
+		}
+
+		public void setTelefono(String telefono) {
+			this.telefono = telefono;
+		}
+
+		public boolean isAttivo() {
+			return attivo;
+		}
+
+		public void setAttivo(boolean attivo) {
+			this.attivo = attivo;
+		}
+
+		public List<Amico> getFriendships() {
+			return friendships;
+		}
+
+		public void setFriendships(List<Amico> friendships) {
+			this.friendships = friendships;
+		}
+
+		public Set<Ruolo> getRuoli() {
+			return ruoli;
+		}
+
+		public void setRuoli(Set<Ruolo> ruoli) {
+			this.ruoli = ruoli;
+		}
+
+		public Pagamento getPagamenti() {
+			return pagamenti;
+		}
+
+		public void setPagamenti(Pagamento pagamenti) {
+			this.pagamenti = pagamenti;
+		}
+
+		public List<Recensione> getRecensioni() {
+			return recensioni;
+		}
+
+		public void setRecensioni(List<Recensione> recensioni) {
+			this.recensioni = recensioni;
+		}
+
+		public List<Visualizzazione> getVisualizzazioni() {
+			return Visualizzazioni;
+		}
+
+		public void setVisualizzazioni(List<Visualizzazione> visualizzazioni) {
+			Visualizzazioni = visualizzazioni;
+		}
+
+		@Override
+		public String toString() {
+			return "Utente [Id=" + Id + ", nickname=" + nickname + ", nome=" + nome + ", cognome=" + cognome
+					+ ", dataDiNascita=" + dataDiNascita + ", email=" + email + ", password=" + password + ", telefono="
+					+ telefono + ", attivo=" + attivo + ", friendships=" + friendships + ", ruoli=" + ruoli
+					+ ", pagamenti=" + pagamenti + ", recensioni=" + recensioni + ", Visualizzazioni=" + Visualizzazioni
+					+ "]";
+		}
 		
 }

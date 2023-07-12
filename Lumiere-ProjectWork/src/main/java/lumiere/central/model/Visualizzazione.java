@@ -40,4 +40,59 @@ public class Visualizzazione implements Serializable{
 	@JoinColumn(name = "id_utente", referencedColumnName = "id_utente")
 	private Utente utenti;
 
+	public Visualizzazione(Long id, Date data, Integer numero, Film films, Utente utenti) {
+		super();
+		Id = id;
+		this.data = data;
+		this.numero = numero;
+		this.films = films;
+		this.utenti = utenti;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public Film getFilms() {
+		return films;
+	}
+
+	public void setFilms(Film films) {
+		this.films = films;
+	}
+
+	public Utente getUtenti() {
+		return utenti;
+	}
+
+	public void setUtenti(Utente utenti) {
+		this.utenti = utenti;
+	}
+
+	@Override
+	public String toString() {
+		return "Visualizzazione [Id=" + Id + ", data=" + data + ", numero=" + numero + ", films=" + films + ", utenti="
+				+ utenti + "]";
+	}
+
 }
