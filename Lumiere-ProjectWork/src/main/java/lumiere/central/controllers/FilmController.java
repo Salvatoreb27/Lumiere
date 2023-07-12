@@ -22,7 +22,7 @@ import lumiere.central.services.FilmService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/api/v1/films")
+@RequestMapping("/lumiere/films")
 public class FilmController {
 
 	@Autowired
@@ -62,11 +62,11 @@ public class FilmController {
 	
 	@PutMapping("/user/update/{id}")
 	public Film updateFilmById(@PathVariable Long id, @RequestBody Film film) {
-		Film a = filmService.updateFilm(film, id);
-		if (a == null) {
+		Film f = filmService.updateFilm(film, id);
+		if (f == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Film non trovato");
 		}
-		return a;
+		return f;
 	}
 
 	@DeleteMapping("/user/delete/{id}")
