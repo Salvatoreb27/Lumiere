@@ -16,7 +16,7 @@ public class PagamentoServiceDB implements PagamentoService {
 	private PagamentoRepository pagamentirepository;
 
 	@Override
-	public List<Pagamento> getPagamento() {
+	public List<Pagamento> getPagamenti() {
 		return (List<Pagamento>) pagamentirepository.findAll();
 	}
 
