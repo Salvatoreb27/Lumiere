@@ -3,6 +3,7 @@ package lumiere.central.services;
 import java.util.List;
 
 import lumiere.central.model.Amico;
+import lumiere.central.model.Attore;
 
 public interface AmicoService {
 
