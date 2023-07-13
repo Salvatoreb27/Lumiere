@@ -22,7 +22,7 @@ import lumiere.central.services.FilmService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/films")
+@RequestMapping("/api/v1/lumiere/films")
 public class FilmController {
 
 	@Autowired
