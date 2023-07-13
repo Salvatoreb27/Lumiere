@@ -98,7 +98,7 @@ public class Film implements Serializable {
 			super();
 		}
 
-		public Film(Long id, String titolo, Image copertina, Date anno, Time durata, String regista, String paese,
+		public Film(Long id, String titolo,/* Image copertina,*/ Date anno, Time durata, String regista, String paese,
 				String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
 				Set<Visualizzazione> visualizzazioni) {
 			super();

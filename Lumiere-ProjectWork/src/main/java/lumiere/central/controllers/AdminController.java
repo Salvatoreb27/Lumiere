@@ -57,7 +57,6 @@ public class AdminController {
 	@Autowired
 	private VisualizzazioneService visualizzazioneService; 
 	
-	
 //Cancellazione di film --> Admin
 	@DeleteMapping("/film/delete/{id}")
 	public boolean deleteFilmById(@PathVariable Long id) {
@@ -74,8 +73,10 @@ public class AdminController {
 	//Aggiunta di film ---> Admin
 	@PostMapping("/film/addFilm") 
 	public Long saveFilm(@RequestBody Film film) {
-		Long idFilm = filmService.addFilm(film);
-		return idFilm;
+//		Long idFilm = filmService.addFilm(film);
+		System.err.println(film);
+//		return idFilm;
+		return 0L;
 	}
 	
 	//@Secured("ROLE_ADMIN")
