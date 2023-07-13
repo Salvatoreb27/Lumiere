@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import lumiere.central.dto.FilmDTO;
+
 import lumiere.central.dto.UtenteDTO;
 import lumiere.central.model.Attore;
 import lumiere.central.model.Film;
@@ -29,7 +29,7 @@ import lumiere.central.security.SessionUtils;
 import lumiere.central.services.AttoreService;
 import lumiere.central.services.FilmService;
 import lumiere.central.services.GenereService;
-import lumiere.central.services.PagamentoService;
+
 import lumiere.central.services.RuoloService;
 import lumiere.central.services.UtenteService;
 import lumiere.central.services.VisualizzazioneService;

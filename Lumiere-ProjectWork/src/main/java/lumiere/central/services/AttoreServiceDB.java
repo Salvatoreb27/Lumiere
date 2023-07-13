@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lumiere.central.model.Attore;
+import lumiere.central.model.Genere;
 import lumiere.central.repository.AttoreRepository;
 
 @Service
@@ -54,5 +55,12 @@ public class AttoreServiceDB implements AttoreService{
 		}
 		return false;
 	}
-
+	//Da verificare
+	public Attore getAttoreByName(String name) {
+		Optional<Attore> a = attorerepository.findByNome(name);
+		if (a.isPresent()) {
+			return a.get();
+		}
+		return null;
+	}
 }
