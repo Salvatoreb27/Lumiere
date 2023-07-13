@@ -73,10 +73,8 @@ public class AdminController {
 	//Aggiunta di film ---> Admin
 	@PostMapping("/film/addFilm") 
 	public Long saveFilm(@RequestBody Film film) {
-//		Long idFilm = filmService.addFilm(film);
-		System.err.println(film);
-//		return idFilm;
-		return 0L;
+		Long idFilm = filmService.addFilm(film);
+		return idFilm;
 	}
 	
 	//@Secured("ROLE_ADMIN")
