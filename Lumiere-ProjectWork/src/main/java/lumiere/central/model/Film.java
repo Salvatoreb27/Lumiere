@@ -7,6 +7,8 @@ import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,10 +41,11 @@ public class Film implements Serializable {
 //	private Image copertina;
 
 	@Column(name = "anno", nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date anno;
 
 	@Column(name = "durata", nullable = false)
-	private Time durata;
+	private Integer durata;
 
 	@Column(name = "regista", length = 100, nullable = false)
 	private String regista;
@@ -98,7 +101,7 @@ public class Film implements Serializable {
 			super();
 		}
 
-		public Film(Long id, String titolo,/* Image copertina,*/ Date anno, Time durata, String regista, String paese,
+		public Film(Long id, String titolo,/* Image copertina,*/ Date anno, Integer durata, String regista, String paese,
 				String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
 				Set<Visualizzazione> visualizzazioni) {
 			super();
@@ -153,12 +156,12 @@ public class Film implements Serializable {
 		}
 
 
-		public Time getDurata() {
+		public Integer getDurata() {
 			return durata;
 		}
 
 
-		public void setDurata(Time durata) {
+		public void setDurata(Integer durata) {
 			this.durata = durata;
 		}
 

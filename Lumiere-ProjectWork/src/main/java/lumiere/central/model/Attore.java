@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class Attore implements Serializable {
 	
 	//Associazione molti a molti tra attori e film
 	@ManyToMany(mappedBy = "attori") 
+	@JsonIgnore
 	private Set<Film> films = new HashSet<>();
 
 	public Attore() {

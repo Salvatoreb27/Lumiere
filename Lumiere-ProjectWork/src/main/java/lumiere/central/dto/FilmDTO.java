@@ -16,7 +16,7 @@ public class FilmDTO {
 	
 	private String titolo;
 	private Date anno;
-	private Time durata;
+	private Integer durata;
 	private String regista;
 	private String paese;
 	private String lingua;

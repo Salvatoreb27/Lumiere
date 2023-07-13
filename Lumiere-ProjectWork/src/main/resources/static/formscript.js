@@ -100,7 +100,7 @@ function filmForm() {
 	</div>
     <div class="mb-3">
 		<label for="durata" class="form-label">Durata</label>
-		<input type="time" class="form-control" id="durata">
+		<input type="number" class="form-control" id="durata">
 	</div>
     <div class="mb-3">
 		<label for="regista" class="form-label">Regista</label>
