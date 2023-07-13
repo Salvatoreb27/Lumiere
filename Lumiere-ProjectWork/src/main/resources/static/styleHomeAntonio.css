@@ -1,15 +1,11 @@
-
-html,body, main{
+body, main{
     background-color: #393E46;
-    font-family: 'Poppins', sans-serif;  
+    font-family: 'Poppins', sans-serif !important;
 } 
-
-main{
-    background-color: #393E46;
-}
 
 .container-fluid{
     background-color: #222831;
+    color: #EEEEEE !important;
 }
 
 #titolo-logo{
@@ -40,17 +36,24 @@ main{
 .carousel-inner{
    padding-left: 3em;
    padding-right: 3em;
+   display: block;
+   overflow: visible !important;
 }
 
-.carousel-img{
+.carousel-item > img{
     display: flex;
     justify-content: center;
-    width: 1024px;
+    border: 1px solid #1C1C1C;
+    -webkit-box-shadow: 8px 10px 23px -2px rgba(0,0,0,0.85); 
+    box-shadow: 8px 10px 23px -2px rgba(0,0,0,0.85);
 }
 
  .carousel-title{
     padding: 2rem;
     font-size: 3.5rem;
+    color: #EEEEEE;
+    position: fixed;
+    top: 50rem;
 }
 
 .bg-body-custom-light {
@@ -66,4 +69,12 @@ main{
 .text-body-custom-light {
     --bs-bg-opacity:1;
     color: #EEEEEE !important;
+}
+
+@media (min-width: 1280px){
+
+#carouselExampleCaptions > div.carousel-inner > div.carousel-item.active > img {
+    max-width: 1280px !important;
+    margin: auto !important;
+  } 
 }
