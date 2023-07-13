@@ -20,7 +20,7 @@ import lumiere.central.services.PagamentoService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/pagamenti")
+@RequestMapping("/api/v1/lumiere/pagamenti")
 public class PagamentoController {
 
 	@Autowired

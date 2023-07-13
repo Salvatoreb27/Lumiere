@@ -33,7 +33,7 @@ import lumiere.central.services.UtenteService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/utenti")
+@RequestMapping("/api/v1/lumiere/utenti")
 public class UtenteController {
 	
 	@Autowired

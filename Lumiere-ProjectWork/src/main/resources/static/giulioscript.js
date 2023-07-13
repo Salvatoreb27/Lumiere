@@ -31,10 +31,21 @@ function visualizzaCarouselFilms(){
 function addFilm(){
 	console.log("add film");
 
-	var newFilm = {"titolo": "Il pollo Mannaro", "anno": "2023,11,20", "durata": "6,30,50", "regista": "Salvatore Di Francia", "paese": "italia", "lingua": "italiano", "attori": "Salvatore Buono, Jack il pollo", "generi": "horror, action", "recensioni": null, "visualizzazioni": null };
+	let newFilm = {
+	 "titolo": "Il pollo Mannaro",
+	 "anno": "2023-11-20",
+	 "durata": "6:30:50",
+	 "regista": "Salvatore Di Francia",
+	 "paese": "italia", 
+	 "lingua": "italiano", 
+	 "attori": null, 
+	 "generi": "[{id:1, nome:horror},{id:2, nome:action}]", 
+	 "recensioni": null, 
+	 "visualizzazioni": null 
+	 };
 	console.log(newFilm.value)
 
-	fetch("http://localhost:8080/admin/films/all",{
+	fetch("http://localhost:8080/admin/film/addFilm",{
 		method: 'POST',
 		headers: {
 			"Content-Type": "application/json"
@@ -42,7 +53,7 @@ function addFilm(){
 		body: JSON.stringify(newFilm)
 	}
 	)
-	.then(visualizzaCarouselFilms());
+	.then();
 } 
 
 /* 			this.titolo = titolo;

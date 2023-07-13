@@ -22,7 +22,7 @@ import lumiere.central.services.FilmService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/films")
+@RequestMapping("/api/v1/lumiere/films")
 public class FilmController {
 
 	@Autowired
@@ -37,7 +37,6 @@ public class FilmController {
 		List <FilmDTO> filmsDTO = new ArrayList <>();
 		for (Film film: films) {
 			FilmDTO filmDTO = new FilmDTO();
-			filmDTO.setId(film.getId());
 			filmDTO.setTitolo(film.getTitolo());
 			filmDTO.setAnno(film.getAnno());
 			filmDTO.setDurata(film.getDurata());
