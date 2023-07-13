@@ -18,7 +18,7 @@
     <!-- Header / Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Offcanvas navbar large">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="titolo-logo"> <img src="./imagesAntonio/video-camera.png" alt="logo" height="55" id="img-logo">Lumière</a>
+          <a class="navbar-brand" href="#" id="titolo-logo"> <img src="./imagesAntonio/lumiere-logo2.png" alt="logo" height="70" id="img-logo"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -61,7 +61,7 @@
               </ul>
               <form class="d-flex mt-3 mt-lg-0" role="search">
                 <input class="form-control me-2" type="search" placeholder="Inserisci titolo..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Cerca</button>
+                <button class="btn btn-outline-dark" type="submit">Cerca</button>
               </form>
             </div>
           </div>
@@ -71,6 +71,7 @@
       
 <!-- Main Carousel -->
 <main>
+  <div class="container">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">  <!--  data-bs-ride="carousel" -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -110,33 +111,14 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-<<<<<<< Updated upstream
-<!-- Secondary Carousel -->
-
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner" id="carouselSecondary">
-
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div id="headerUltimeUscite">Ultime Uscite</div>
 </div>
 
 
-<!-- Cards -->
-=======
->>>>>>> Stashed changes
 
-<!-- Cards Album -->
- <div class="album py-5 bg-body-custom-light">
-    <div class="container">
-
+<!-- Cards Album v1 -->
+    <!-- <div class="container">
+      <div class="headerCards">Consigliati</div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
@@ -145,11 +127,11 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
+            
                 </div>
-                <small class="text-body-secondary">Durata</small>
+                <small class="text-body-warning">1h 30m</small>
               </div>
             </div>
           </div>
@@ -161,11 +143,10 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
                 </div>
-                <small class="text-body-secondary">Durata</small>
+                <small class="text-body-warning">1h 30m</small>
               </div>
             </div>
           </div>
@@ -177,66 +158,63 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
+                <small class="text-body-warning">1h 30m</small>
               </div>
             </div>
           </div>
         </div>
+      
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
+                </div>
+                <small class="text-body-warning">1h 30m</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
+                </div>
+                <small class="text-body-warning">1h 30m</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-warning">Guarda</button>
+                  <button type="button" class="btn btn-sm btn-outline-warning">Recensioni</button>
+                </div>
+                <small class="text-body-warning">1h 30m</small>
+              </div>
+            </div>
+          </div>
+        </div> -->
 
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Guarda</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Recensioni</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Colonna sonora</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Test -->
+        
+    <!--      Card Test 
         <div class="card" style="width: 18rem;">
           <img src="/static/imagesAntonio/guardiani-della-galassia.jpg" class="card-img-top" alt="guardiani-della-galassia" height="0">
           <div class="card-body">
@@ -252,6 +230,168 @@
             <a href="#" class="card-link">Guarda</a>
             <a href="#" class="card-link">Colonna sonora</a>
           </div>
+        </div> -->
+
+        <!-- Carousel + Cards v2 -->
+<div class="container">
+        <div class="headerCards">Consigliati</div>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <!-- Cards Wrapper 1 -->
+              <div class="cards-wrapper">
+                <div class="card">
+                  <img src="../static/imagesAntonio/locandine/pulp.png" class="card-img-top" alt="..." >
+                  <div class="card-body">
+                    <h5 class="card-title">Titolo Film</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quidem dolores eveniet ducimus, recusandae doloremque exercitationem inventore quis nesciunt explicabo itaque ipsum repudiandae totam officiis dolorum fuga dolore error similique.</p>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-warning">Guarda</button>
+                      <button type="button" class="btn btn-outline-warning">Recensioni</button>
+                    </div>
+                    <br>
+                    <small class="text-body-warning">1h 30m</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title3</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title4</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+               <!-- Cards Wrapper 1 -->
+              <div class="cards-wrapper">
+                <div class="card">
+                  <img src=".." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title5</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title6</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title7</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title8</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+               <!-- Cards Wrapper 1 -->
+              <div class="cards-wrapper">
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title9</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title10</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title11</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title7</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
         </div>
 </main>
 
@@ -272,4 +412,26 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+$('#recipeCarousel').carousel({
+  interval: 10000
+})
+
+$('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});</script>
 </html>
