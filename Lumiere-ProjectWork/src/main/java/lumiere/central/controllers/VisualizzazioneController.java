@@ -20,7 +20,7 @@ import lumiere.central.services.VisualizzazioneService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/visualizzazioni")
+@RequestMapping("/api/v1/lumiere/visualizzazioni")
 public class VisualizzazioneController {
 
 	@Autowired

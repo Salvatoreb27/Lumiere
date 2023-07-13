@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lumiere.central.security.SessionUtils;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/api/v1/user")
 public class LoginUserController {
 	
 	@GetMapping("/logout")

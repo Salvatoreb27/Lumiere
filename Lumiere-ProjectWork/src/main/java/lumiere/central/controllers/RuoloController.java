@@ -18,7 +18,7 @@ import lumiere.central.services.RuoloService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/ruoli")
+@RequestMapping("/api/v1/lumiere/ruoli")
 public class RuoloController {
 
 	@Autowired

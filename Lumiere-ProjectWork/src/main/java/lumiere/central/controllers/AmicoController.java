@@ -23,7 +23,7 @@ import lumiere.central.services.AmicoService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/amici")
+@RequestMapping("/api/v1/lumiere/amici")
 public class AmicoController {
 
 	@Autowired

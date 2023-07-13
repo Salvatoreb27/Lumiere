@@ -17,7 +17,7 @@ import lumiere.central.services.AttoreService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/attori")
+@RequestMapping("/api/v1/lumiere/attori")
 public class AttoreController {
 
 	@Autowired

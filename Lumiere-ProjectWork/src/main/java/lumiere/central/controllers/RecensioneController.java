@@ -23,7 +23,7 @@ import lumiere.central.services.RecensioneService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/recensioni")
+@RequestMapping("/api/v1/lumiere/recensioni")
 public class RecensioneController {
 
 	@Autowired

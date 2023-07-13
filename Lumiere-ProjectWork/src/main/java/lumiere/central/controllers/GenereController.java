@@ -20,7 +20,7 @@ import lumiere.central.services.GenereService;
 
 @CrossOrigin
 @RestController 
-@RequestMapping("/lumiere/generi")
+@RequestMapping("/api/v1/lumiere/generi")
 public class GenereController {
 
 	@Autowired
