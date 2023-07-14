@@ -149,10 +149,6 @@ function filmForm() {
                     "regista": regista.value,
                     "paese": paese.value,
                     "lingua": lingua.value,
-                    "generi": [{
-        			"id": 1,
-        			"nome": "horror"
-   					 }]
                 };
 				console.log(newFilm.value)
 
