@@ -27,7 +27,7 @@ public class Recensione implements Serializable {
 	
 	@Column(name = "data", nullable = false)
 	private Date data;
-	
+	//Chiedere: va bene che voto sia Comparator? O Crea Problemi?
 	@Column(name = "voto", nullable = false)
 	private Comparator<? super Film> voto;
 	

@@ -1,5 +1,6 @@
 package lumiere.central.controllers;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,12 +77,12 @@ public class FilmController {
 	public List <Film> getFilmsByAttore(@PathVariable String nomeAttore) {
 		List<Film> film = filmService.getAllFilmsByNameOfAttore(nomeAttore);
 		if (film == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato in cui recita questo attore");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film disponibile in cui recita questo attore");
 		}
 		return film;
 	}
-	@GetMapping("/MostViewed")
-	public List <Film> getFilmsMoreViewed() {
+	@GetMapping("/BestVotes")
+	public List <Film> getFilmsWithBestVotes() {
 		List<Film> film = filmService.getAllFilmsByVotoOfRecensioni();
 		if (film == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film è stato ancora recensito");
@@ -92,7 +93,7 @@ public class FilmController {
 	public List <Film> getFilmsByRegista(@PathVariable String nomeRegista) {
 		List<Film> film = filmService.getFilmByRegista(nomeRegista);
 		if (film == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato diretto da questo regista");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film disponibile diretto da questo regista");
 		}
 		return film;
 	}
@@ -100,11 +101,27 @@ public class FilmController {
 	public List <Film> getFilmsByPaese(@PathVariable String nomePaese) {
 		List<Film> film = filmService.getFilmByPaese(nomePaese);
 		if (film == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato girato in questo paese");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film disponibile girato in questo paese");
 		}
 		return film;
 	}
-	
+	//Chiedere: ma quindi in questo modo riusciamo a risalire solo ai film rilasciati solo un determinato giorno?
+	@GetMapping("/{anno}")
+	public List <Film> getFilmsByAnno(@PathVariable Date anno) {
+		List<Film> film = filmService.getFilmByAnno(anno);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film disponibile girato in questo anno");
+		}
+		return film;
+	}
+	@GetMapping("/{lingua}")
+	public List <Film> getFilmsByLingua(@PathVariable String lingua) {
+		List<Film> film = filmService.getFilmByLingua(lingua);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film disponibile in questa lingua");
+		}
+		return film;
+	}
 
 }
 

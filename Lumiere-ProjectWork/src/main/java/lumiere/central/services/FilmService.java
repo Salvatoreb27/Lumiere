@@ -31,4 +31,6 @@ public interface FilmService {
 		public List<Film> getAllFilmsByNameOfAttore(String nome);
 		//Visualizzazione di tutti i film ordinati per voto delle recensioni
 		public List<Film> getAllFilmsByVotoOfRecensioni();
+		//Visualizzazione di tutti i film in base alla lingua disponibile
+		public List<Film> getFilmByLingua(String lingua);
 }

@@ -173,5 +173,20 @@ public class FilmServiceDB implements FilmService{
 		return risultati;
 	}
 
+	@Override
+	public List<Film> getFilmByLingua(String lingua) {
+		List<Film> risultati = new ArrayList<>();
+		
+		for (Film film : filmrepository.findAll()) {
+			for ( String linguaDisponibile : film.getLingue()) {
+				if (linguaDisponibile == lingua) {
+					risultati.add(film);
+				}
+			}
+		}
+		
+		return risultati;
+	}
+
 
 }
