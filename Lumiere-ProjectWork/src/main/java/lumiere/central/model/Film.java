@@ -1,9 +1,7 @@
 package lumiere.central.model;
 
-import java.awt.Image;
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -262,6 +260,7 @@ public class Film implements Serializable {
 					+ visualizzazioni + "]";
 		}
 	
+
 
 
 

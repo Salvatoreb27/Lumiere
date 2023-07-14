@@ -55,12 +55,12 @@ public class AttoreServiceDB implements AttoreService{
 		}
 		return false;
 	}
-	//Da verificare
+	/*Da verificare
 	public Attore getAttoreByName(String name) {
 		Optional<Attore> a = attorerepository.findByAttoreNome(name);
 		if (a.isPresent()) {
 			return a.get();
 		}
 		return null;
-	}
+	}*/
 }

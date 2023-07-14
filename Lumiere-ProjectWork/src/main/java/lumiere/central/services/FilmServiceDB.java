@@ -2,18 +2,15 @@ package lumiere.central.services;
 
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lumiere.central.dto.FilmDTO;
+import lumiere.central.model.Attore;
 import lumiere.central.model.Film;
 import lumiere.central.model.Genere;
-import lumiere.central.model.Utente;
 import lumiere.central.repository.FilmRepository;
 import lumiere.central.repository.GenereRepository;
 
@@ -135,44 +132,31 @@ public class FilmServiceDB implements FilmService{
 
 		return risultati;
 	}
-	//Avere tutti i film in base al genere 2
+	//Avere tutti i film in base al nome del genere metodo definitivo
+	public List<Film> getAllFilmsByNameOfGenere(String nome) {
+		List<Film> risultati = new ArrayList<>();
 
-	public Set<Film> getAllFilmsByNameofGenere(String nome) { 
-		Set<Film> risultati = new HashSet<>();
 		for (Film film : filmrepository.findAll()) {
-			
-				if (film.getGeneri().contains(nome)) {
+			for (Genere genere : film.getGeneri()) {
+				if (genere.getNome() == nome) {
 					risultati.add(film);
 				}
-
 			}
+		}
+
 		return risultati;
 	}
+	public List<Film> getAllFilmsByNameOfAttore(String nome) {
+		List<Film> risultati = new ArrayList<>();
 
-	public Set<Film> getAllFilmsByNameofGenere3(String nome) { 
-		Optional<Genere> genere = genererepository.findByGenereNome(nome);
-		Set<Film> risultati = new HashSet<>();
 		for (Film film : filmrepository.findAll()) {
-			if (film.getGeneri().contains(genere)) {
-
-				risultati.add(film);
+			for (Attore attore : film.getAttori()) {
+				if (attore.getNome() == nome) {
+					risultati.add(film);
+				}
 			}
 		}
 
 		return risultati;
 	}
-	public List <FilmDTO> getAllFilmsByNameofGenere4(String nome) {
-		List <Film> films = filmrepository.findAll();
-		List <FilmDTO> filmsDTO = new ArrayList <>();
-		for (Film film: films) {
-			FilmDTO filmDTO = new FilmDTO();
-			filmDTO.setGeneri(film.getGeneri());
-			filmsDTO.add(filmDTO);
-
-		}
-		return filmsDTO;
-	}
-	public Set<Film> getAllFilmsByNameofAttore(String nome) {
-		return null;
-}
 }
