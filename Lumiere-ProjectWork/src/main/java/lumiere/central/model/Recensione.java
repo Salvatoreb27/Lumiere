@@ -1,6 +1,7 @@
 package lumiere.central.model;
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -26,9 +27,9 @@ public class Recensione implements Serializable {
 	
 	@Column(name = "data", nullable = false)
 	private Date data;
-	
+	//Chiedere: va bene che voto sia Comparator? O Crea Problemi?
 	@Column(name = "voto", nullable = false)
-	private Integer voto;
+	private Comparator<? super Film> voto;
 	
 	@Column(name = "testo", length = 100, nullable = false)
 	private String testo;
@@ -46,7 +47,7 @@ public class Recensione implements Serializable {
 	referencedColumnName = "id_utente") 
 	private Utente utenti;
 
-	public Recensione(Long id, Date data, Integer voto, String testo, Boolean pubblico, Film films, Utente utenti) {
+	public Recensione(Long id, Date data, Comparator<? super Film> voto, String testo, Boolean pubblico, Film films, Utente utenti) {
 		super();
 		Id = id;
 		this.data = data;
@@ -73,11 +74,11 @@ public class Recensione implements Serializable {
 		this.data = data;
 	}
 
-	public Integer getVoto() {
+	public Comparator<? super Film> getVoto() {
 		return voto;
 	}
 
-	public void setVoto(Integer voto) {
+	public void setVoto(Comparator<? super Film> voto) {
 		this.voto = voto;
 	}
 

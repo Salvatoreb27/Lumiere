@@ -3,6 +3,7 @@ package lumiere.central.model;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -54,7 +55,7 @@ public class Film implements Serializable {
 	private String paese;
 
 	@Column(name = "lingua", length = 50, nullable = false)
-	private String lingua;
+	private List <String> lingue;
 
 	
 	//Associazione molti a molti tra attori e film
@@ -97,168 +98,172 @@ public class Film implements Serializable {
 		private Set<Visualizzazione> visualizzazioni = new HashSet<>();
 
 
-		public Film() {
-			super();
-		}
+	public Film() {
+		super();
+	}
 
 
-		public Film(Long id, String titolo, String trama, String locandina, Date anno, Integer durata, String regista,
-				String paese, String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
-				Set<Visualizzazione> visualizzazioni) {
-			super();
-			Id = id;
-			this.titolo = titolo;
-			this.trama = trama;
-			this.locandina = locandina;
-			this.anno = anno;
-			this.durata = durata;
-			this.regista = regista;
-			this.paese = paese;
-			this.lingua = lingua;
-			this.attori = attori;
-			this.generi = generi;
-			this.recensioni = recensioni;
-			this.visualizzazioni = visualizzazioni;
-		}
+	public Film(Long id, String titolo, String trama, String locandina, Date anno, Integer durata, String regista,
+			String paese, List<String> lingue, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
+			Set<Visualizzazione> visualizzazioni) {
+		super();
+		Id = id;
+		this.titolo = titolo;
+		this.trama = trama;
+		this.locandina = locandina;
+		this.anno = anno;
+		this.durata = durata;
+		this.regista = regista;
+		this.paese = paese;
+		this.lingue = lingue;
+		this.attori = attori;
+		this.generi = generi;
+		this.recensioni = recensioni;
+		this.visualizzazioni = visualizzazioni;
+	}
 
 
-		public Long getId() {
-			return Id;
-		}
+	public Long getId() {
+		return Id;
+	}
 
 
-		public void setId(Long id) {
-			Id = id;
-		}
+	public void setId(Long id) {
+		Id = id;
+	}
 
 
-		public String getTitolo() {
-			return titolo;
-		}
+	public String getTitolo() {
+		return titolo;
+	}
 
 
-		public void setTitolo(String titolo) {
-			this.titolo = titolo;
-		}
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
 
 
-		public String getTrama() {
-			return trama;
-		}
+	public String getTrama() {
+		return trama;
+	}
 
 
-		public void setTrama(String trama) {
-			this.trama = trama;
-		}
+	public void setTrama(String trama) {
+		this.trama = trama;
+	}
 
 
-		public String getLocandina() {
-			return locandina;
-		}
+	public String getLocandina() {
+		return locandina;
+	}
 
 
-		public void setLocandina(String locandina) {
-			this.locandina = locandina;
-		}
+	public void setLocandina(String locandina) {
+		this.locandina = locandina;
+	}
 
 
-		public Date getAnno() {
-			return anno;
-		}
+	public Date getAnno() {
+		return anno;
+	}
 
 
-		public void setAnno(Date anno) {
-			this.anno = anno;
-		}
+	public void setAnno(Date anno) {
+		this.anno = anno;
+	}
 
 
-		public Integer getDurata() {
-			return durata;
-		}
+	public Integer getDurata() {
+		return durata;
+	}
 
 
-		public void setDurata(Integer durata) {
-			this.durata = durata;
-		}
+	public void setDurata(Integer durata) {
+		this.durata = durata;
+	}
 
 
-		public String getRegista() {
-			return regista;
-		}
+	public String getRegista() {
+		return regista;
+	}
 
 
-		public void setRegista(String regista) {
-			this.regista = regista;
-		}
+	public void setRegista(String regista) {
+		this.regista = regista;
+	}
 
 
-		public String getPaese() {
-			return paese;
-		}
+	public String getPaese() {
+		return paese;
+	}
 
 
-		public void setPaese(String paese) {
-			this.paese = paese;
-		}
+	public void setPaese(String paese) {
+		this.paese = paese;
+	}
 
 
-		public String getLingua() {
-			return lingua;
-		}
+	public List<String> getLingue() {
+		return lingue;
+	}
 
 
-		public void setLingua(String lingua) {
-			this.lingua = lingua;
-		}
+	public void setLingue(List<String> lingue) {
+		this.lingue = lingue;
+	}
 
 
-		public Set<Attore> getAttori() {
-			return attori;
-		}
+	public Set<Attore> getAttori() {
+		return attori;
+	}
 
 
-		public void setAttori(Set<Attore> attori) {
-			this.attori = attori;
-		}
+	public void setAttori(Set<Attore> attori) {
+		this.attori = attori;
+	}
 
 
-		public Set<Genere> getGeneri() {
-			return generi;
-		}
+	public Set<Genere> getGeneri() {
+		return generi;
+	}
 
 
-		public void setGeneri(Set<Genere> generi) {
-			this.generi = generi;
-		}
+	public void setGeneri(Set<Genere> generi) {
+		this.generi = generi;
+	}
 
 
-		public Set<Recensione> getRecensioni() {
-			return recensioni;
-		}
+	public Set<Recensione> getRecensioni() {
+		return recensioni;
+	}
 
 
-		public void setRecensioni(Set<Recensione> recensioni) {
-			this.recensioni = recensioni;
-		}
+	public void setRecensioni(Set<Recensione> recensioni) {
+		this.recensioni = recensioni;
+	}
 
 
-		public Set<Visualizzazione> getVisualizzazioni() {
-			return visualizzazioni;
-		}
+	public Set<Visualizzazione> getVisualizzazioni() {
+		return visualizzazioni;
+	}
 
 
-		public void setVisualizzazioni(Set<Visualizzazione> visualizzazioni) {
-			this.visualizzazioni = visualizzazioni;
-		}
+	public void setVisualizzazioni(Set<Visualizzazione> visualizzazioni) {
+		this.visualizzazioni = visualizzazioni;
+	}
 
 
-		@Override
-		public String toString() {
-			return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", anno="
-					+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingua=" + lingua
-					+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
-					+ visualizzazioni + "]";
-		}
+	@Override
+	public String toString() {
+		return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", anno="
+				+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingue=" + lingue
+				+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
+				+ visualizzazioni + "]";
+	}
+
+
+		
+
 	
 
 

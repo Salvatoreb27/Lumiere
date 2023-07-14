@@ -2,6 +2,7 @@ package lumiere.central.services;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +12,9 @@ import org.springframework.stereotype.Service;
 import lumiere.central.model.Attore;
 import lumiere.central.model.Film;
 import lumiere.central.model.Genere;
+import lumiere.central.model.Recensione;
 import lumiere.central.repository.FilmRepository;
-import lumiere.central.repository.GenereRepository;
+
 
 @Service
 public class FilmServiceDB implements FilmService{
@@ -20,8 +22,6 @@ public class FilmServiceDB implements FilmService{
 	@Autowired 
 	private FilmRepository filmrepository;
 
-	@Autowired 
-	private GenereRepository genererepository;
 
 	@Override
 	public List<Film> getFilms() {
@@ -53,7 +53,7 @@ public class FilmServiceDB implements FilmService{
 			f.setAnno(film.getAnno());
 			f.setDurata(film.getDurata());
 			f.setPaese(film.getPaese());
-			f.setLingua(film.getLingua());
+			f.setLingue(film.getLingue());
 			f.setAttori(film.getAttori());
 			f.setGeneri(film.getGeneri());
 			f.setRecensioni(film.getRecensioni());
@@ -159,4 +159,34 @@ public class FilmServiceDB implements FilmService{
 
 		return risultati;
 	}
+	public List<Film> getAllFilmsByVotoOfRecensioni() {
+		List<Film> risultati = new ArrayList<>();
+
+		for (Film film : filmrepository.findAll()) {
+			for (Recensione recensione : film.getRecensioni()) {
+				risultati.add(film);
+				risultati.sort(recensione.getVoto());
+
+			}
+		}
+
+		return risultati;
+	}
+
+	@Override
+	public List<Film> getFilmByLingua(String lingua) {
+		List<Film> risultati = new ArrayList<>();
+		
+		for (Film film : filmrepository.findAll()) {
+			for ( String linguaDisponibile : film.getLingue()) {
+				if (linguaDisponibile == lingua) {
+					risultati.add(film);
+				}
+			}
+		}
+		
+		return risultati;
+	}
+
+
 }
