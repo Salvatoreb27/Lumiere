@@ -38,7 +38,7 @@ public class FilmController {
 			filmDTO.setDurata(film.getDurata());
 			filmDTO.setRegista(film.getRegista());
 			filmDTO.setPaese(film.getPaese());
-			filmDTO.setLingua(film.getLingua());
+			filmDTO.setLingue(film.getLingue());
 			filmDTO.setAttori(film.getAttori());
 			filmDTO.setGeneri(film.getGeneri());
 			filmDTO.setRecensioni(film.getRecensioni());
@@ -53,6 +53,54 @@ public class FilmController {
 		Film film = filmService.getFilm(id);
 		if (film == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Film non trovato");
+		}
+		return film;
+	}
+	@GetMapping("/{titolo}")
+	public List<Film> getFilmsByTitolo(@PathVariable String titolo) {
+		List<Film> film = filmService.getFilmByTitolo(titolo);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Film non trovato");
+		}
+		return film;
+	}
+	@GetMapping("/{nomeGenere}")
+	public List <Film> getFilmsByGenere(@PathVariable String nomeGenere) {
+		List<Film> film = filmService.getAllFilmsByNameOfGenere(nomeGenere);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato per questo genere");
+		}
+		return film;
+	}
+	@GetMapping("/{nomeAttore}")
+	public List <Film> getFilmsByAttore(@PathVariable String nomeAttore) {
+		List<Film> film = filmService.getAllFilmsByNameOfAttore(nomeAttore);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato in cui recita questo attore");
+		}
+		return film;
+	}
+	@GetMapping("/MostViewed")
+	public List <Film> getFilmsMoreViewed() {
+		List<Film> film = filmService.getAllFilmsByVotoOfRecensioni();
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film è stato ancora recensito");
+		}
+		return film;
+	}
+	@GetMapping("/{nomeRegista}")
+	public List <Film> getFilmsByRegista(@PathVariable String nomeRegista) {
+		List<Film> film = filmService.getFilmByRegista(nomeRegista);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato diretto da questo regista");
+		}
+		return film;
+	}
+	@GetMapping("/{nomePaese}")
+	public List <Film> getFilmsByPaese(@PathVariable String nomePaese) {
+		List<Film> film = filmService.getFilmByPaese(nomePaese);
+		if (film == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun film trovato girato in questo paese");
 		}
 		return film;
 	}

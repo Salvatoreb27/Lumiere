@@ -14,7 +14,7 @@ import lumiere.central.model.Film;
 import lumiere.central.model.Genere;
 import lumiere.central.model.Recensione;
 import lumiere.central.repository.FilmRepository;
-import lumiere.central.repository.GenereRepository;
+
 
 @Service
 public class FilmServiceDB implements FilmService{
@@ -22,8 +22,6 @@ public class FilmServiceDB implements FilmService{
 	@Autowired 
 	private FilmRepository filmrepository;
 
-	@Autowired 
-	private GenereRepository genererepository;
 
 	@Override
 	public List<Film> getFilms() {
@@ -55,7 +53,7 @@ public class FilmServiceDB implements FilmService{
 			f.setAnno(film.getAnno());
 			f.setDurata(film.getDurata());
 			f.setPaese(film.getPaese());
-			f.setLingua(film.getLingua());
+			f.setLingue(film.getLingue());
 			f.setAttori(film.getAttori());
 			f.setGeneri(film.getGeneri());
 			f.setRecensioni(film.getRecensioni());

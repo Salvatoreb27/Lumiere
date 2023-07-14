@@ -1,7 +1,9 @@
 package lumiere.central.dto;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import lombok.Data;
@@ -20,7 +22,7 @@ public class FilmDTO {
 	private Integer durata;
 	private String regista;
 	private String paese;
-	private String lingua;
+	private List <String> lingue = new ArrayList<>();
 	private Set<Attore> attori = new HashSet<>();
 	private Set<Genere> generi = new HashSet<>();
 	private Set<Recensione> recensioni = new HashSet<>();
