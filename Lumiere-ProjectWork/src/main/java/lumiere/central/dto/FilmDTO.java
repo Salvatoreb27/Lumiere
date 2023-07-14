@@ -1,7 +1,6 @@
 package lumiere.central.dto;
 
 import java.sql.Date;
-import java.sql.Time;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +14,8 @@ import lumiere.central.model.Visualizzazione;
 public class FilmDTO {
 	
 	private String titolo;
+	private String trama;
+	private String locandina;
 	private Date anno;
 	private Integer durata;
 	private String regista;

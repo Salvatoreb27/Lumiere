@@ -36,9 +36,11 @@ public class Film implements Serializable {
 	@Column(name = "titolo", length = 100, nullable = false)
 	private String titolo;
 	
-//	@Column(name = "copertina", nullable = true)
-//	@Lob
-//	private Image copertina;
+	@Column(name = "trama", length = 100, nullable = true)
+	private String trama;
+	
+	@Column(name = "locandina", length = 100, nullable = true)
+	private String locandina;
 
 	@Column(name = "anno", nullable = false)
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -101,13 +103,15 @@ public class Film implements Serializable {
 			super();
 		}
 
-		public Film(Long id, String titolo,/* Image copertina,*/ Date anno, Integer durata, String regista, String paese,
-				String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
+
+		public Film(Long id, String titolo, String trama, String locandina, Date anno, Integer durata, String regista,
+				String paese, String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
 				Set<Visualizzazione> visualizzazioni) {
 			super();
 			Id = id;
 			this.titolo = titolo;
-//			this.copertina = copertina;
+			this.trama = trama;
+			this.locandina = locandina;
 			this.anno = anno;
 			this.durata = durata;
 			this.regista = regista;
@@ -118,6 +122,7 @@ public class Film implements Serializable {
 			this.recensioni = recensioni;
 			this.visualizzazioni = visualizzazioni;
 		}
+
 
 		public Long getId() {
 			return Id;
@@ -137,14 +142,27 @@ public class Film implements Serializable {
 		public void setTitolo(String titolo) {
 			this.titolo = titolo;
 		}
-		
-//		public Image getCopertina() {
-//			return copertina;
-//		}
-//
-//		public void setCopertina(Image copertina) {
-//			this.copertina = copertina;
-//		}
+
+
+		public String getTrama() {
+			return trama;
+		}
+
+
+		public void setTrama(String trama) {
+			this.trama = trama;
+		}
+
+
+		public String getLocandina() {
+			return locandina;
+		}
+
+
+		public void setLocandina(String locandina) {
+			this.locandina = locandina;
+		}
+
 
 		public Date getAnno() {
 			return anno;
@@ -238,11 +256,12 @@ public class Film implements Serializable {
 
 		@Override
 		public String toString() {
-			return "Film [Id=" + Id + ", titolo=" + titolo + ", anno=" + anno + ", durata=" + durata + ", regista="
-					+ regista + ", paese=" + paese + ", lingua=" + lingua + ", attori=" + attori + ", generi=" + generi
-					+ ", recensioni=" + recensioni + ", visualizzazioni=" + visualizzazioni + "]";
+			return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", anno="
+					+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingua=" + lingua
+					+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
+					+ visualizzazioni + "]";
 		}
-
+	
 
 
 

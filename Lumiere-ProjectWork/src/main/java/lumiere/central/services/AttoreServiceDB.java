@@ -57,7 +57,7 @@ public class AttoreServiceDB implements AttoreService{
 	}
 	//Da verificare
 	public Attore getAttoreByName(String name) {
-		Optional<Attore> a = attorerepository.findByNome(name);
+		Optional<Attore> a = attorerepository.findByAttoreNome(name);
 		if (a.isPresent()) {
 			return a.get();
 		}

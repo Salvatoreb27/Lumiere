@@ -56,8 +56,8 @@ public class GenereServiceDB implements GenereService {
 	}
 	
 	//Da verificare
-	public Genere getGenereByName(String name) {
-		Optional<Genere> g = genererepository.findByNome(name);
+	public Genere getGenereByName(String nome) {
+		Optional<Genere> g = genererepository.findByGenereNome(nome);
 		if (g.isPresent()) {
 			return g.get();
 		}

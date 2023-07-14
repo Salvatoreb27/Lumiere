@@ -8,5 +8,5 @@ import lumiere.central.model.Genere;
 
 public interface GenereRepository extends JpaRepository <Genere, Long> {
 
-	Optional<Genere> findByNome (String nome);
+	Optional<Genere> findByGenereNome (String nome);
 }

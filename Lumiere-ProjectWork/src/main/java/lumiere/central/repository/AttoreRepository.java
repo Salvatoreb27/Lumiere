@@ -9,5 +9,5 @@ import lumiere.central.model.Genere;
 
 public interface AttoreRepository extends JpaRepository <Attore, Long> {
 
-	Optional<Attore> findByNome (String nome);
+	Optional<Attore> findByAttoreNome (String nome);
 }
