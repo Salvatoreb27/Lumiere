@@ -2,6 +2,7 @@ package lumiere.central.services;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import lumiere.central.model.Attore;
 import lumiere.central.model.Film;
 import lumiere.central.model.Genere;
+import lumiere.central.model.Recensione;
 import lumiere.central.repository.FilmRepository;
 import lumiere.central.repository.GenereRepository;
 
@@ -159,4 +161,19 @@ public class FilmServiceDB implements FilmService{
 
 		return risultati;
 	}
+	public List<Film> getAllFilmsByVotoOfRecensioni() {
+		List<Film> risultati = new ArrayList<>();
+
+		for (Film film : filmrepository.findAll()) {
+			for (Recensione recensione : film.getRecensioni()) {
+				risultati.add(film);
+				risultati.sort(recensione.getVoto());
+
+			}
+		}
+
+		return risultati;
+	}
+
+
 }

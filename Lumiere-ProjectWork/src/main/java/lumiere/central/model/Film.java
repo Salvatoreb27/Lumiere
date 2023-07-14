@@ -259,6 +259,7 @@ public class Film implements Serializable {
 					+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
 					+ visualizzazioni + "]";
 		}
+
 	
 
 
