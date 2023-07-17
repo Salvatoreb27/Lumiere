@@ -369,6 +369,7 @@ function filmList() {
 			console.log(listaFilms);
 			g = "";
 			a = "";
+			l = "";
 			s =  `
 			<div class="row">
 				<div class="col">
@@ -387,7 +388,7 @@ function filmList() {
 					 <h5>Paese Di Produzione</h5>
 				 </div>
 				<div class="col">
-					 <h5>Lingua Originale</h5>
+					 <h5>Lingue</h5>
 				 </div>
 				 <div class="col">
 					 <h5>Attori</h5>
@@ -409,6 +410,9 @@ function filmList() {
 				let generiJSON = JSON.stringify(film.generi);
 				let generi = JSON.parse(generiJSON);
 				
+				l = film.lingue;
+				console.log(l);
+				
 				s += `
 				<div class="row">
 					<div class="col">
@@ -427,7 +431,7 @@ function filmList() {
 				 		<p>${film.paese}</p>
 			 		</div>
 					<div class="col">
-					 	<p>${film.lingua}</p>
+					 	<p>${l}</p>
 				 	</div>
 				 	<div class="col">
 				 		 ${a}
@@ -447,6 +451,7 @@ function filmList() {
 					</div>
 		   		</div>
 			 	`;
+			 	
 				
 				for (gen of generi) {
 					console.log(g);
@@ -458,7 +463,6 @@ function filmList() {
 					console.log(a);
 					a += `<p>${att.nome}</p>`;
 					}
-			
 			}
 			listTarget.innerHTML = s;
 		});
@@ -503,7 +507,9 @@ function utentiList() {
 			</div>
 			 `;
 			for (utente of listaUtenti) {
+				console.log(utente.ruoli);
 				let ruoliJSON = JSON.stringify(utente.ruoli);
+				console.log(ruoliJSON);
 				let ruoli = JSON.parse(ruoliJSON);
 				s += `
 				<div class="row">
@@ -532,7 +538,7 @@ function utentiList() {
 					 	<p>${utente.attivo}</p>
 				 	</div>
 					<div class="col">
-					 	${r}
+					 	${a}
 				 	</div>
 			 		<div class="d-flex justify-content-end">
 						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${utente.id})">/</button>
@@ -542,9 +548,9 @@ function utentiList() {
 			 	`;
 			 	
 			 	for (ruo of ruoli) {
-					console.log(r);
-					r += `<p>${ruo.nome}</p>`;
-					}
+					 a += `<p>${ruo.nome}</p>`
+				 }
+			 
 			}
 			listTarget.innerHTML = s;
 		});
@@ -567,13 +573,13 @@ function ruoliList() {
 			for (ruolo of listaRuoli) {
 				s += `
   				<div class="row">
-   					<div class="col">
+   					<div class="col d-flex">
 						<p>${ruolo.nome}</p>
+						<div class="flex-shrink-1">
+						<button class="btn btn-sm pt-0" onclick="attoreUpdate(${ruolo.id})">/</button>
+						<button class="btn btn-sm pt-0" onclick="attoreDelete(${ruolo.id})">x</button>
+						</div>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${ruolo.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${ruolo.id})">x</button>
-					</div>
   				</div>
 			 	`;
 			}
