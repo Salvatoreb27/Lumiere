@@ -5,17 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="formTarget">
-        
+    <div class="container text-center" id="listTarget">
+
     </div>
-    <button class="btn btn-primary" onclick="genereForm()">TESTgenere</button>
-    <button class="btn btn-primary" onclick="attoreForm()">TESTattore</button>
-    <button class="btn btn-primary" onclick="filmForm()">TESTfilm</button>
+    <div>
+        <button class="btn btn-primary" onclick="attoriList()">TESTlistAttori</button>
+        <button class="btn btn-primary" onclick="filmList()">TESTlistFilm</button>
+        <button class="btn btn-primary" onclick="generiList()">TESTlistGeneri</button>
+        <button class="btn btn-primary" onclick="utentiList()">TESTlistUtenti</button>
+
+    </div>
+    <div id="formTarget">
+
+    </div>
+    <div>
+        <button class="btn btn-primary" onclick="genereForm()">TESTaddGenere</button>
+        <button class="btn btn-primary" onclick="attoreForm()">TESTaddAttore</button>
+        <button class="btn btn-primary" onclick="filmForm()">TESTaddFilm</button>
+        <button class="btn btn-primary" onclick="utenteForm()">TESTaddUtente</button>
+        <button class="btn btn-primary" onclick="ruoloForm()">TESTaddRuolo</button>
+    </div>
+    <div>
+
+    </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
 <script src="formscript.js"></script>
+
 </html>
