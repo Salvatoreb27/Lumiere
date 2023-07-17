@@ -369,7 +369,6 @@ function filmList() {
 			console.log(listaFilms);
 			g = "";
 			a = "";
-			l = "";
 			s =  `
 			<div class="row">
 				<div class="col">
@@ -406,12 +405,28 @@ function filmList() {
 			 `;
 			for (film of listaFilms) {
 				let attoriJSON = JSON.stringify(film.attori);
+				console.log(attoriJSON);
 				let attori = JSON.parse(attoriJSON);
+				console.log(attori);
 				let generiJSON = JSON.stringify(film.generi);
+				console.log(generiJSON);
 				let generi = JSON.parse(generiJSON);
+				console.log(generi);
 				
-				l = film.lingue;
-				console.log(l);
+				for (gen of generi) {
+					console.log(gen);
+					g += `<p>${gen.nome}</p>`;
+					console.log(g);
+					console.log(typeof(g));
+					}
+				
+				
+				for (att of attori) {
+					console.log(att);
+					a += `<p>${att.nome}</p>`;
+					console.log(a);
+					console.log(typeof(a));
+					}
 				
 				s += `
 				<div class="row">
@@ -431,13 +446,13 @@ function filmList() {
 				 		<p>${film.paese}</p>
 			 		</div>
 					<div class="col">
-					 	<p>${l}</p>
+					 	<p>${film.lingua}</p>
 				 	</div>
 				 	<div class="col">
 				 		 ${a}
 			 		</div>
 					<div class="col">
-					 	${g}
+					 	 ${g}
 				 	</div>
 					<div class="col">
 					 <p>${film.locandina}</p>
@@ -452,17 +467,6 @@ function filmList() {
 		   		</div>
 			 	`;
 			 	
-				
-				for (gen of generi) {
-					console.log(g);
-					g += `<p>${gen.nome}</p>`;
-					}
-				
-				
-				for (att of attori) {
-					console.log(a);
-					a += `<p>${att.nome}</p>`;
-					}
 			}
 			listTarget.innerHTML = s;
 		});
@@ -508,9 +512,17 @@ function utentiList() {
 			 `;
 			for (utente of listaUtenti) {
 				console.log(utente.ruoli);
+				console.log(typeof(utente.ruoli));
 				let ruoliJSON = JSON.stringify(utente.ruoli);
 				console.log(ruoliJSON);
-				let ruoli = JSON.parse(ruoliJSON);
+			/*	let ruoli = JSON.parse(ruoliJSON);			non funziona per qualchè motivo
+				
+				for (ruo of ruoli) {
+					console.log(ruo);
+					 a += `<p>${ruo.nome}</p>`
+					 console.log(a);
+					 console.log(typeof(a));
+				 }	*/
 				s += `
 				<div class="row">
 					<div class="col">
@@ -538,7 +550,7 @@ function utentiList() {
 					 	<p>${utente.attivo}</p>
 				 	</div>
 					<div class="col">
-					 	${a}
+					 	<p>${ruoliJSON}</p>
 				 	</div>
 			 		<div class="d-flex justify-content-end">
 						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${utente.id})">/</button>
@@ -547,9 +559,6 @@ function utentiList() {
 		   		</div>
 			 	`;
 			 	
-			 	for (ruo of ruoli) {
-					 a += `<p>${ruo.nome}</p>`
-				 }
 			 
 			}
 			listTarget.innerHTML = s;
@@ -573,7 +582,7 @@ function ruoliList() {
 			for (ruolo of listaRuoli) {
 				s += `
   				<div class="row">
-   					<div class="col d-flex">
+   					<div class="col d-flex justify-content-between">
 						<p>${ruolo.nome}</p>
 						<div class="flex-shrink-1">
 						<button class="btn btn-sm pt-0" onclick="attoreUpdate(${ruolo.id})">/</button>
