@@ -20,17 +20,17 @@ import lumiere.central.repository.FilmRepository;
 public class FilmServiceDB implements FilmService{
 
 	@Autowired 
-	private FilmRepository filmRepository;
+	private FilmRepository filmrepository;
 
 
 	@Override
 	public List<Film> getFilms() {
-		return (List<Film>) filmRepository.findAll();
+		return (List<Film>) filmrepository.findAll();
 	}
 
 	@Override
 	public Film getFilm(Long id) {
-		Optional<Film> f = filmRepository.findById(id);
+		Optional<Film> f = filmrepository.findById(id);
 		if (f.isPresent()) {
 			return f.get();
 		}
@@ -40,14 +40,14 @@ public class FilmServiceDB implements FilmService{
 
 	@Override
 	public Long addFilm(Film film) {
-		Film f = filmRepository.save(film);
+		Film f = filmrepository.save(film);
 		return f.getId();
 	}
 
 	@Override
 	public Film updateFilm(Film film, Long id) {
-		if (filmRepository.existsById(id)) {
-			Film f = filmRepository.findById(id).get(); //film sul DB
+		if (filmrepository.existsById(id)) {
+			Film f = filmrepository.findById(id).get(); //film sul DB
 			f.setTitolo(film.getTitolo());
 			f.setRegista(film.getRegista());
 			f.setAnno(film.getAnno());
@@ -58,7 +58,7 @@ public class FilmServiceDB implements FilmService{
 			f.setGeneri(film.getGeneri());
 			f.setRecensioni(film.getRecensioni());
 			f.setVisualizzazioni(film.getVisualizzazioni());
-			filmRepository.save(f);
+			filmrepository.save(f);
 			return f;
 		}
 		return null;
@@ -66,8 +66,8 @@ public class FilmServiceDB implements FilmService{
 	}
 	@Override
 	public boolean deleteFilm(Long id) {
-		if (filmRepository.existsById(id)) {
-			filmRepository.deleteById(id);
+		if (filmrepository.existsById(id)) {
+			filmrepository.deleteById(id);
 			return true;
 		}
 		return false;
@@ -76,7 +76,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getFilmByTitolo(String titolo) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			if (film.getTitolo().equalsIgnoreCase(titolo)) {
 				risultati.add(film);
 			}
@@ -88,7 +88,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getFilmByRegista(String regista) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			if (film.getRegista().equalsIgnoreCase(regista)) {
 				risultati.add(film);
 			}
@@ -100,7 +100,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getFilmByAnno(Date anno) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			if (film.getAnno().equals(anno)) {
 				risultati.add(film);
 			}
@@ -112,7 +112,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getFilmByPaese(String paese) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			if (film.getPaese().equalsIgnoreCase(paese)) {
 				risultati.add(film);
 			}
@@ -124,7 +124,7 @@ public class FilmServiceDB implements FilmService{
 	/*public List<Film> getAllFilmsByGenere(Genere genere) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			if (film.getGeneri().contains(genere)) {
 				risultati.add(film);
 			}
@@ -136,7 +136,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getAllFilmsByNameOfGenere(String nome) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			for (Genere genere : film.getGeneri()) {
 				if (genere.getNome() == nome) {
 					risultati.add(film);
@@ -149,7 +149,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getAllFilmsByNameOfAttore(String nome) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			for (Attore attore : film.getAttori()) {
 				if (attore.getNome() == nome) {
 					risultati.add(film);
@@ -162,7 +162,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getAllFilmsByVotoOfRecensioni() {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			for (Recensione recensione : film.getRecensioni()) {
 				risultati.add(film);
 
@@ -177,7 +177,7 @@ public class FilmServiceDB implements FilmService{
 	public List<Film> getFilmByLingua(String lingua) {
 		List<Film> risultati = new ArrayList<>();
 
-		for (Film film : filmRepository.findAll()) {
+		for (Film film : filmrepository.findAll()) {
 			for ( String linguaDisponibile : film.getLingue()) {
 				if (linguaDisponibile == lingua) {
 					risultati.add(film);
@@ -189,19 +189,19 @@ public class FilmServiceDB implements FilmService{
 	}
 	//Avere tutti i film in base al nome del genere
 	public List<Film> getAllFilmsByNameOfGenere(String nome) {
-		return filmRepository.FindFilmByNameOfGenre(nome);
+		return filmrepository.FindFilmByNameOfGenre(nome);
 	}
 	//Avere tutti i film in base al nome del genere
 	public List<Film> getAllFilmsByNameOfAttore(String nome) {
-		return filmRepository.FindFilmByNameOfActor(nome);
+		return filmrepository.FindFilmByNameOfActor(nome);
 	}
 	//Ordinare tutti i film in base al voto delle recensioni
 	public List<Film> getAllFilmsByVotoOfRecensioni() {
-		return filmRepository.OrderFilmByVotoOfRecensione();
+		return filmrepository.OrderFilmByVotoOfRecensione();
 	}
 	//Ordinare tutti i film in base al numero di visualizzazioni
 	public List<Film> getAllFilmsByNumberOfVisualizzazioni() {
-		return filmRepository.OrderFilmByNumberOfVisualizzazioni();
+		return filmrepository.OrderFilmByNumberOfVisualizzazioni();
 	}
 
 }
