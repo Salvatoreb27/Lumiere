@@ -67,11 +67,11 @@ public class Utente implements Serializable {
 		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 		@JoinTable(name = "ruolo_utente",
 		joinColumns = {
-		@JoinColumn(name = "id_ruolo", 
+		@JoinColumn(name = "id_utente", 
 		referencedColumnName = "id_utente")
 		},
 		inverseJoinColumns = {
-		@JoinColumn(name = "id_utente", 
+		@JoinColumn(name = "id_ruolo", 
 		referencedColumnName = "id_ruolo") 
 		})
 		private Set<Ruolo> ruoli = new HashSet<>();

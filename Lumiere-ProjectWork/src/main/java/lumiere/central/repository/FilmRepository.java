@@ -26,5 +26,4 @@ List <Film> OrderFilmByVotoOfRecensione ();
 
 List <Film> OrderFilmByNumberOfVisualizzazioni ();
 
-
 }

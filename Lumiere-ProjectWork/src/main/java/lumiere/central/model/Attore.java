@@ -33,7 +33,6 @@ public class Attore implements Serializable {
 	
 	//Associazione molti a molti tra attori e film
 	@ManyToMany(mappedBy = "attori") 
-	@JsonIgnore
 	private Set<Film> films = new HashSet<>();
 
 	public Attore() {
