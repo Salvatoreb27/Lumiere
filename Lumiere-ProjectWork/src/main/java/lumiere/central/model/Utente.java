@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -65,6 +67,7 @@ public class Utente implements Serializable {
 		
 		//Associazione tra ruoli e utenti
 		@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+		@JsonManagedReference
 		@JoinTable(name = "ruolo_utente",
 		joinColumns = {
 		@JoinColumn(name = "id_utente", 
