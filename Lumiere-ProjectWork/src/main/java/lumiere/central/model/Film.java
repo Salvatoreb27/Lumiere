@@ -62,11 +62,11 @@ public class Film implements Serializable {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_attore",
 	joinColumns = {
-			@JoinColumn(name = "id_attore", 
+			@JoinColumn(name = "id_film", 
 					referencedColumnName = "id_film")
 	},
 	inverseJoinColumns = {
-			@JoinColumn(name = "id_film", 
+			@JoinColumn(name = "id_attore", 
 					referencedColumnName = "id_attore") 
 	})
 	private Set<Attore> attori = new HashSet<>();
@@ -76,11 +76,11 @@ public class Film implements Serializable {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	@JoinTable(name = "film_genere",
 	joinColumns = {
-			@JoinColumn(name = "id_genere", 
+			@JoinColumn(name = "id_film", 
 					referencedColumnName = "id_film")
 	},
 	inverseJoinColumns = {
-			@JoinColumn(name = "id_film", 
+			@JoinColumn(name = "id_genere", 
 					referencedColumnName = "id_genere") 
 	})
 	private Set<Genere> generi = new HashSet<>();
