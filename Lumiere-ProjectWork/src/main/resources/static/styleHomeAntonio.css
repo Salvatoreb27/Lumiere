@@ -78,7 +78,7 @@ div.album.py-5.bg-body-custom-light{
 
 @media (min-width: 1280px){
 
-#carouselExampleCaptions > div.carousel-inner > div.carousel-item.active > img {
+#carouselExample > div.carousel-inner > div.carousel-item.active > img {
     max-width: 1280px !important;
     margin: auto !important;
   } 
@@ -115,7 +115,8 @@ div.album.py-5.bg-body-custom-light{
     text-align: left;
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 0.6em;
+    text-shadow: 2px 2px 2px rgba(109, 109, 109, 1);
 }
 
 .col{
@@ -130,12 +131,51 @@ div.album.py-5.bg-body-custom-light{
   background-color: #222831!important;
 }
 
+@media (max-width: 576px){
+  .card{
+    width: 5em!important;
+}
+}
+
+@media (max-width: 768px){
+  .card{
+    width: 8em!important;
+}
+}
+
+@media (max-width: 992px){
+  .card{
+    width: 10em!important;
+}
+}
+
+@media (max-width: 1280px){
+
+  .card{
+    width: 12em !important;
+  }
+
+
+}
+
+@media (min-width: 1281px){
+
+  .card{
+    width: 16em !important;
+  }
+
+
+}
 .card-title{
   color: #EEEEEE !important;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1rem!important;
 }
 
 .card-text{
   font-size: 0.8em;
-  color: #EEEEEE;
+  color: #EEEEEE !important;
+  margin-bottom: 0.7rem!important;
 }
 
