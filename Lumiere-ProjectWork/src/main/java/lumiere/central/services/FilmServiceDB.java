@@ -121,7 +121,7 @@ public class FilmServiceDB implements FilmService{
 		return risultati;
 	}
 	//Avere tutti i film in base al genere 1
-	public List<Film> getAllFilmsByGenere(Genere genere) {
+	/*public List<Film> getAllFilmsByGenere(Genere genere) {
 		List<Film> risultati = new ArrayList<>();
 
 		for (Film film : filmrepository.findAll()) {
@@ -133,7 +133,7 @@ public class FilmServiceDB implements FilmService{
 		return risultati;
 	}
 	//Avere tutti i film in base al nome del genere metodo definitivo
-	/*public List<Film> getAllFilmsByNameOfGenere(String nome) {
+	public List<Film> getAllFilmsByNameOfGenere(String nome) {
 		List<Film> risultati = new ArrayList<>();
 
 		for (Film film : filmrepository.findAll()) {
@@ -165,18 +165,18 @@ public class FilmServiceDB implements FilmService{
 		for (Film film : filmrepository.findAll()) {
 			for (Recensione recensione : film.getRecensioni()) {
 				risultati.add(film);
-				
+
 
 			}
 		}
 
 		return risultati;
-	}
+	}*/
 
 	@Override
 	public List<Film> getFilmByLingua(String lingua) {
 		List<Film> risultati = new ArrayList<>();
-		
+
 		for (Film film : filmrepository.findAll()) {
 			for ( String linguaDisponibile : film.getLingue()) {
 				if (linguaDisponibile == lingua) {
@@ -184,9 +184,24 @@ public class FilmServiceDB implements FilmService{
 				}
 			}
 		}
-		
-		return risultati;
-	}*/
 
+		return risultati;
+	}
+	//Avere tutti i film in base al nome del genere
+	public List<Film> getAllFilmsByNameOfGenere(String nome) {
+		return filmrepository.FindFilmByNameOfGenre(nome);
+	}
+	//Avere tutti i film in base al nome del genere
+	public List<Film> getAllFilmsByNameOfAttore(String nome) {
+		return filmrepository.FindFilmByNameOfActor(nome);
+	}
+	//Ordinare tutti i film in base al voto delle recensioni
+	public List<Film> getAllFilmsByVotoOfRecensioni() {
+		return filmrepository.OrderFilmByVotoOfRecensione();
+	}
+	//Ordinare tutti i film in base al numero di visualizzazioni
+	public List<Film> getAllFilmsByNumberOfVisualizzazioni() {
+		return filmrepository.OrderFilmByNumberOfVisualizzazioni();
+	}
 
 }
