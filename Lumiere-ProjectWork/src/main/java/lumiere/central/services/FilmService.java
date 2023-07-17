@@ -18,7 +18,7 @@ public interface FilmService {
 		//cancellazione di un film esistente
 		boolean deleteFilm(Long id);
 		//Visualizzazione di un film ricercando il titolo
-		public List<Film> getFilmByTitolo(String titolo);
+		/*public List<Film> getFilmByTitolo(String titolo);
 		//Visualizzazione di un film ricercando il regista
 		public List<Film> getFilmByRegista(String regista);
 		//Visualizzazione di un film ricercando l'anno
@@ -32,5 +32,5 @@ public interface FilmService {
 		//Visualizzazione di tutti i film ordinati per voto delle recensioni
 		public List<Film> getAllFilmsByVotoOfRecensioni();
 		//Visualizzazione di tutti i film in base alla lingua disponibile
-		public List<Film> getFilmByLingua(String lingua);
+		public List<Film> getFilmByLingua(String lingua);*/
 }

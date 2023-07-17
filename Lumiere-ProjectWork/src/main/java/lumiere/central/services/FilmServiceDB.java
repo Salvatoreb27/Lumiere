@@ -133,7 +133,7 @@ public class FilmServiceDB implements FilmService{
 		return risultati;
 	}
 	//Avere tutti i film in base al nome del genere metodo definitivo
-	public List<Film> getAllFilmsByNameOfGenere(String nome) {
+	/*public List<Film> getAllFilmsByNameOfGenere(String nome) {
 		List<Film> risultati = new ArrayList<>();
 
 		for (Film film : filmrepository.findAll()) {
@@ -165,7 +165,7 @@ public class FilmServiceDB implements FilmService{
 		for (Film film : filmrepository.findAll()) {
 			for (Recensione recensione : film.getRecensioni()) {
 				risultati.add(film);
-				risultati.sort(recensione.getVoto());
+				
 
 			}
 		}
@@ -186,7 +186,7 @@ public class FilmServiceDB implements FilmService{
 		}
 		
 		return risultati;
-	}
+	}*/
 
 
 }

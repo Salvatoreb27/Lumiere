@@ -29,7 +29,7 @@ public class Recensione implements Serializable {
 	private Date data;
 	//Chiedere: va bene che voto sia Comparator? O Crea Problemi?
 	@Column(name = "voto", nullable = false)
-	private Comparator<? super Film> voto;
+	private Integer voto;
 	
 	@Column(name = "testo", length = 100, nullable = false)
 	private String testo;
@@ -47,7 +47,7 @@ public class Recensione implements Serializable {
 	referencedColumnName = "id_utente") 
 	private Utente utenti;
 
-	public Recensione(Long id, Date data, Comparator<? super Film> voto, String testo, Boolean pubblico, Film films, Utente utenti) {
+	public Recensione(Long id, Date data, Integer voto, String testo, Boolean pubblico, Film films, Utente utenti) {
 		super();
 		Id = id;
 		this.data = data;
@@ -74,11 +74,11 @@ public class Recensione implements Serializable {
 		this.data = data;
 	}
 
-	public Comparator<? super Film> getVoto() {
+	public Integer getVoto() {
 		return voto;
 	}
 
-	public void setVoto(Comparator<? super Film> voto) {
+	public void setVoto(Integer voto) {
 		this.voto = voto;
 	}
 
