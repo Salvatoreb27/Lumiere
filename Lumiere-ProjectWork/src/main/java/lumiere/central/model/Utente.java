@@ -78,8 +78,8 @@ public class Utente implements Serializable {
 		
 		//Associazione tra pagamenti e utente
 		@ManyToOne(fetch = FetchType.LAZY)
-		@JoinColumn(name = "id_utente",
-		referencedColumnName = "id_utente") 
+		@JoinColumn(name = "id_pagamento",
+		referencedColumnName = "id_pagamento") 
 		private Pagamento pagamenti;
 		
 		@OneToMany(mappedBy = "utenti")
