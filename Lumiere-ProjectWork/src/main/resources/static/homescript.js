@@ -6,49 +6,30 @@ function visualizzaCarouselFilms() {
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
-			s = `<div id="carouselExample" class="carousel slide">
+			s = `<div id="carouselExampleCaptions" class="carousel slide">
   				 <div class="carousel-inner"> `
 			
 			
 			for (film of listaFilms) {
+				
+				let generiJSON = JSON.stringify(film.generi);
+				let generi = JSON.parse(generiJSON);
 
-				a += `<div class="carousel-item">
-				<img src="./imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="babbeo">
+				a += `
+				<div class="carousel-item">
+					<img src="./imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="babbeo">
+		  			<div class="carousel-caption d-none d-md-block">
+        				<h5>${film.titolo}</h5>
+        				<p>${film.durata}</p>
+        				<p>${g}</p>
+      				</div>
 		  		</div> `;
-
-
-				/* s += `<div class="card" onclick="increaseLikes(${recensione.id})">
-					<div class="d-flex justify-content-end">
-					<button id="bottone" class="btn btn-sm position-absolute pt-0" onclick="elimina(${recensione.id})">x</button>
-					</div>
-					<h5 class="card-title ms-1 mt-1"> ${recensione.title} </h5> 
-					<p class="testo-card ms-1 mt-1"> ${recensione.content} </p>
-						</div> `; 
-						
-						
-						
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-						*/
+				
+				for (gen of generi) {
+					console.log(g);
+					g += `${gen.nome}`
+				}
+				
 			}
 			s += a;
 			s += `

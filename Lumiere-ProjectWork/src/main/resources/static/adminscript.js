@@ -532,7 +532,7 @@ function utentiList() {
 					 	<p>${utente.attivo}</p>
 				 	</div>
 					<div class="col">
-					 	<p>${ruoli.nome}</p>
+					 	${r}
 				 	</div>
 			 		<div class="d-flex justify-content-end">
 						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${utente.id})">/</button>
