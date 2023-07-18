@@ -45,7 +45,7 @@
                     Generi
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
+                    <li><a class="dropdown-item" onclick="visualizzaFilmPerGenere('Avventura')" href="#">Avventura</a></li>
                     <li><a class="dropdown-item" href="#">Azione</a></li>
                     <li><a class="dropdown-item" href="#">Commedia</a></li>
                     <li><a class="dropdown-item" href="#">Drammatico</a></li>
@@ -73,8 +73,8 @@
       
 <!-- Main Carousel -->
 <main>
-  <div class="container">
-  <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">  <!--  data-bs-ride="carousel" -->
+  <div class="container" id="BannerFilm">
+  <div id="carousel-1" class="carousel slide">  <!--  data-bs-ride="carousel" -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -110,13 +110,14 @@
   <div id="carouselSecondary"></div>
 </div>
 
+
 <!-- Cards Carousel -->
-<div id="carouselExampleCaptions" class="carousel slide">
+<div id="carouselExampleCaptions" class="carousel slide" >
   <div class="carousel-inner">
     <div class="carousel-item active"> 
   <div class="row g-3">
     <div class="col col-md-6 col-lg">
-       <div class="card" style="width: 15em;">
+       <div class="card" style="width: 18em;">
           <img src="./imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Pulp Fiction</h5>
@@ -132,7 +133,7 @@
    </div>
 
    <div class="col col-md-6 col-lg">
-    <div class="card" style="width: 15em;">
+    <div class="card" style="width: 18em;">
        <img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title">Taxi Driver</h5>
@@ -148,7 +149,7 @@
 </div>
 
 <div class="col col-md-6 col-lg">
-  <div class="card" style="width: 15em;">
+  <div class="card" style="width: 18em;">
      <img src="./imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Matrix</h5>
@@ -164,7 +165,7 @@
 </div>
 
 <div class="col col-md-6 col-lg">
-  <div class="card" style="width: 15em;">
+  <div class="card" style="width: 18em;">
      <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Shining</h5>
@@ -179,8 +180,10 @@
   </div>
 </div>
 
+
+
   </div>
-</div>  end carousel item 1  
+</div>  <!-- end carousel item 1 -->  
 
 <div class="carousel-item">
   <div class="row g-2">
@@ -330,8 +333,7 @@
   <span class="visually-hidden">Next</span>
 </button>
 </div> <!-- end carousel -->
-         
-   
+
 
 </main>
 
@@ -346,7 +348,6 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
     </ul>
     <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
-    <button onclick="addFilm()" class="btn btn-primary">TEST</button>
   </footer>
 </div>
 

@@ -57,7 +57,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{titolo}")
+	@GetMapping("/titolo/{titolo}")
 	public List<Film> getFilmsByTitolo(@PathVariable String titolo) {
 		List<Film> film = filmService.getFilmByTitolo(titolo);
 		if (film == null) {
@@ -65,7 +65,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{nomeGenere}")
+	@GetMapping("/genere/{nomeGenere}")
 	public List <Film> getFilmsByGenere(@PathVariable String nomeGenere) {
 		List<Film> film = filmService.getAllFilmsByNameOfGenere(nomeGenere);
 		if (film == null) {
@@ -73,7 +73,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{nomeAttore}")
+	@GetMapping("/attore/{nomeAttore}")
 	public List <Film> getFilmsByAttore(@PathVariable String nomeAttore) {
 		List<Film> film = filmService.getAllFilmsByNameOfAttore(nomeAttore);
 		if (film == null) {
@@ -81,7 +81,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/BestVotes")
+	@GetMapping("/voti/BestVotes")
 	public List <Film> getFilmsWithBestVotes() {
 		List<Film> film = filmService.getAllFilmsByVotoOfRecensioni();
 		if (film == null) {
@@ -89,7 +89,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{nomeRegista}")
+	@GetMapping("/regista/{nomeRegista}")
 	public List <Film> getFilmsByRegista(@PathVariable String nomeRegista) {
 		List<Film> film = filmService.getFilmByRegista(nomeRegista);
 		if (film == null) {
@@ -97,7 +97,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{nomePaese}")
+	@GetMapping("/paese/{nomePaese}")
 	public List <Film> getFilmsByPaese(@PathVariable String nomePaese) {
 		List<Film> film = filmService.getFilmByPaese(nomePaese);
 		if (film == null) {
@@ -106,7 +106,7 @@ public class FilmController {
 		return film;
 	}
 	//Chiedere: ma quindi in questo modo riusciamo a risalire solo ai film rilasciati solo un determinato giorno?
-	@GetMapping("/{anno}")
+	@GetMapping("/anno/{anno}")
 	public List <Film> getFilmsByAnno(@PathVariable Date anno) {
 		List<Film> film = filmService.getFilmByAnno(anno);
 		if (film == null) {
@@ -114,7 +114,7 @@ public class FilmController {
 		}
 		return film;
 	}
-	@GetMapping("/{lingua}")
+	@GetMapping("/lingua/{lingua}")
 	public List <Film> getFilmsByLingua(@PathVariable String lingua) {
 		List<Film> film = filmService.getFilmByLingua(lingua);
 		if (film == null) {
