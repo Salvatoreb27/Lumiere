@@ -513,6 +513,7 @@ function utentiList() {
 			for (utente of listaUtenti) {
 				console.log(utente.ruoli);
 				console.log(typeof(utente.ruoli));
+				console.log
 				let ruoliJSON = JSON.stringify(utente.ruoli);
 				console.log(ruoliJSON);
 			/*	let ruoli = JSON.parse(ruoliJSON);			non funziona per qualchè motivo
