@@ -54,7 +54,7 @@ public class Film implements Serializable {
 	@Column(name = "paese", length = 50, nullable = false)
 	private String paese;
 
-	@Column(name = "lingua", length = 50, nullable = false)
+	@Column(name = "lingue", length = 50, nullable = false)
 	private List <String> lingue;
 
 	
