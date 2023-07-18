@@ -54,25 +54,3 @@ function visualizzaCarouselFilms() {
 		/*	a.firstChild.classList.add("active");	*/
 		});
 }
-  function redirectToPage() {
-    window.location.href = "HomeXGenere.html";
-  }
-  function changePage() {
-      let dropdown = document.getElementById("myDropdown");
-      let selectedValue = dropdown.value;
-      console.log(typeof(dropdown.value))
-      let titolo = document.getElementById("dropdown-item");
-      let contenuto = document.getElementById("contenuto");
-
-      if (selectedValue === "Avventura") {
-		  console.log("success");
-        titolo.innerHTML = "Film Di Avventura";
-        contenuto.innerHTML = "<p>Contenuto per l'opzione 1</p>";
-      } else if (selectedValue === "opzione2") {
-        titolo.innerHTML = "Opzione 2 selezionata";
-        contenuto.innerHTML = "<p>Contenuto per l'opzione 2</p>";
-      } else if (selectedValue === "opzione3") {
-        titolo.innerHTML = "Opzione 3 selezionata";
-        contenuto.innerHTML = "<p>Contenuto per l'opzione 3</p>";
-      }
-    }
