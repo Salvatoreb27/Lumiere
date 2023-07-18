@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shutter Island - Informazioni sul film</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    #immaginefilm{
+        width: 40%;
+        height: auto;
+    }
+    .row {
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="jumbotron p-0 m-0">
+                <div class="media">
+                    <img id="immaginefilm" src="data:image/jpeg;base64,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"" alt="Shutter Island" class="mr-3" width="100" height="100">
+                    <div class="media-body">
+                        <h1 class="display-4">Shutter Island</h1>
+                        <p class="lead">Un film diretto da Martin Scorsese</p>
+                    </div>
+                </div>
+            </div>
+    
+            <video id="film-video" width="100%" controls>
+                <source src="link_al_film.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="row">
+            
+                <div class="col-md-6">
+                    <h2>Trama</h2>
+                    <p>Shutter Island è un thriller psicologico del 2010 basato sul romanzo omonimo di Dennis Lehane. Ambientato nel 1954,
+                    il film segue il U.S. Marshal Teddy Daniels (interpretato da Leonardo DiCaprio) mentre indaga sulla scomparsa di una
+                    paziente nel manicomio criminale di Shutter Island.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                        <h2>Cast</h2>
+                        <ul>
+                            <li>Leonardo DiCaprio - Teddy Daniels</li>
+                            <li>Mark Ruffalo - Chuck Aule</li>
+                            <li>Ben Kingsley - Dr. John Cawley</li>
+                            <li>Michelle Williams - Dolores Chanal</li>
+                            <li>Emily Mortimer - Rachel Solando</li>
+                            <li>Max von Sydow - Dr. Jeremiah Naehring</li>
+                        </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2>Trailer</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5iaYLCiq5RM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Recensioni</h2>
+                    <p>Shutter Island ha ricevuto recensioni generalmente positive dalla critica. Il sito di aggregazione di recensioni
+                    Rotten Tomatoes riporta un punteggio di approvazione del 68% basato su 280 recensioni, con una valutazione media di
+                    6,80/10.</p>
+                    <p>Metacritic assegna al film un punteggio di 63 su 100, indicando "recensioni generalmente positive".</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

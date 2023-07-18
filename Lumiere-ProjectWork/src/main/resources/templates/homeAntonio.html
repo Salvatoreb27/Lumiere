@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./styleHomeAntonio.css">
+    <link rel="stylesheet" href="../static/css/styleHomeAntonio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,63 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<script src="./giulioscript.js"></script>
+<script src="../static/js/homescript.js"></script>
 </head>
 <body class="bg-body-custom-dark">
 
   
     <!-- Header / Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Offcanvas navbar large">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="titolo-logo"> <img src="./imagesAntonio/lumiere-logo2.png" alt="logo" height="70" id="img-logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menù</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Premium</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Account</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Generi
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
-                    <li><a class="dropdown-item" href="#">Azione</a></li>
-                    <li><a class="dropdown-item" href="#">Commedia</a></li>
-                    <li><a class="dropdown-item" href="#">Drammatico</a></li>
-                    <li><a class="dropdown-item" href="#">Thriller</a></li>
-                    <li><a class="dropdown-item" href="#">Horror</a></li>
-                    <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                    <li><a class="dropdown-item" href="#">Romantico</a></li>
-                    <li><a class="dropdown-item" href="#">Animazione</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex mt-3 mt-lg-0" role="search">
-                <input class="form-control me-2" type="search" placeholder="Inserisci titolo..." aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Cerca</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </nav>
+   <div th:replace="~{layouts/commonHeader :: header}"></div>
 
       
 <!-- Main Carousel -->
@@ -82,13 +32,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="oppenheimer" >
+        <img src="../static/imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="oppenheimer" >
       </div>
       <div class="carousel-item">
-        <img src="imagesAntonio/mission-impossible-dead-reckoning.jpg" class="d-block w-100" alt="mission-impossible-dead-reckoning">
+        <img src="../static/imagesAntonio/mission-impossible-dead-reckoning.jpg" class="d-block w-100" alt="mission-impossible-dead-reckoning">
       </div>
       <div class="carousel-item">
-        <img src="imagesAntonio/indiana-jones-and-the-dial-of-destiny.jpg" class="d-block w-100" alt="indiana-jones-and-the-dial-of-destiny">
+        <img src="../static/imagesAntonio/indiana-jones-and-the-dial-of-destiny.jpg" class="d-block w-100" alt="indiana-jones-and-the-dial-of-destiny">
       </div>
       <div class="carousel-title"></div>
     </div>
@@ -116,7 +66,7 @@
   <div class="row g-3">
     <div class="col col-md-6 col-lg">
        <div class="card" style="width: 15em;">
-          <img src="./imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
+          <img src="../static/imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Pulp Fiction</h5>
               <p class="card-text">Commedia</p>
@@ -132,7 +82,7 @@
 
    <div class="col col-md-6 col-lg">
     <div class="card" style="width: 15em;">
-       <img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       <img src="../static/imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title">Taxi Driver</h5>
            <p class="card-text">Giallo, Thriller</p>
@@ -148,7 +98,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Matrix</h5>
          <p class="card-text">Fantasy, Azione</p>
@@ -164,7 +114,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Shining</h5>
          <p class="card-text">Horror</p>
@@ -185,7 +135,7 @@
   <div class="row g-2">
     <div class="col col-md-6 col-lg">
        <div class="card" style="width: 15em;">
-          <img src="./imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
+          <img src="../static/imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Pulp Fiction</h5>
               <p class="card-text">Commedia</p>
@@ -201,7 +151,7 @@
 
    <div class="col col-md-6 col-lg">
     <div class="card" style="width: 15em;">
-       <img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       <img src="../static/imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title">Taxi Driver</h5>
            <p class="card-text">Giallo, Thriller</p>
@@ -217,7 +167,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Matrix</h5>
          <p class="card-text">Fantasy, Azione</p>
@@ -233,7 +183,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Shining</h5>
          <p class="card-text">Horror</p>
@@ -254,7 +204,7 @@
   <div class="row g-2">
     <div class="col col-md-6 col-lg">
        <div class="card" style="width: 15em;">
-          <img src="./imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
+          <img src="../static/imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Pulp Fiction</h5>
               <p class="card-text">Commedia</p>
@@ -270,7 +220,7 @@
 
    <div class="col col-md-6 col-lg">
     <div class="card" style="width: 15em;">
-       <img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       <img src="../static/imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title">Taxi Driver</h5>
            <p class="card-text">Giallo, Thriller</p>
@@ -286,7 +236,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Matrix</h5>
          <p class="card-text">Fantasy, Azione</p>
@@ -302,7 +252,7 @@
 
 <div class="col col-md-6 col-lg">
   <div class="card" style="width: 15em;">
-     <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
+     <img src="../static/imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Shining</h5>
          <p class="card-text">Horror</p>
@@ -330,22 +280,11 @@
 </button>
 </div> <!-- end carousel -->
 
+
 </main>
 
-<!-- Footer -->
-<div class="container">
-  <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
-    </ul>
-    <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
-    <button onclick="addFilm()" class="btn btn-primary">TEST</button>
-  </footer>
-</div>
+<!-- FOOTER-->
+  <div th:replace="~{layouts/commonFooter :: footer}"></div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
