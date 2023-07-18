@@ -39,7 +39,7 @@ public class FilmController {
 			filmDTO.setDurata(film.getDurata());
 			filmDTO.setRegista(film.getRegista());
 			filmDTO.setPaese(film.getPaese());
-			filmDTO.setLingue(film.getLingue());
+			filmDTO.setLingua(film.getLingua());
 			filmDTO.setAttori(film.getAttori());
 			filmDTO.setGeneri(film.getGeneri());
 			filmDTO.setRecensioni(film.getRecensioni());

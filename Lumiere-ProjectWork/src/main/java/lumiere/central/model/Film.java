@@ -54,8 +54,8 @@ public class Film implements Serializable {
 	@Column(name = "paese", length = 50, nullable = false)
 	private String paese;
 
-	@Column(name = "lingue", length = 50, nullable = false)
-	private List <String> lingue;
+	@Column(name = "lingua", length = 50, nullable = false)
+	private String lingua;
 
 	
 	//Associazione molti a molti tra attori e film
@@ -104,7 +104,7 @@ public class Film implements Serializable {
 
 
 	public Film(Long id, String titolo, String trama, String locandina, Date anno, Integer durata, String regista,
-			String paese, List<String> lingue, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
+			String paese, String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
 			Set<Visualizzazione> visualizzazioni) {
 		super();
 		Id = id;
@@ -115,7 +115,7 @@ public class Film implements Serializable {
 		this.durata = durata;
 		this.regista = regista;
 		this.paese = paese;
-		this.lingue = lingue;
+		this.lingua = lingua;
 		this.attori = attori;
 		this.generi = generi;
 		this.recensioni = recensioni;
@@ -203,13 +203,13 @@ public class Film implements Serializable {
 	}
 
 
-	public List<String> getLingue() {
-		return lingue;
+	public String getLingua() {
+		return lingua;
 	}
 
 
-	public void setLingue(List<String> lingue) {
-		this.lingue = lingue;
+	public void setLingua(String lingua) {
+		this.lingua = lingua;
 	}
 
 
@@ -253,14 +253,21 @@ public class Film implements Serializable {
 	}
 
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", anno="
-				+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingue=" + lingue
+				+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingua=" + lingua
 				+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
 				+ visualizzazioni + "]";
 	}
 
+
+	
 
 		
 

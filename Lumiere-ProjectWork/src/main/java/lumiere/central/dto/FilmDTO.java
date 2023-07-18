@@ -22,7 +22,7 @@ public class FilmDTO {
 	private Integer durata;
 	private String regista;
 	private String paese;
-	private List <String> lingue = new ArrayList<>();
+	private String lingua;
 	private Set<Attore> attori = new HashSet<>();
 	private Set<Genere> generi = new HashSet<>();
 	private Set<Recensione> recensioni = new HashSet<>();

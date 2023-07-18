@@ -53,7 +53,7 @@ public class FilmServiceDB implements FilmService{
 			f.setAnno(film.getAnno());
 			f.setDurata(film.getDurata());
 			f.setPaese(film.getPaese());
-			f.setLingue(film.getLingue());
+			f.setLingua(film.getLingua());
 			f.setAttori(film.getAttori());
 			f.setGeneri(film.getGeneri());
 			f.setRecensioni(film.getRecensioni());
@@ -178,12 +178,11 @@ public class FilmServiceDB implements FilmService{
 		List<Film> risultati = new ArrayList<>();
 
 		for (Film film : filmrepository.findAll()) {
-			for ( String linguaDisponibile : film.getLingue()) {
-				if (linguaDisponibile == lingua) {
+				if (film.getLingua() == lingua) {
 					risultati.add(film);
 				}
 			}
-		}
+		
 
 		return risultati;
 	}
