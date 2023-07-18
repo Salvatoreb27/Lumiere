@@ -9,7 +9,7 @@ function visualizzaCarouselFilms() {
 			g = "";
 			s = `
 			<div id="carousel-2" class="carousel slide">
-  				 <div class="carousel-inner"
+  				 <div class="carousel-inner">
   				  `
 			
 			
