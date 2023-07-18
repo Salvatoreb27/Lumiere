@@ -5,16 +5,19 @@
     color: #EEEEEE  !important
 }
 
-body > div.d-flex.flex-column.flex-shrink-0.p-3.text-bg-dark {
-    display: inline-block!important;
-}
-
 body{
     background-color: #393E46;
+    color: #EEEEEE  !important;
 }
 
-.content{
-    display: inline-block!important;
-    color: #EEEEEE  !important;
 
+.feature-icon{
+    width: 4rem; 
+    height: 4rem;
+    border-radius: 0.75rem;
+    background-color: #FFD369 !important;
+}
+
+.feature-icon.text{
+    color: #393E46!important;
 }
