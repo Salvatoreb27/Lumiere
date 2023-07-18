@@ -1,0 +1,11 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+.text-bg-dark{
+    background-color: #222831;
+    font-family: 'Poppins', sans-serif;
+    color: #EEEEEE
+}
+
+body{
+    background-color: #393E46;
+}
