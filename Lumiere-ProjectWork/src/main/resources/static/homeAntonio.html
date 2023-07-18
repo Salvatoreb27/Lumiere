@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<script src="./homescript.js"></script>
+<script src="./giulioscript.js"></script>
 </head>
-<body class="bg-body-custom-dark" onload="visualizzaCarouselFilms()">
+<body class="bg-body-custom-dark">
 
   
     <!-- Header / Navbar -->
@@ -74,11 +74,11 @@
 <!-- Main Carousel -->
 <main>
   <div class="container">
-  <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">  <!--  data-bs-ride="carousel" -->
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">  <!--  data-bs-ride="carousel" -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -92,11 +92,11 @@
       </div>
       <div class="carousel-title"></div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-1" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-1" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
@@ -107,11 +107,9 @@
 
 <div class="container">
   <div class="headerCards">Consigliati</div>
-  <div id="carouselSecondary"></div>
 </div>
 
 <!-- Cards Carousel -->
-<!--
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active"> 
@@ -181,7 +179,7 @@
 </div>
 
   </div>
-</div> <!-- end carousel item 1  
+</div> <!-- end carousel item 1  -->
 
 <div class="carousel-item">
   <div class="row g-2">
@@ -226,8 +224,111 @@
          <p class="card-text">1h30min</p>
          <div class="card-footer">
          <div class="d-grid gap-2 col-12 mx-">
-         <button type="button" class="btn btn-sm btn-warning">Guarda</button>	-->
-   
+         <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col col-md-6 col-lg">
+  <div class="card" style="width: 15em;">
+     <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h5 class="card-title">Shining</h5>
+         <p class="card-text">Horror</p>
+         <p class="card-text">1h30min</p>
+         <div class="card-footer">
+         <div class="d-grid gap-2 col-12 mx-">
+         <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div> <!-- end carousel item 2 -->
+
+<div class="carousel-item">
+  <div class="row g-2">
+    <div class="col col-md-6 col-lg">
+       <div class="card" style="width: 15em;">
+          <img src="./imagesAntonio/locandine/pulp.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pulp Fiction</h5>
+              <p class="card-text">Commedia</p>
+              <p class="card-text">1h30min</p>
+              <div class="card-footer">
+              <div class="d-grid gap-2 col-12 mx-">
+              <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+            </div>
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="col col-md-6 col-lg">
+    <div class="card" style="width: 15em;">
+       <img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+         <div class="card-body">
+           <h5 class="card-title">Taxi Driver</h5>
+           <p class="card-text">Giallo, Thriller</p>
+           <p class="card-text">1h30min</p>
+           <div class="card-footer">
+           <div class="d-grid gap-2 col-12 mx-">
+           <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+         </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="col col-md-6 col-lg">
+  <div class="card" style="width: 15em;">
+     <img src="./imagesAntonio/locandine/matrix.png" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h5 class="card-title">Matrix</h5>
+         <p class="card-text">Fantasy, Azione</p>
+         <p class="card-text">1h30min</p>
+         <div class="card-footer">
+         <div class="d-grid gap-2 col-12 mx-">
+         <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col col-md-6 col-lg">
+  <div class="card" style="width: 15em;">
+     <img src="./imagesAntonio/locandine/shining.png" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h5 class="card-title">Shining</h5>
+         <p class="card-text">Horror</p>
+         <p class="card-text">1h30min</p>
+         <div class="card-footer">
+         <div class="d-grid gap-2 col-12 mx-">
+         <button type="button" class="btn btn-sm btn-warning">Guarda</button>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div> <!-- end carousel item 3 -->
+
+ </div> <!-- end carousel inner -->
+ <button class="carousel-control-prev" style="width: 12em;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" style="width: 10em;" aria-hidden="true" ></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next " style="width: 10em;" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <span class="carousel-control-next-icon" style="width: 10em;" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div> <!-- end carousel -->
 
 </main>
 
@@ -242,6 +343,7 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
     </ul>
     <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
+    <button onclick="addFilm()" class="btn btn-primary">TEST</button>
   </footer>
 </div>
 

@@ -1,29 +1,22 @@
 
 function visualizzaCarouselFilms() {
 	console.log("visualizzazione");
-	fetch("http://localhost:8080/api/v1/lumiere/films/all")
+	console
+	fetch("http://localhost:8080/lumiere/films/all")
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
-			a = "";
-			g = "";
-			s = `
-			<div id="carousel-2" class="carousel slide">
-  				 <div class="carousel-inner"
-  				  `
+			s = `<div id="carouselExampleCaptions" class="carousel slide">
+  				 <div class="carousel-inner"> `
 			
 			
 			for (film of listaFilms) {
 				
-				let generi =JSON.parse(JSON.stringify(film.generi));
-				
-					for (gen of generi) {
-					g += `${gen.nome} `
-					console.log(g);
-				}
+				let generiJSON = JSON.stringify(film.generi);
+				let generi = JSON.parse(generiJSON);
 
 				a += `
-				<div class="carousel-item active">
+				<div class="carousel-item">
 					<img src="./imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="babbeo">
 		  			<div class="carousel-caption d-none d-md-block">
         				<h5>${film.titolo}</h5>
@@ -32,25 +25,27 @@ function visualizzaCarouselFilms() {
       				</div>
 		  		</div> `;
 				
+				for (gen of generi) {
+					console.log(g);
+					g += `${gen.nome}`
+				}
+				
 			}
-			console.log(a);
 			s += a;
 			s += `
 				</div>
- 					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
-    					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Previous</span>
-  					</button>
-  					<button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
-   						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Next</span>
-  					</button>
-				</div>
+ 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+   					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    				<span class="visually-hidden">Previous</span>
+  				</button>
+  				<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    				<span class="visually-hidden">Next</span>
+  				</button>
+			</div>
 			`
-			console.log(s);
+			
 			carouselSecondary.innerHTML = s;
-
-		
-		/*	a.firstChild.classList.add("active");	*/
+			then.a.firstChild.classList.add('active');
 		});
 }

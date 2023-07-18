@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -34,7 +33,7 @@ public class Ruolo implements Serializable {
 	private String nome;
 
 	@ManyToMany(mappedBy = "ruoli") 
-	@JsonBackReference
+	@JsonIgnore
 	private Set<Utente> utenti = new HashSet<>();
 
 	
