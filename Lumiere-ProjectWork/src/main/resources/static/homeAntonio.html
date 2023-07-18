@@ -45,7 +45,7 @@
                     Generi
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="visualizzaFilmPerGenere('Avventura')" href="#">Avventura</a></li>
+                    <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
                     <li><a class="dropdown-item" href="#">Azione</a></li>
                     <li><a class="dropdown-item" href="#">Commedia</a></li>
                     <li><a class="dropdown-item" href="#">Drammatico</a></li>
@@ -73,8 +73,8 @@
       
 <!-- Main Carousel -->
 <main>
-  <div class="container" id="BannerFilm">
-  <div id="carousel-1" class="carousel slide">  <!--  data-bs-ride="carousel" -->
+  <div class="container">
+  <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">  <!-- data-bs-ride="carousel" -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -110,9 +110,8 @@
   <div id="carouselSecondary"></div>
 </div>
 
-
 <!-- Cards Carousel -->
-<div id="carouselExampleCaptions" class="carousel slide" >
+<div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active"> 
   <div class="row g-3">
@@ -333,7 +332,7 @@
   <span class="visually-hidden">Next</span>
 </button>
 </div> <!-- end carousel -->
-
+         
 
 </main>
 
@@ -348,6 +347,7 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
     </ul>
     <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
+    <button onclick="addFilm()" class="btn btn-primary">TEST</button>
   </footer>
 </div>
 
