@@ -29,7 +29,7 @@ function visualizzaCarouselFilms() {
 				a += `
 					<div class="col col-md-6 col-lg-3">
 						<div class="card" style="width: 16em;">
-       						<img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       						<img src="${film.locandina}" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
@@ -112,40 +112,6 @@ function visualizzaCarouselFilms() {
 }
 
 
-
-function visualizzaCarouselFilmsmulti() {
-	console.log("visualizzazione");
-	fetch("http://localhost:8080/api/v1/lumiere/films/all")
-		.then(res => res.json())
-		.then(listaFilms => {
-			s = "";
-			a = "";
-			
-			let i = 0;
-			for (film of listaFilms) {
-				i++;
-				console.log(i);
-				a += `<h5>${film.titolo}</h5>`
-				console.log(a);
-				
-					if (i && !(i % 2)) {
-						s = `
-						<div>
-							${a}
-						</div>
-							`
-						
-						a = ` `
-			
-					console.log(s);
-					pollo.innerHTML += s;	
-					}
-				}
-			
-		});
-
-	}
-	
 function generazioneDropdownGeneri() {
 	console.log("avvio lista");
 
@@ -195,7 +161,7 @@ function ricercaPerGenere(nome) {
 				
 				s += `
 				<div class="card" style="width: 16em;">
-       						<img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       						<img src="${film.locandina}" class="card-img-top" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>

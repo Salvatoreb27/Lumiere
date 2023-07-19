@@ -799,8 +799,28 @@ function attoreUpdate(id) {
 }
 
 function filmUpdate(id) {
-	s = "";
-
+	let s = "";
+	let a = "";
+	let g = "";
+	
+	
+	const add = fetch("http://localhost:8080/api/v1/lumiere/generi/all")
+		.then(res => res.json())
+		.then(listaGeneri => {
+		let a = "";
+			console.log(listaGeneri);	   		
+    		for (genere of listaGeneri) {
+				
+		a +=`
+    			<option value="${genere.id}">${genere.nome}</option>
+    			`
+			}
+  			
+	console.log(a);
+	return a;
+	})
+	a += add;
+	console.log(a);
 	s = `
     <h3>Update Film</h3>
 	<form id="forma">
@@ -809,7 +829,7 @@ function filmUpdate(id) {
 		<input type="text" class="form-control" id="titolo">
 	</div>
 	<div class="mb-3">
-		<label for="trama" class="form-label">Descrizzione</label>
+		<label for="trama" class="form-label">Descrizione</label>
 		<input type="text" class="form-control" id="trama">
 	</div>
 	<div class="mb-3">
@@ -836,6 +856,21 @@ function filmUpdate(id) {
 		<label for="lingua" class="form-label">Lingua Del Film</label>
 		<input type="text" class="form-control" id="lingua">
 	</div>
+	<div class="input-group mb-3">
+		<label class="input-group-text" for="attoreOptions">Attore</label>
+			<select class="form-select" id="attoreOptions">
+				<option selected>Scegliere un genere</option>
+			</select>
+	</div>
+	<div class="input-group mb-3">
+		<label class="input-group-text" for="genereOptions">Genere</label>
+			<select class="form-select" id="genereOptions">
+				<option selected>Scegliere un genere</option>
+				${a}
+			</select>
+	</div>
+	
+		
 	<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 		`;

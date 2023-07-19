@@ -38,6 +38,8 @@ public class FilmController {
 		for (Film film: films) {
 			FilmDTO filmDTO = new FilmDTO();
 			filmDTO.setId(film.getId());
+			filmDTO.setTrama(film.getTrama());
+			filmDTO.setLocandina(film.getLocandina());
 			filmDTO.setTitolo(film.getTitolo());
 			filmDTO.setAnno(film.getAnno());
 			filmDTO.setDurata(film.getDurata());
