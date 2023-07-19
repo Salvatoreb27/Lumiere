@@ -1,52 +1,113 @@
-
 <!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Lumiere Login Page </title>
-    <link rel="stylesheet" href="styleLogin.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="styleRegLog.css" />
 </head>
 
 <body>
-    <nav>
-        <!-- <div class="form-img"><img src="./images/Logo_lumiere.png" height="250"  alt="logo-lumiere"></div> -->
-    </nav>
-    <div class="form-wrapper">
-        <h2> Accedi </h2>
-        <form action="#">
-
-            <div class="form-control">
-
-                <input type="text" required>
-                <label>Email o numero di telefono</label>
-
-                <!--voglio mettere bottone che verifica email e se non metti la @ da messaggio errore-->
-
+    <section class="container">
+        <h1>Registrati</h1>
+        <form action="#" class="form">
+            <div class="input-box">
+                <label>Nome e cognome:</label>
+                <input type="text" placeholder="Inserisci nome e cognome" required />
             </div>
-            <div class="form-control">
-                <input type="password" required>
-                <label>Password</label>
 
+            <div class="input-box">
+                <label>Email:</label>
+                <input type="text" placeholder="Inserisci il tuo indirizzo email" required />
             </div>
-            <button type="submit">Accedi</button>
-            <div class="form-help">
-                <div class="remember-me">
-                    <input type="checkbox" id="remember-me">
-                    <label for="remember-me"> Ricordami </label>
+
+            <div class="column">
+                <div class="input-box">
+                    <label>Numero di telefono:</label>
+                    <input type="number" placeholder="Inserisci il tuo numero di telefono" required />
                 </div>
-                <a href="#"> Hai bisogno di aiuto?</a>
+                <div class="input-box">
+                    <label>Data di nascita:</label>
+                    <input type="date" placeholder="Inserisci la tua data di nascita" required />
+                </div>
             </div>
-        </form>
-        <p>Sei nuovo qui? <a h ref="#">Registrati ora. </a></p>
+            <div class="gender-box">
+                <h3>Sesso:</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" checked />
+                        <label for="check-male">Uomo</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender" />
+                        <label for="check-female">Donna</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-other" name="gender" />
+                        <label for="check-other">Preferisco non specificarlo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-box address">
+                <label>Indirizzo di residenza:</label>
+                <input type="text" placeholder="Inserisci l'indirizzo di residenza" required />
+                <input type="text" placeholder="Inserisci l'indirizzo di residenza 2" required />
+                <div class="column">
+                    <div class="select-box">
+                        <select required>
+                            <option hidden>Nazione</option>
+                            <option>Italia</option>
+                            <option>Stati Uniti d'America</option>
+                            <option>Giappone</option>
+                            <option>Cina</option>
+                        </select>
+                    </div>
+                    <div class="select-box">
+                        <select required>
+                            <option hidden>Città</option>
+                            <option>Roma, (RM)</option>
+                            <option>Napoli, (NA)</option>
+                            <option>Milano, (MI)</option>
+                            <option>Bologna, (BO)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select required>
+                            <option hidden>Regione</option>
+                            <option>Lazio</option>
+                            <option>Campania</option>
+                            <option>Lombardia</option>
+                            <option>Emilia-Romagna</option>
+                        </select>
+                    </div>
+                    <input type="number" placeholder="Codice postale" required />
+                </div>
 
-        <small>Questa pagina è protetta da Google reCAPTCHA per garantire che tu non sia un bot.
-            <a href="#"> Scopri di più.</a>
-        </small>
-        <a href="homeAntonio.html"><button>Torna alla Home</button></a>
+            </div>
+            </div>
+            <button>Registrati</button>
 
-    </div>
+    </section>
+    </form>
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
+            </ul>
+            <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
+        </footer>
 
-    </div>
 </body>
+
+
+</html>
