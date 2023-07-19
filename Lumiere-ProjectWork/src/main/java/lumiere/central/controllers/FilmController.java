@@ -9,11 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import lumiere.central.dto.FilmDTO;
+import lumiere.central.dto.FilmDTO2;
 import lumiere.central.model.Film;
 import lumiere.central.services.FilmService;
 
@@ -122,6 +125,25 @@ public class FilmController {
 		}
 		return film;
 	}
+	//Aggiunta di film ---> Admin
+		@PostMapping("/film/addFilm") 
+		public Long saveFilm(@RequestBody Film film) {
+			Long idFilm = filmService.addFilm(film);
+			return idFilm;
+		}
+		//Aggiunta di film ---> Admin
+				@PostMapping("/film/addFilm2") 
+				public Long saveFilm2(@RequestBody FilmDTO2 film) {
+					Film f = new Film();
+					f.setTitolo(film.getTitolo());
+					f.setAnno(film.getAnno());
+					f.setDurata(film.getDurata());
+					f.setRegista(film.getRegista());
+					f.setPaese(film.getPaese());
+					f.setLingua(film.getLingua());
+					Long idFilm = filmService.addFilm(f);
+					return idFilm;
+				}
 
 }
 

@@ -70,12 +70,12 @@ public class AdminController {
 	//@Secured("ROLE_ADMIN")
 	//@PreAuthorize("hasRole('ADMIN')")
 	
-	//Aggiunta di film ---> Admin
+	/*Aggiunta di film ---> Admin
 	@PostMapping("/film/addFilm") 
 	public Long saveFilm(@RequestBody Film film) {
 		Long idFilm = filmService.addFilm(film);
 		return idFilm;
-	}
+	}*/
 	
 	//@Secured("ROLE_ADMIN")
 	//@PreAuthorize("hasRole('ADMIN')")
