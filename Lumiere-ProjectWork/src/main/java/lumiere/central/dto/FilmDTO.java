@@ -13,6 +13,7 @@ import lumiere.central.model.Visualizzazione;
 @Data
 public class FilmDTO {
 	
+	private Long id;
 	private String titolo;
 	private String trama;
 	private String locandina;
