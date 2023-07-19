@@ -178,3 +178,12 @@ div.album.py-5.bg-body-custom-light{
   color: #EEEEEE !important;
   margin-bottom: 0.7rem!important;
 }
+
+.text-over-image{
+	position: absolute; 
+    top:50%; 
+    left:50%; 
+    transform: translate(-50%, -50%); 
+    font-size:1rem;
+}
+

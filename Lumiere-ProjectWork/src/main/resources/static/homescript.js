@@ -5,8 +5,11 @@ function visualizzaCarouselFilms() {
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
+			i = 0;
+			n = 0;
 			a = "";
 			g = "";
+			t = "";
 			s = `
 			<div id="carousel-2" class="carousel slide">
   				 <div class="carousel-inner">
@@ -14,16 +17,40 @@ function visualizzaCarouselFilms() {
 			
 			
 			for (film of listaFilms) {
-				
+					i ++;
+					c = ""
+					if (n===1) {
+						c = `active`;
+					} else {
+						c = "";
+					}
 				let generi =JSON.parse(JSON.stringify(film.generi));
-				
+					
 					for (gen of generi) {
 					g += `${gen.nome} `
 					console.log(g);
 				}
-
+				
 				a += `
-				<div class="carousel-item active">
+					<div class="col col-md-6 col-lg-3">
+						<div class="card" style="width: 16em;">
+       						<img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+        					<div class="card-body">
+          						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
+          						<p class="card-text mb-2 fs-6">${g} </p>
+           						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
+           						<div class="card-footer pb-0">
+           							<div class="d-grid gap-2 col-12 mx-">
+							<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+         							</div>
+        						</div>
+      						</div>
+    					</div>
+    				</div>
+				`
+			/*
+				a += `
+				<div class="carousel-item ${c}">
 					<img src="./imagesAntonio/oppenheimer.jpg" class="d-block w-100" alt="babbeo">
 		  			<div class="carousel-caption d-none d-md-block">
         				<h5>${film.titolo}</h5>
@@ -31,10 +58,27 @@ function visualizzaCarouselFilms() {
         				<p>${g}</p>
       				</div>
 		  		</div> `;
+				*/
 				
+				a += `
+				
+				`
+				
+			if (i && !(i % 4)) {
+				n++;
+						t = `
+						<div class="carousel-item ${c}">
+							<div class="row">
+								${a}
+							</div>
+						</div>
+							`
+						
+						a = ` `
+						s += t;
+			};
+			
 			}
-			console.log(a);
-			s += a;
 			s += `
 				</div>
  					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
@@ -46,14 +90,78 @@ function visualizzaCarouselFilms() {
     					<span class="visually-hidden">Next</span>
   					</button>
 				</div>
-			`
+				</div>
+				</div>
+			`;
 			console.log(s);
 			carouselSecondary.innerHTML = s;
 
 		
-		/*	a.firstChild.classList.add("active");	*/
-		});
+
+	});
+
 }
+
+
+
+function visualizzaCarouselFilmsmulti() {
+	console.log("visualizzazione");
+	fetch("http://localhost:8080/api/v1/lumiere/films/all")
+		.then(res => res.json())
+		.then(listaFilms => {
+			s = "";
+			a = "";
+			
+			let i = 0;
+			for (film of listaFilms) {
+				i++;
+				console.log(i);
+				a += `<h5>${film.titolo}</h5>`
+				console.log(a);
+				
+					if (i && !(i % 2)) {
+						s = `
+						<div>
+							${a}
+						</div>
+							`
+						
+						a = ` `
+			
+					console.log(s);
+					pollo.innerHTML += s;	
+					}
+				}
+			
+		});
+
+	}
+
+
+
+  function redirectToPage() {
+    window.location.href = "HomeXGenere.html";
+  }
+  function changePage() {
+      let dropdown = document.getElementById("myDropdown");
+      let selectedValue = dropdown.value;
+      console.log(typeof(dropdown.value))
+      let titolo = document.getElementById("dropdown-item");
+      let contenuto = document.getElementById("contenuto");
+
+      if (selectedValue === "Avventura") {
+		  console.log("success");
+        titolo.innerHTML = "Film Di Avventura";
+        contenuto.innerHTML = "<p>Contenuto per l'opzione 1</p>";
+      } else if (selectedValue === "opzione2") {
+        titolo.innerHTML = "Opzione 2 selezionata";
+        contenuto.innerHTML = "<p>Contenuto per l'opzione 2</p>";
+      } else if (selectedValue === "opzione3") {
+        titolo.innerHTML = "Opzione 3 selezionata";
+        contenuto.innerHTML = "<p>Contenuto per l'opzione 3</p>";
+      }
+    }
+
 
 function visualizzaFilmPerGenere (genere) {
 	console.log("success");
@@ -74,3 +182,4 @@ function visualizzaFilmPerGenere (genere) {
 </div>`
     document.getElementById("listaFilmPerGenere").innerHTML = s;
 }
+
