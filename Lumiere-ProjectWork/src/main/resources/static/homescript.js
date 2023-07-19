@@ -5,12 +5,13 @@ function visualizzaCarouselFilms() {
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
-			i = 0;
-			n = 0;
-			a = "";
-			g = "";
-			t = "";
-			s = `
+			let i = 0;
+			let n = 0;
+			let a = "";
+			let g = "";
+			let t = "";
+			let c = "";
+			let s = `
 			<div id="carousel-2" class="carousel slide">
   				 <div class="carousel-inner">
   				  `
@@ -18,12 +19,6 @@ function visualizzaCarouselFilms() {
 			
 			for (film of listaFilms) {
 					i ++;
-					c = ""
-					if (n===1) {
-						c = `active`;
-					} else {
-						c = "";
-					}
 				let generi =JSON.parse(JSON.stringify(film.generi));
 					
 					for (gen of generi) {
@@ -41,7 +36,7 @@ function visualizzaCarouselFilms() {
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-							<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
@@ -60,12 +55,14 @@ function visualizzaCarouselFilms() {
 		  		</div> `;
 				*/
 				
-				a += `
-				
-				`
-				
 			if (i && !(i % 4)) {
 				n++;
+					if (n===1) {
+						c = `active`;
+					} else {
+						c = "";
+					}
+					
 						t = `
 						<div class="carousel-item ${c}">
 							<div class="row">
@@ -79,18 +76,30 @@ function visualizzaCarouselFilms() {
 			};
 			
 			}
+			
+			if (i != 0) {
+				s += `
+						<div class="carousel-item">
+							<div class="row">
+								${a}
+							</div>
+						</div>
+							`
+			}
+			
+			
 			s += `
-				</div>
- 					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
-    					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Previous</span>
-  					</button>
-  					<button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
-   						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Next</span>
-  					</button>
-				</div>
-				</div>
+						</div>
+ 							<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
+    							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    							<span class="visually-hidden">Previous</span>
+  							</button>
+  							<button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
+   								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    							<span class="visually-hidden">Next</span>
+  							</button>
+						</div>
+					</div>
 				</div>
 			`;
 			console.log(s);
