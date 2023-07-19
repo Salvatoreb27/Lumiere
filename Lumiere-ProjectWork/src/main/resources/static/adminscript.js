@@ -298,6 +298,8 @@ function ruoloForm() {
 	})
 }
 
+//inizio liste
+
 function attoriList() {
 	console.log("avvio lista");
 
@@ -318,9 +320,9 @@ function attoriList() {
    					<div class="col">
 						<p>${attore.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${attore.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${attore.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${attore.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${attore.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -349,9 +351,9 @@ function generiList() {
    					<div class="col">
 						<p>${genere.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${genere.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${genere.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${genere.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${genere.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -460,9 +462,9 @@ function filmList() {
 				 	<div class="col">
 					 	<p>${film.trama}</p>
 				 	</div>
-			 		<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${film.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${film.id})">x</button>
+			 		<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${film.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${film.id})">x</button>
 					</div>
 		   		</div>
 			 	`;
@@ -553,9 +555,9 @@ function utentiList() {
 					<div class="col">
 					 	<p>${ruoliJSON}</p>
 				 	</div>
-			 		<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${utente.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${utente.id})">x</button>
+			 		<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${utente.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${utente.id})">x</button>
 					</div>
 		   		</div>
 			 	`;
@@ -585,10 +587,10 @@ function ruoliList() {
   				<div class="row">
    					<div class="col d-flex justify-content-between">
 						<p>${ruolo.nome}</p>
-						<div class="flex-shrink-1">
-						<button class="btn btn-sm pt-0" onclick="attoreUpdate(${ruolo.id})">/</button>
-						<button class="btn btn-sm pt-0" onclick="attoreDelete(${ruolo.id})">x</button>
-						</div>
+						<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${ruolo.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${ruolo.id})">x</button>
+					</div>
     				</div>
   				</div>
 			 	`;
@@ -635,9 +637,9 @@ function visualizzazioniList() {
     				<div class="col">
 						<p>${visual.utenti}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${visual.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${visual.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${visual.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${visual.id})">x</button>
 					</div>
   				</div>
 			 	`;

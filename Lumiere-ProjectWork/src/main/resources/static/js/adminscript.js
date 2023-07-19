@@ -1,3 +1,5 @@
+// FORMS
+
 function genereForm() {
 	s = "";
 
@@ -298,6 +300,8 @@ function ruoloForm() {
 	})
 }
 
+// INIZIO LISTE
+
 function attoriList() {
 	console.log("avvio lista");
 
@@ -318,8 +322,10 @@ function attoriList() {
    					<div class="col">
 						<p>${attore.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
+					<div class="d-flex justify-content-end bg-light">
 						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${attore.id})">/</button>
+					</div>
+					<div class="d-flex justify-content-end bg-light">
 						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${attore.id})">x</button>
 					</div>
   				</div>
@@ -349,9 +355,11 @@ function generiList() {
    					<div class="col">
 						<p>${genere.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${genere.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${genere.id})">x</button>
+					<div class="d-flex justify-content-end bg-light">
+						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${attore.id})">/</button>
+					</div>
+					<div class="d-flex justify-content-end bg-light">
+						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${attore.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -646,6 +654,8 @@ function visualizzazioniList() {
 		});
 }
 
+// INIZIO DELETE
+
 function genereDelete(id)
         {
             console.log("eliminazione id" + id);
@@ -706,6 +716,8 @@ function visualizzazioneDelete(id)
             })
             .then(visualizzazioniList());
         }
+        
+// INIZIO UPDATE
         
 function genereUpdate(id) {
 	s = "";

@@ -3,7 +3,6 @@ package lumiere.central.model;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
