@@ -17,7 +17,7 @@
 
 
 </head>
-<body class="bg-body-custom-dark" onload="visualizzaCarouselFilms()">
+<body class="bg-body-custom-dark" onload="generazioneDropdownGeneri()">
 
   
     <!-- Header / Navbar -->
@@ -47,20 +47,7 @@
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Generi
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
-                    <li><a class="dropdown-item" href="#">Azione</a></li>
-                    <li><a class="dropdown-item" href="#">Commedia</a></li>
-                    <li><a class="dropdown-item" href="#">Drammatico</a></li>
-                    <li><a class="dropdown-item" href="#">Thriller</a></li>
-                    <li><a class="dropdown-item" href="#">Horror</a></li>
-                    <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                    <li><a class="dropdown-item" href="#">Romantico</a></li>
-                    <li><a class="dropdown-item" href="#">Animazione</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu" id="dropdownTarget">
                   </ul>
                 </li>
               </ul>
@@ -75,7 +62,8 @@
 
       
 <!-- Main Carousel -->
-<main>
+<div id = "refreshComplete">
+<main id="refreshTarget">
   <div class="container">
   <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">  <!-- data-bs-ride="carousel" -->
     <div class="carousel-indicators">
@@ -345,6 +333,7 @@
 
 
 </main>
+</div>
 
 <!-- Footer -->
 <div class="container">

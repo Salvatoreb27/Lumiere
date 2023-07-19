@@ -145,8 +145,79 @@ function visualizzaCarouselFilmsmulti() {
 		});
 
 	}
+	
+function generazioneDropdownGeneri() {
+	console.log("avvio lista");
+
+	fetch("http://localhost:8080/api/v1/lumiere/generi/all")
+		.then(res => res.json())
+		.then(listaGeneri => {
+			console.log(listaGeneri);
+			s = `
+				
+			 	`;
+			for (genere of listaGeneri) {
+				console.log(genere.nome)
+				console.log(typeof(genere.nome))
+				s += `
+				<li><button class="dropdown-item" onclick="ricercaPerGenere('${genere.nome}')">${genere.nome}</li>
+			 	`;
+			}
+			dropdownTarget.innerHTML = s;
+		});
+}
 
 
+function ricercaPerGenere(nome) {
+	console.log(nome);
+	console.log(typeof(nome));
+	let n = document.getElementById("refreshTarget");	
+	n.remove();
+	
+	console.log("visualizzazione");
+	fetch("http://localhost:8080/api/v1/lumiere/films/genere/" + nome)
+		.then(res => res.json())
+		.then(listaFilms => {
+				console.log("listaFilmFiltrati");
+				g = ""
+				s = `
+				<main id="refreshTarget">
+				`
+				
+				for (film of listaFilms) {
+				let generi =JSON.parse(JSON.stringify(film.generi));
+					
+					for (gen of generi) {
+					g += `${gen.nome} `
+					console.log(g);
+				}
+				
+				
+				s += `
+				<div class="card" style="width: 16em;">
+       						<img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+        					<div class="card-body">
+          						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
+          						<p class="card-text mb-2 fs-6">${g} </p>
+           						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
+           						<div class="card-footer pb-0">
+           							<div class="d-grid gap-2 col-12 mx-">
+										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+         							</div>
+        						</div>
+      						</div>
+    					</div>
+				`
+				}
+				
+				s += `
+				</main>
+				`
+				console.log(s)
+				refreshComplete.innerHTML = s;
+			});
+	
+}
 
   function redirectToPage() {
     window.location.href = "HomeXGenere.html";
