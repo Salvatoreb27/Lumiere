@@ -1,0 +1,23 @@
+
+.text-bg-dark{
+    background-color: #222831;
+    font-family: 'Poppins', sans-serif;
+    color: #EEEEEE  !important
+}
+
+body{
+    background-color: #393E46;
+    color: #EEEEEE  !important;
+}
+
+
+.feature-icon{
+    width: 4rem; 
+    height: 4rem;
+    border-radius: 0.75rem;
+    background-color: #FFD369 !important;
+}
+
+.feature-icon.text{
+    color: #393E46!important;
+}

@@ -134,6 +134,7 @@ function visualizzaCarouselFilmsmulti() {
 				}
 			
 		});
+
 	}
 
 
@@ -160,4 +161,25 @@ function visualizzaCarouselFilmsmulti() {
         contenuto.innerHTML = "<p>Contenuto per l'opzione 3</p>";
       }
     }
+
+
+function visualizzaFilmPerGenere (genere) {
+	console.log("success");
+	
+	document.getElementById("BannerFilm").style.display = "none";
+	let s = `  <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      ${genere}
+    </div>
+    <div class="col">
+      ${genere}
+    </div>
+    <div class="col">
+      ${genere}
+    </div>
+  </div>
+</div>`
+    document.getElementById("listaFilmPerGenere").innerHTML = s;
+}
 
