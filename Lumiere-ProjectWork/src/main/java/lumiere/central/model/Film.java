@@ -39,7 +39,10 @@ public class Film implements Serializable {
 	
 	@Column(name = "locandina", length = 100, nullable = true)
 	private String locandina;
-
+	
+	@Column(name = "trailer", length = 200, nullable = true)
+	private String trailer;
+	
 	@Column(name = "anno", nullable = false)
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date anno;
@@ -102,14 +105,15 @@ public class Film implements Serializable {
 	}
 
 
-	public Film(Long id, String titolo, String trama, String locandina, Date anno, Integer durata, String regista,
-			String paese, String lingua, Set<Attore> attori, Set<Genere> generi, Set<Recensione> recensioni,
-			Set<Visualizzazione> visualizzazioni) {
+	public Film(Long id, String titolo, String trama, String locandina, String trailer, Date anno, Integer durata,
+			String regista, String paese, String lingua, Set<Attore> attori, Set<Genere> generi,
+			Set<Recensione> recensioni, Set<Visualizzazione> visualizzazioni) {
 		super();
 		Id = id;
 		this.titolo = titolo;
 		this.trama = trama;
 		this.locandina = locandina;
+		this.trailer = trailer;
 		this.anno = anno;
 		this.durata = durata;
 		this.regista = regista;
@@ -159,6 +163,16 @@ public class Film implements Serializable {
 
 	public void setLocandina(String locandina) {
 		this.locandina = locandina;
+	}
+
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
 	}
 
 
@@ -252,27 +266,12 @@ public class Film implements Serializable {
 	}
 
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", anno="
-				+ anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese + ", lingua=" + lingua
-				+ ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni + ", visualizzazioni="
-				+ visualizzazioni + "]";
+		return "Film [Id=" + Id + ", titolo=" + titolo + ", trama=" + trama + ", locandina=" + locandina + ", trailer="
+				+ trailer + ", anno=" + anno + ", durata=" + durata + ", regista=" + regista + ", paese=" + paese
+				+ ", lingua=" + lingua + ", attori=" + attori + ", generi=" + generi + ", recensioni=" + recensioni
+				+ ", visualizzazioni=" + visualizzazioni + "]";
 	}
-
-
-	
-
-		
-
-	
-
-
-
 
 }
