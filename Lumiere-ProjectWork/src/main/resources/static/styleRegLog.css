@@ -14,9 +14,12 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: #222831;
+    background-color: #333;
+    background: url('images/american-horror-movie-posters-9pvmdtvz4cb0xl37.png');
+    background-position: center
     ;
 }
+
 
 .container {
     position: relative;

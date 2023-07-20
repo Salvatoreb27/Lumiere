@@ -4,48 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Lumiere Login Page </title>
+    <title>Login</title>
     <link rel="stylesheet" href="styleLogin.css">
+
 </head>
 
 <body>
 
-    <nav>
-        <a href="#"><img src="images/Logo_lumiere.png" alt="logo"></a>
-    </nav>
-    <main>
-        <div class="form-wrapper">
-            <h2> Accedi </h2>
-            <form action="#">
+    <div class="form-wrapper">
 
-                <div class="form-control">
+        <h2> Accedi </h2>
+        <form action="#">
 
-                    <input type="text" required>
-                    <label>Email o numero di telefono</label>
+            <div class="form-control">
 
+                <input type="text" required>
+                <label>Email o numero di telefono</label>
+
+            </div>
+            <div class="form-control">
+                <input type="password" required>
+                <label>Password</label>
+
+            </div>
+            <button type="submit">Accedi</button>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me"> Ricordami </label>
                 </div>
-                <div class="form-control">
-                    <input type="password" required>
-                    <label>Password</label>
+                <a href="#"> Hai bisogno di aiuto?</a>
+            </div>
+        </form>
+        <p>Sei nuovo qui? <a h ref="#">Registrati ora. </a></p>
 
-                </div>
-                <button type="submit">Accedi</button>
-                <div class="form-help">
-                    <div class="remember-me">
-                        <input type="checkbox" id="remember-me">
-                        <label for="remember-me"> Ricordami </label>
-                    </div>
-                    <a href="#"> Hai bisogno di aiuto?</a>
-                </div>
-            </form>
-            <p>Sei nuovo qui? <a h ref="#">Registrati ora. </a></p>
+        <small>Questa pagina è protetta da Google reCAPTCHA per garantire che tu non sia un bot.
+            <a href="#"> Scopri di più.</a>
+        </small>
 
-            <small>Questa pagina è protetta da Google reCAPTCHA per garantire che tu non sia un bot.
-                <a href="#"> Scopri di più.</a>
-            </small>
-
-        </div>
-    </main>
+    </div>
 
     </div>
 
