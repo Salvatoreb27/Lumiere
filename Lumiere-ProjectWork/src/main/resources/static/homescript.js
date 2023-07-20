@@ -71,8 +71,9 @@ function visualizzaCarouselFilms() {
 						</div>
 							`
 						
-						a = ` `
+						a = ` `;
 						s += t;
+						i = 0;
 			};
 			
 			}
@@ -161,7 +162,7 @@ function ricercaPerGenere(nome) {
 				
 				s += `
 				<div class="card" style="width: 16em;">
-       						<img src="${film.locandina}" class="card-img-top" alt="...">
+       						<img src="${film.locandina}" class="card-img-top" alt="Locandina del film">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
@@ -183,6 +184,85 @@ function ricercaPerGenere(nome) {
 				refreshComplete.innerHTML = s;
 			});
 	
+}
+
+function dettaglioFilm(id) {
+	console.log(id);
+	let n = document.getElementById("refreshTarget");	
+	n.remove();
+	
+	console.log("visualizzazione");
+	fetch("http://localhost:8080/api/v1/lumiere/films/" + id)
+		.then(res => res.json())
+		.then(film => {
+			console.log("film al dettaglio");
+			
+			let generi =JSON.parse(JSON.stringify(film.generi));
+					
+					for (gen of generi) {
+					g += `<p>${gen.nome}</p>`
+					console.log(g);
+				}
+				
+			let attori =JSON.parse(JSON.stringify(film.attori));
+					
+					for (att of attori) {
+					a += `<p>${att.nome}</p>`
+					console.log(g);
+				}	
+			
+			
+			
+			s = `
+			<main id="refreshTarget">
+				<div class = "row">
+					<div class = "col-6">
+					<img src = "${film.locandina}" alt = "Immagine del film">
+					<h2>${film.titolo}</h2>
+					</div>
+					<div class = "col-6">
+					<p>${film.trama}</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-2">
+					<p>Durata in minuti</p>
+					<p>${film.durata}</p>
+					</div>
+					<div class = "col-2">
+					<p>Lingua Originale</p>
+					<p>${film.anno}</p>
+					</div>
+					<div class = "col-2">
+					<p>Lingua Originale</p>
+					<p>${film.lingua}</p>
+					</div>
+					<div class = "col-2">
+					<p>Paese di produzione</p>
+					<p>${film.paese}</p>
+					</div>
+					<div class = "col-2">
+					<p>Paese di produzione</p>
+					<p>${film.regista}</p>
+					</div>
+					<div class = "col-2">
+						<div class = "row">
+							<div class = "col-6">
+								<p>Attori</p>
+								${a}
+							</div>
+							<div class = "col-6">
+								<p>Generi</p>
+								${g}
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			`
+			console.log(s)
+			refreshComplete.innerHTML = s;
+			});
 }
 
   function redirectToPage() {
