@@ -205,9 +205,12 @@ function ricercaPerGenere(nome) {
 	n.remove();
 	
 	console.log("visualizzazione");
-	fetch("http://localhost:8080/api/v1/lumiere/films/titolo/" + nome)
-		.then(res => res.json())
-		.then(listaFilms => {
+	Promise.all([
+		fetch("http://localhost:8080/api/v1/lumiere/films/titolo/" + nome).then(res => res.json()),
+		fetch("http://localhost:8080/api/v1/lumiere/films/attore/" + nome).then(res => res.json())
+	])
+	//	.then(res => res.json()) 
+	 	.then(listaFilms => {
 				console.log("listaFilmFiltrati");
 				g = ""
 				s = `
@@ -216,7 +219,7 @@ function ricercaPerGenere(nome) {
 				`
 				
 				for (film of listaFilms) {
-				let generi =JSON.parse(JSON.stringify(film.generi));
+				let generi = JSON.parse(JSON.stringify(film.generi));
 					
 					for (gen of generi) {
 					g += `${gen.nome} `

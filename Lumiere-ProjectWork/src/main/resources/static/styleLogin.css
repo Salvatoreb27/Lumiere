@@ -24,7 +24,7 @@ body::before {
 }
 
 nav {
-    position: sticky;
+    position: relative;
     z-index: 1;
     padding: 50px 78px;
     user-select: none;
@@ -81,7 +81,7 @@ form .form-control {
 
 .form-control input:is(:focus, :valid) {
     padding: 16px 20px 0;
-    background: #ababab;
+    background: #ffe896;
 }
 
 .form-control label {
