@@ -391,6 +391,7 @@ function filmList() {
 			a = "";
 			s =  `
 			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Film</h3>
+			<div class="table-responsive">
 			<table class="table">
 				<thead>
 					<tr>
@@ -454,7 +455,8 @@ function filmList() {
       				<td>${g}</td>
       				<td>${film.locandina}</td>
       				<td>${film.trailer}</td>
-      				<td>${film.trama}</td>
+					  <td class="overflow-auto!important" style="overflow-y: scroll;">${film.trama}</td>
+
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmUpdate(${film.id})"><i class="bi bi-pencil-square"></i></button></td>
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmDelete(${film.id})"><i class="bi bi-x"></i></button></td>
     			</tr>
@@ -467,6 +469,7 @@ function filmList() {
 			s += `
 			 		</tbody>
 			 	</table>
+				</div>
 			 	`
 			
 			listTarget.innerHTML = s;
