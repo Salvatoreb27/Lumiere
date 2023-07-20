@@ -21,3 +21,22 @@ body{
 .feature-icon.text{
     color: #393E46!important;
 }
+.btn.btn-outline-dark{
+    background-color: #FFD369!important;
+    font-weight: 600!important;
+    color: #222831!important;
+    border-color: whitesmoke!important;
+}
+
+.btn-outline-dark{
+    background-color: #393E46!important;
+    color: #FFD369!important;
+    border-color: #FFD369!important;
+}
+
+.btn.btn-outline-dark:hover{
+    background-color: #393E46!important;
+    color: #FFD369!important;
+    border-color: #FFD369!important;
+
+}
