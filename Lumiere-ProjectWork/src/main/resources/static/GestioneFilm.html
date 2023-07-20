@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styleAdminPage.css">
 </head>
 
-<body>
+<body onload="filmList(); filmForm()">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Offcanvas navbar large"
@@ -81,22 +81,9 @@
 <div id="listTarget" class="content">
 </div>
 
-    <div>
-     
-        <button class="btn btn-primary me-2" onclick="filmList()">TESTlistFilm</button>
-   
-    </div>
     <div id="formTarget">
 
     </div>
-    <div>
-    
-        <button class="btn btn-primary" onclick="filmForm()">TESTaddFilm</button>
-   
-    </div>
-    <div>
-
-    </div> 
 
     <a href="AdminPage.html"><button class="btn btn-primary" >Torna alla Admin Page</button></a>
 
