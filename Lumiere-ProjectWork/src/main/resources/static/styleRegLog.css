@@ -73,6 +73,12 @@ body {
     column-gap: 15px;
 }
 
+ .column {
+    display: flex;
+    column-gap: 15px;
+}
+
+
 .form .gender-box {
     margin-top: 20px;
 }
@@ -134,7 +140,7 @@ body {
     outline: none;
     user-select: none;
     box-shadow: 0 10px 0 0 #B39349;
-    color: #ffffff;
+    color: #222831;
     cursor: pointer;
     font-weight: 500;
     border-radius: 5px;
@@ -151,6 +157,40 @@ form button:active {
 form button:hover {
     background: #FFD369;
 }
+
+ button.go-back {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    user-select: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+    margin: 25px 0 20px;
+    transition: 0.1s ease;
+    background-color: grey;
+    box-shadow: 0 10px 0 0 #222831;
+}
+
+ button.go-back:active {
+    transform: translateY(10px);
+    box-shadow: 0 0 0 0 #222831;
+ }
+   
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+
 
 /*Responsive*/
 @media screen and (max-width: 500px) {
