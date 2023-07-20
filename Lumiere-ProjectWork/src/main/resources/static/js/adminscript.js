@@ -88,7 +88,7 @@ function filmForm() {
 	s = "";
 
 	s = `
-    <h3>Form Film</h3>
+    <h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Form Film</h2>
 	<form id="forma">
 	<div class="mb-3">
 		<label for="titolo" class="form-label">Titolo</label>
@@ -114,7 +114,7 @@ function filmForm() {
 		<label for="lingua" class="form-label">Lingua Del Film</label>
 		<input type="text" class="form-control" id="lingua">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;" >Submit</button>
 	</form>
 		`;
 
@@ -200,7 +200,7 @@ function utenteForm() {
 		<label for="telefono" class="form-label">Telefono</label>
 		<input type="text" class="form-control" id="telefono">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary  style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
 	</form>
 		`;
 
@@ -266,7 +266,7 @@ function ruoloForm() {
 		<label for="ruolo" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="ruolo">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
 	</form>
 		`;
 
@@ -373,40 +373,40 @@ function filmList() {
 			g = "";
 			a = "";
 			s =  `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Film</h3>
 			<div class="row">
 				<div class="col">
 					 <h5>Titolo Film</h5>
-				</div>
+				 </div>
 				<div class="col">
 					 <h5>Data Di Uscita</h5>
-				</div>
-				<div class="col">
+				 </div>
+				 <div class="col">
 					 <h5>Durata Del Film</h5>
-				</div>
+				 </div>
 				<div class="col">
 					 <h5>Regista</h5>
-				</div>
-				<div class="col">
+				 </div>
+				 
+				 <div class="col">
 					 <h5>Paese Di Produzione</h5>
-				</div>
+				 </div>
 				<div class="col">
 					 <h5>Lingue</h5>
-				</div>
-				<div class="col">
+				 </div>
+				 <div class="col">
 					 <h5>Attori</h5>
-				</div>
+				 </div>
 				<div class="col">
 					 <h5>Generi</h5>
-				</div>
+				 </div>
 				<div class="col">
-				 	<h5>Locandina</h5>
-				</div>
-				<div class="col">
-					<h5>Trailer</h5>
-				</div>
-				<div class="col">
-					<h5>Trama</h5>
-				</div>
+				 <h5>Locandina</h5>
+				 </div>
+				 <div class="col">
+					 <h5>Trama</h5>
+				 </div>
+				 <hr>
 			   </div>
 			 `;
 			for (film of listaFilms) {
@@ -466,14 +466,11 @@ function filmList() {
 					 <p>${film.locandina}</p>
 				 	</div>
 				 	<div class="col">
-					 <p>${film.trailer}</p>
-				 	</div>
-				 	<div class="col">
 					 	<p>${film.trama}</p>
 				 	</div>
 			 		<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmUpdate(${film.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmDelete(${film.id})">x</button>
+						<button class="btn btn-sm ms-1 pt-0"  style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmUpdate(${film.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0"  style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmDelete(${film.id})">x</button>
 					</div>
 		   		</div>
 			 	`;
@@ -816,7 +813,7 @@ function filmUpdate(id) {
 		.then(res => res.json())
 		.then(listaGeneri => {
 		let a = "";
-			console.log(listaGeneri);
+			console.log(listaGeneri);	   		
     		for (genere of listaGeneri) {
 				
 		a +=`
@@ -830,7 +827,7 @@ function filmUpdate(id) {
 	a += add;
 	console.log(a);
 	s = `
-    <h3>Update Film</h3>
+    <h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369">Update Film</h2>
 	<form id="forma">
 	<div class="mb-3">
 		<label for="titolo" class="form-label">Titolo</label>
@@ -843,10 +840,6 @@ function filmUpdate(id) {
 	<div class="mb-3">
 		<label for="locandina" class="form-label">Path Immagine</label>
 		<input type="text" class="form-control" id="locandina">
-	</div>
-	<div class="mb-3">
-		<label for="trailer" class="form-label">URL Trailer</label>
-		<input type="text" class="form-control" id="trailer">
 	</div>
     <div class="mb-3">
 		<label for="anno" class="form-label">Anno Di Produzione</label>
@@ -896,7 +889,6 @@ function filmUpdate(id) {
 		let titolo = document.getElementById('titolo');
 		let trama = document.getElementById('trama');
 		let locandina = document.getElementById('locandina');
-		let trailer = document.getElementById('trailer')
 		let anno = document.getElementById('anno');
 		let durata = document.getElementById('durata');
 		let regista = document.getElementById('regista');
@@ -907,11 +899,10 @@ function filmUpdate(id) {
 		console.log(typeof trama.value)
 		console.log(typeof locandina.value)
 		console.log(locandina.value)
-		console.log(typeof trailer.value)
-		console.log(trailer.value)
 		console.log(typeof anno.value)
 		console.log(anno.value)
 		console.log(typeof durata.value)
+		console.log(durata.value)
 		console.log(typeof regista.value)
 		console.log(typeof paese.value)
 		console.log(typeof lingua.value)
@@ -922,7 +913,6 @@ function filmUpdate(id) {
 			"titolo": titolo.value,
 			"trama": trama.value,
 			"locandina": locandina.value,
-			"trailer": trailer.value,
 			"anno": anno.value,
 			"durata": durata.value,
 			"regista": regista.value,

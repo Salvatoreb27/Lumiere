@@ -29,14 +29,14 @@ function visualizzaCarouselFilms() {
 				a += `
 					<div class="col col-md-6 col-lg-3">
 						<div class="card" style="width: 16em;">
-       						<img src="${film.locandina}" alt="...">
+       						<img src="imagesAntonio/locandine/${film.locandina}" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-										<button type="button" onclick="dettaglioFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" onclick="paginaFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
@@ -75,6 +75,8 @@ function visualizzaCarouselFilms() {
 						s += t;
 						i = 0;
 			};
+			
+			g = "";
 			
 			}
 			
@@ -170,12 +172,14 @@ function ricercaPerGenere(nome) {
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-										<button type="button" onclick="dettaglioFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" onclick="paginaFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
     					</div>
 				`
+				
+				g = "";
 				}
 				
 				s += `
@@ -186,6 +190,11 @@ function ricercaPerGenere(nome) {
 				refreshComplete.innerHTML = s;
 			});
 	
+}
+
+function paginaFilm(id) {
+	sessionStorage.filmId = id;
+	window.location = "./visualizzazioneFilm.html"
 }
 
 function dettaglioFilm(id) {

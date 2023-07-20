@@ -11,6 +11,30 @@
   <link rel="stylesheet" href="styleAdminPage.css">
 </head>
 
+<style>
+  .listStyle{
+    margin-bottom: 4em;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color:#2a313c;
+    border: solid 0.3px;
+    border-color: #FFD369;
+    border-radius: 1%;
+    padding: 2em;
+
+  }
+    .formStyle{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color:#2a313c;
+    border: solid 0.3px;
+    border-color: #FFD369;
+    border-radius: 1%;
+    padding: 2em;
+    
+  }
+</style>
+
 <body onload="filmList(); filmForm()">
 
   <!-- Navbar -->
@@ -74,14 +98,14 @@
 
   <!-- Features -->
   <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Benvenuto nella gestione film</h2>
-    <h6 class="pb-2 border-bottom">Cosa vuoi fare?</h6>
+    <h1 class="pb-2 border-bottom" style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"">Benvenuto nella Gestione Film</h2>
+    <h5 class="pb-2 border-bottom">Cosa vuoi fare?</h6>
    </div>
 <!--  Bottoni  -->
-<div id="listTarget" class="content">
+<div id="listTarget" class="listStyle">
 </div>
 
-    <div id="formTarget">
+    <div id="formTarget" class="formStyle">
 
     </div>
 
