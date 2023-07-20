@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-
+import lumiere.central.dto.FilmDTO2;
 import lumiere.central.dto.UtenteDTO;
 import lumiere.central.model.Attore;
 import lumiere.central.model.Film;
@@ -76,6 +76,19 @@ public class AdminController {
 		Long idFilm = filmService.addFilm(film);
 		return idFilm;
 	}*/
+	//Aggiunta di film ---> Admin
+	@PostMapping("/film/addFilm") 
+	public Long saveFilm2(@RequestBody FilmDTO2 film) {
+		Film f = new Film();
+		f.setTitolo(film.getTitolo());
+		f.setAnno(film.getAnno());
+		f.setDurata(film.getDurata());
+		f.setRegista(film.getRegista());
+		f.setPaese(film.getPaese());
+		f.setLingua(film.getLingua());
+		Long idFilm = filmService.addFilm(f);
+		return idFilm;
+	}
 	
 	//@Secured("ROLE_ADMIN")
 	//@PreAuthorize("hasRole('ADMIN')")
