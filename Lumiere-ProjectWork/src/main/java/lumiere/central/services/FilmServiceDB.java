@@ -49,6 +49,8 @@ public class FilmServiceDB implements FilmService{
 		if (filmrepository.existsById(id)) {
 			Film f = filmrepository.findById(id).get(); //film sul DB
 			f.setTitolo(film.getTitolo());
+			f.setTrama(film.getTrama());
+			f.setLocandina(film.getLocandina());
 			f.setRegista(film.getRegista());
 			f.setAnno(film.getAnno());
 			f.setDurata(film.getDurata());
@@ -56,8 +58,6 @@ public class FilmServiceDB implements FilmService{
 			f.setLingua(film.getLingua());
 			f.setAttori(film.getAttori());
 			f.setGeneri(film.getGeneri());
-			f.setRecensioni(film.getRecensioni());
-			f.setVisualizzazioni(film.getVisualizzazioni());
 			filmrepository.save(f);
 			return f;
 		}

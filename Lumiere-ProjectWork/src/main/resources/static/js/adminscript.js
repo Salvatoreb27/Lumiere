@@ -237,7 +237,8 @@ function utenteForm() {
 			"dataDiNascita": dataNascita.value,
 			"email": email.value,
 			"password": password.value,
-			"telefono": telefono.value
+			"telefono": telefono.value,
+			"attivo": 1
 		};
 		console.log(newUtente.value)
 
@@ -298,6 +299,8 @@ function ruoloForm() {
 	})
 }
 
+//inizio liste
+
 function attoriList() {
 	console.log("avvio lista");
 
@@ -318,9 +321,9 @@ function attoriList() {
    					<div class="col">
 						<p>${attore.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${attore.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${attore.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${attore.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${attore.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -349,9 +352,9 @@ function generiList() {
    					<div class="col">
 						<p>${genere.nome}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${genere.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${genere.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereUpdate(${genere.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereDelete(${genere.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -404,6 +407,8 @@ function filmList() {
 			   </div>
 			 `;
 			for (film of listaFilms) {
+				console.log(film.id)
+				console.log(typeof(film.id))
 				let attoriJSON = JSON.stringify(film.attori);
 				console.log(attoriJSON);
 				let attori = JSON.parse(attoriJSON);
@@ -460,9 +465,9 @@ function filmList() {
 				 	<div class="col">
 					 	<p>${film.trama}</p>
 				 	</div>
-			 		<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${film.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${film.id})">x</button>
+			 		<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmUpdate(${film.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmDelete(${film.id})">x</button>
 					</div>
 		   		</div>
 			 	`;
@@ -553,9 +558,9 @@ function utentiList() {
 					<div class="col">
 					 	<p>${ruoliJSON}</p>
 				 	</div>
-			 		<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${utente.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${utente.id})">x</button>
+			 		<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteUpdate(${utente.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteDelete(${utente.id})">x</button>
 					</div>
 		   		</div>
 			 	`;
@@ -585,11 +590,11 @@ function ruoliList() {
   				<div class="row">
    					<div class="col d-flex justify-content-between">
 						<p>${ruolo.nome}</p>
-						<div class="flex-shrink-1">
-						<button class="btn btn-sm pt-0" onclick="attoreUpdate(${ruolo.id})">/</button>
-						<button class="btn btn-sm pt-0" onclick="attoreDelete(${ruolo.id})">x</button>
-						</div>
     				</div>
+    				<div class="d-flex justify-content-end position-absolute">
+							<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloUpdate(${ruolo.id})">/</button>
+							<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloDelete(${ruolo.id})">x</button>
+					</div>
   				</div>
 			 	`;
 			}
@@ -635,9 +640,9 @@ function visualizzazioniList() {
     				<div class="col">
 						<p>${visual.utenti}</p>
     				</div>
-					<div class="d-flex justify-content-end">
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreUpdate(${visual.id})">/</button>
-						<button class="btn btn-sm position-absolute pt-0" onclick="attoreDelete(${visual.id})">x</button>
+					<div class="d-flex justify-content-end position-absolute">
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneUpdate(${visual.id})">/</button>
+						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneDelete(${visual.id})">x</button>
 					</div>
   				</div>
 			 	`;
@@ -657,7 +662,7 @@ function genereDelete(id)
         }
         
 
-function attoriDelete(id)
+function attoreDelete(id)
         {
             console.log("eliminazione id" + id);
             fetch("http://localhost:8080/api/v1/admin/attore/delete/" + id,
@@ -739,7 +744,7 @@ function genereUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/genere/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},
@@ -782,7 +787,7 @@ function attoreUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/attore/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},
@@ -794,8 +799,28 @@ function attoreUpdate(id) {
 }
 
 function filmUpdate(id) {
-	s = "";
-
+	let s = "";
+	let a = "";
+	let g = "";
+	
+	
+	const add = fetch("http://localhost:8080/api/v1/lumiere/generi/all")
+		.then(res => res.json())
+		.then(listaGeneri => {
+		let a = "";
+			console.log(listaGeneri);	   		
+    		for (genere of listaGeneri) {
+				
+		a +=`
+    			<option value="${genere.id}">${genere.nome}</option>
+    			`
+			}
+  			
+	console.log(a);
+	return a;
+	})
+	a += add;
+	console.log(a);
 	s = `
     <h3>Update Film</h3>
 	<form id="forma">
@@ -804,7 +829,7 @@ function filmUpdate(id) {
 		<input type="text" class="form-control" id="titolo">
 	</div>
 	<div class="mb-3">
-		<label for="trama" class="form-label">Descrizzione</label>
+		<label for="trama" class="form-label">Descrizione</label>
 		<input type="text" class="form-control" id="trama">
 	</div>
 	<div class="mb-3">
@@ -831,6 +856,21 @@ function filmUpdate(id) {
 		<label for="lingua" class="form-label">Lingua Del Film</label>
 		<input type="text" class="form-control" id="lingua">
 	</div>
+	<div class="input-group mb-3">
+		<label class="input-group-text" for="attoreOptions">Attore</label>
+			<select class="form-select" id="attoreOptions">
+				<option selected>Scegliere un genere</option>
+			</select>
+	</div>
+	<div class="input-group mb-3">
+		<label class="input-group-text" for="genereOptions">Genere</label>
+			<select class="form-select" id="genereOptions">
+				<option selected>Scegliere un genere</option>
+				${a}
+			</select>
+	</div>
+	
+		
 	<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 		`;
@@ -879,7 +919,7 @@ function filmUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/film/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},
@@ -968,7 +1008,7 @@ function utenteUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/utente/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},
@@ -1011,7 +1051,7 @@ function ruoloUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/ruolo/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},
@@ -1059,7 +1099,7 @@ function visualizzazioneUpdate(id) {
 
 		fetch("http://localhost:8080/api/v1/admin/visualizzazione/update/" + id,
 			{
-				method: 'UPDATE',
+				method: 'PUT',
 				headers: {
 					"Content-Type": "application/json"
 				},

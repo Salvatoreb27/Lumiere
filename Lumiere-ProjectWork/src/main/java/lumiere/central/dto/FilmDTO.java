@@ -1,9 +1,7 @@
 package lumiere.central.dto;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import lombok.Data;
@@ -15,6 +13,7 @@ import lumiere.central.model.Visualizzazione;
 @Data
 public class FilmDTO {
 	
+	private Long id;
 	private String titolo;
 	private String trama;
 	private String locandina;

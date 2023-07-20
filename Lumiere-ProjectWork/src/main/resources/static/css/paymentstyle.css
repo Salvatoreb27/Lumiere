@@ -83,11 +83,32 @@
   padding:12px;
   font-size: 17px;
   background: #393E46;
-  color:#fff;
   margin-top: 5px;
   cursor: pointer;
 }
 
 .container form .submit-btn:hover{
   background: #393E46;
+}
+
+.container-bottone{
+  display: block;
+  justify-content: center;
+  align-items: center
+  
+}
+
+a{
+  text-decoration: none;
+}
+.bottone-home{
+  color: #222831;
+  margin-top: 0.3em;
+  font-size: 0.9rem;;
+  width: 100%!important;
+  background-color: #999!important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
 }

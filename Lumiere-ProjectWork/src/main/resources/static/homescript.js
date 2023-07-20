@@ -5,12 +5,13 @@ function visualizzaCarouselFilms() {
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
-			i = 0;
-			n = 0;
-			a = "";
-			g = "";
-			t = "";
-			s = `
+			let i = 0;
+			let n = 0;
+			let a = "";
+			let g = "";
+			let t = "";
+			let c = "";
+			let s = `
 			<div id="carousel-2" class="carousel slide">
   				 <div class="carousel-inner">
   				  `
@@ -18,12 +19,6 @@ function visualizzaCarouselFilms() {
 			
 			for (film of listaFilms) {
 					i ++;
-					c = ""
-					if (n===1) {
-						c = `active`;
-					} else {
-						c = "";
-					}
 				let generi =JSON.parse(JSON.stringify(film.generi));
 					
 					for (gen of generi) {
@@ -34,14 +29,14 @@ function visualizzaCarouselFilms() {
 				a += `
 					<div class="col col-md-6 col-lg-3">
 						<div class="card" style="width: 16em;">
-       						<img src="./imagesAntonio/locandine/taxi-driver.png" class="card-img-top" alt="...">
+       						<img src="${film.locandina}" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-							<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
@@ -60,12 +55,14 @@ function visualizzaCarouselFilms() {
 		  		</div> `;
 				*/
 				
-				a += `
-				
-				`
-				
 			if (i && !(i % 4)) {
 				n++;
+					if (n===1) {
+						c = `active`;
+					} else {
+						c = "";
+					}
+					
 						t = `
 						<div class="carousel-item ${c}">
 							<div class="row">
@@ -79,18 +76,30 @@ function visualizzaCarouselFilms() {
 			};
 			
 			}
+			
+			if (i != 0) {
+				s += `
+						<div class="carousel-item">
+							<div class="row">
+								${a}
+							</div>
+						</div>
+							`
+			}
+			
+			
 			s += `
-				</div>
- 					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
-    					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Previous</span>
-  					</button>
-  					<button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
-   						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-    					<span class="visually-hidden">Next</span>
-  					</button>
-				</div>
-				</div>
+						</div>
+ 							<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
+    							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    							<span class="visually-hidden">Previous</span>
+  							</button>
+  							<button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
+   								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    							<span class="visually-hidden">Next</span>
+  							</button>
+						</div>
+					</div>
 				</div>
 			`;
 			console.log(s);
@@ -103,41 +112,78 @@ function visualizzaCarouselFilms() {
 }
 
 
+function generazioneDropdownGeneri() {
+	console.log("avvio lista");
 
-function visualizzaCarouselFilmsmulti() {
+	fetch("http://localhost:8080/api/v1/lumiere/generi/all")
+		.then(res => res.json())
+		.then(listaGeneri => {
+			console.log(listaGeneri);
+			s = `
+				
+			 	`;
+			for (genere of listaGeneri) {
+				console.log(genere.nome)
+				console.log(typeof(genere.nome))
+				s += `
+				<li><button class="dropdown-item" onclick="ricercaPerGenere('${genere.nome}')">${genere.nome}</li>
+			 	`;
+			}
+			dropdownTarget.innerHTML = s;
+		});
+}
+
+
+function ricercaPerGenere(nome) {
+	console.log(nome);
+	console.log(typeof(nome));
+	let n = document.getElementById("refreshTarget");	
+	n.remove();
+	
 	console.log("visualizzazione");
-	fetch("http://localhost:8080/api/v1/lumiere/films/all")
+	fetch("http://localhost:8080/api/v1/lumiere/films/genere/" + nome)
 		.then(res => res.json())
 		.then(listaFilms => {
-			s = "";
-			a = "";
-			
-			let i = 0;
-			for (film of listaFilms) {
-				i++;
-				console.log(i);
-				a += `<h5>${film.titolo}</h5>`
-				console.log(a);
+				console.log("listaFilmFiltrati");
+				g = ""
+				s = `
+				<main id="refreshTarget">
+				`
 				
-					if (i && !(i % 2)) {
-						s = `
-						<div>
-							${a}
-						</div>
-							`
-						
-						a = ` `
-			
-					console.log(s);
-					pollo.innerHTML += s;	
-					}
+				for (film of listaFilms) {
+				let generi =JSON.parse(JSON.stringify(film.generi));
+					
+					for (gen of generi) {
+					g += `${gen.nome} `
+					console.log(g);
 				}
-			
-		});
-
-	}
-
-
+				
+				
+				s += `
+				<div class="card" style="width: 16em;">
+       						<img src="${film.locandina}" class="card-img-top" alt="...">
+        					<div class="card-body">
+          						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
+          						<p class="card-text mb-2 fs-6">${g} </p>
+           						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
+           						<div class="card-footer pb-0">
+           							<div class="d-grid gap-2 col-12 mx-">
+										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+         							</div>
+        						</div>
+      						</div>
+    					</div>
+				`
+				}
+				
+				s += `
+				</main>
+				`
+				console.log(s)
+				refreshComplete.innerHTML = s;
+			});
+	
+}
 
   function redirectToPage() {
     window.location.href = "HomeXGenere.html";
