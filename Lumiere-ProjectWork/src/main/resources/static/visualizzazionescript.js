@@ -46,21 +46,21 @@ function generazioneVisualizzazione() {
 					};
 			
 			s = `
-			<img id="immaginefilm" src="imagesAntonio/locandine/${film.locandina}" alt="Immagine film" class="mr-3" width="100" height="100">
+			<img id="immaginefilm" src="imagesAntonio/locandine/${film.locandina}" alt="Immagine film" class="mr-3" style="width:18rem" >
 				<div class="media-body">
                 	<h1 class="display-4">${film.titolo}</h1>
-					<p class="lead">Un film diretto da ${film.regista}</p>
+					<p>${film.trama}</p>
 				</div>
 			`;
 			console.log(s);
 			document.getElementById("mediaTarget").innerHTML = s;
 			
 			g = `
-			<h2>Trama</h2>
-			<p>${film.trama}</p>
+			<h2>Un film diretto da</h2>
+			<p class="lead">${film.regista}</p>
 			`;
 			console.log(g);
-			document.getElementById("tramaTarget").innerHTML += g;
+			document.getElementById("registaTarget").innerHTML += g;
 			
 			attoriList = `
 			<h2>Cast</h2>
