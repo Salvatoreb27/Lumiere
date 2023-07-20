@@ -407,7 +407,7 @@ function filmList() {
 					 <h5>Trama</h5>
 				 </div>
 				 <hr>
-			   </div>
+			   </div> 
 			 `;
 			for (film of listaFilms) {
 				console.log(film.id)
@@ -437,7 +437,8 @@ function filmList() {
 					}
 				
 				s += `
-				<div class="row">
+				
+				  <div class="row">
 					<div class="col">
 				 		<p>${film.titolo}</p>
 			 		</div>
@@ -468,15 +469,15 @@ function filmList() {
 				 	<div class="col">
 					 	<p>${film.trama}</p>
 				 	</div>
-			 		<div class="d-flex justify-content-end position-absolute">
+
+
+			 		<div class="d-flex justify-content-end">
 						<button class="btn btn-sm ms-1 pt-0"  style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmUpdate(${film.id})">/</button>
 						<button class="btn btn-sm ms-1 pt-0"  style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmDelete(${film.id})">x</button>
 					</div>
-		   		</div>
+		   		</div> 
 			 	`;
 			 	
-			 	a = "";
-			 	g = "";
 			}
 			listTarget.innerHTML = s;
 		});
