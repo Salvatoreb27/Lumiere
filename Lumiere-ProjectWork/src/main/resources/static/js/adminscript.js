@@ -308,26 +308,34 @@ function attoriList() {
 		.then(res => res.json())
 		.then(listaAttori => {
 			console.log(listaAttori);
+			i = 0;
 			s = `
-				<div class="row">
-   					<div class="col">
-						<h5>Nomi Attori</h5>
-    				</div>
-  				</div>
+				<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nomi Attori</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			`;
 			for (attore of listaAttori) {
+				i++;
 				s += `
-  				<div class="row">
-   					<div class="col">
-						<p>${attore.nome}</p>
-    				</div>
-					<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${attore.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${attore.id})">x</button>
-					</div>
-  				</div>
+  				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${attore.nome}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${attore.id})"><i class="bi bi-pencil-square"></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${attore.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
 			 	`;
 			}
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
 			listTarget.innerHTML = s;
 		});
 }
@@ -339,26 +347,34 @@ function generiList() {
 		.then(res => res.json())
 		.then(listaGeneri => {
 			console.log(listaGeneri);
+			i = 0;
 			s = `
-				<div class="row">
-   					<div class="col">
-						<h5>Nomi Generi</h5>
-    				</div>
-  				</div>
+				<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome Genere</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			 	`;
 			for (genere of listaGeneri) {
+				i++;
 				s += `
-  				<div class="row">
-   					<div class="col">
-						<p>${genere.nome}</p>
-    				</div>
-					<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereUpdate(${genere.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereDelete(${genere.id})">x</button>
-					</div>
-  				</div>
+				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${genere.nome}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereUpdate(${genere.id})"><i class="bi bi-pencil-square"></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="genereDelete(${genere.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
 			 	`;
 			}
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
 			listTarget.innerHTML = s;
 		});
 }
@@ -370,46 +386,33 @@ function filmList() {
 		.then(res => res.json())
 		.then(listaFilms => {
 			console.log(listaFilms);
+			i = 0;
 			g = "";
 			a = "";
 			s =  `
-			<div class="row">
-				<div class="col">
-					 <h5>Titolo Film</h5>
-				</div>
-				<div class="col">
-					 <h5>Data Di Uscita</h5>
-				</div>
-				<div class="col">
-					 <h5>Durata Del Film</h5>
-				</div>
-				<div class="col">
-					 <h5>Regista</h5>
-				</div>
-				<div class="col">
-					 <h5>Paese Di Produzione</h5>
-				</div>
-				<div class="col">
-					 <h5>Lingue</h5>
-				</div>
-				<div class="col">
-					 <h5>Attori</h5>
-				</div>
-				<div class="col">
-					 <h5>Generi</h5>
-				</div>
-				<div class="col">
-				 	<h5>Locandina</h5>
-				</div>
-				<div class="col">
-					<h5>Trailer</h5>
-				</div>
-				<div class="col">
-					<h5>Trama</h5>
-				</div>
-			   </div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Titolo Film</th>
+						<th scope="col">Data Di Uscita</th>
+						<th scope="col">Durata Del Film</th>
+						<th scope="col">Regista</th>
+						<th scope="col">Paese Di Produzione</th>
+						<th scope="col">Lingua Originale</th>
+						<th scope="col">Attori</th>
+						<th scope="col">Generi</th>
+						<th scope="col">Locandina</th>
+						<th scope="col">Trailer</th>
+						<th scope="col">Trama</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			 `;
 			for (film of listaFilms) {
+				i++;
 				console.log(film.id)
 				console.log(typeof(film.id))
 				let attoriJSON = JSON.stringify(film.attori);
@@ -437,50 +440,33 @@ function filmList() {
 					}
 				
 				s += `
-				<div class="row">
-					<div class="col">
-				 		<p>${film.titolo}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${film.anno}</p>
-				 	</div>
-				 	<div class="col">
-				 		<p>${film.durata}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${film.regista}</p>
-				 	</div>
-				 	<div class="col">
-				 		<p>${film.paese}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${film.lingua}</p>
-				 	</div>
-				 	<div class="col">
-				 		 ${a}
-			 		</div>
-					<div class="col">
-					 	 ${g}
-				 	</div>
-					<div class="col">
-					 <p>${film.locandina}</p>
-				 	</div>
-				 	<div class="col">
-					 <p>${film.trailer}</p>
-				 	</div>
-				 	<div class="col">
-					 	<p>${film.trama}</p>
-				 	</div>
-			 		<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmUpdate(${film.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmDelete(${film.id})">x</button>
-					</div>
-		   		</div>
+				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${film.titolo}</td>
+      				<td>${film.anno}</td>
+      				<td>${film.durata}</td>
+      				<td>${film.regista}</td>
+      				<td>${film.paese}</td>
+      				<td>${film.lingua}</td>
+      				<td>${a}</td>
+      				<td>${g}</td>
+      				<td>${film.locandina}</td>
+      				<td>${film.trailer}</td>
+      				<td>${film.trama}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmUpdate(${film.id})"><i class="bi bi-pencil-square"></i></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="filmDelete(${film.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
 			 	`;
 			 	
 			 	a = "";
 			 	g = "";
 			}
+			
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
+			
 			listTarget.innerHTML = s;
 		});
 }
@@ -492,38 +478,29 @@ function utentiList() {
 		.then(res => res.json())
 		.then(listaUtenti => {
 			console.log(listaUtenti);
+			i = 0;
 			s = `
-			<div class="row">
-				<div class="col">
-					<h5>Nickname</h5>
-				</div>
-				<div class="col">
-					<h5>Nome</h5>
-				</div>
-				<div class="col">
-					<h5>Cognome</h5>
-				</div>
-				<div class="col">
-					<h5>Data Di Nascita</h5>
-				</div>
-				<div class="col">
-					<h5>Email</h5>
-				</div>
-				<div class="col">
-					<h5>Password</h5>
-				</div>
-				<div class="col">
-					<h5>Telefono</h5>
-				</div>
-				<div class="col">
-					<h5>Attivo</h5>
-				</div>
-				<div class="col">
-				 	<h5>Ruoli</h5>
-				</div>
-			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nickname</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Cognome</th>
+						<th scope="col">Data Di Nascita</th>
+						<th scope="col">Email</th>
+						<th scope="col">Password</th>
+						<th scope="col">Telefono</th>
+						<th scope="col">Attivo</th>
+						<th scope="col">Ruoli</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			 `;
 			for (utente of listaUtenti) {
+				i++;
 				console.log(utente.ruoli);
 				console.log(typeof(utente.ruoli));
 				console.log
@@ -538,43 +515,26 @@ function utentiList() {
 					 console.log(typeof(a));
 				 }	*/
 				s += `
-				<div class="row">
-					<div class="col">
-				 		<p>${utente.nickname}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${utente.nome}</p>
-				 	</div>
-				 	<div class="col">
-				 		<p>${utente.cognome}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${utente.dataDiNascita}</p>
-				 	</div>
-				 	<div class="col">
-				 		<p>${utente.email}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${utente.password}</p>
-				 	</div>
-				 	<div class="col">
-				 		<p>${utente.telefono}</p>
-			 		</div>
-					<div class="col">
-					 	<p>${utente.attivo}</p>
-				 	</div>
-					<div class="col">
-					 	<p>${ruoliJSON}</p>
-				 	</div>
-			 		<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteUpdate(${utente.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteDelete(${utente.id})">x</button>
-					</div>
-		   		</div>
-			 	`;
-			 	
-			 
+				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${utente.nickname}</td>
+      				<td>${utente.nome}</td>
+      				<td>${utente.cognome}</td>
+      				<td>${utente.dataDiNascita}</td>
+      				<td>${utente.email}</td>
+      				<td>${utente.password}</td>
+      				<td>${utente.telefono}</td>
+      				<td>${utente.attivo}</td>
+      				<td>${ruoliJSON}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteUpdate(${utente.id})"><i class="bi bi-pencil-square"></i></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="utenteDelete(${utente.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
+			 	`; 
 			}
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
 			listTarget.innerHTML = s;
 		});
 }
@@ -586,26 +546,34 @@ function ruoliList() {
 		.then(res => res.json())
 		.then(listaRuoli => {
 			console.log(listaRuoli);
+			i = 0;
 			s = `
-				<div class="row">
-   					<div class="col">
-						<h5>Nomi Ruoli</h5>
-    				</div>
-  				</div>
+				<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome Ruoli</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			 	`;
 			for (ruolo of listaRuoli) {
+				i++;
 				s += `
-  				<div class="row">
-   					<div class="col d-flex justify-content-between">
-						<p>${ruolo.nome}</p>
-    				</div>
-    				<div class="d-flex justify-content-end position-absolute">
-							<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloUpdate(${ruolo.id})">/</button>
-							<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloDelete(${ruolo.id})">x</button>
-					</div>
-  				</div>
+				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${ruolo.nome}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloUpdate(${ruolo.id})"><i class="bi bi-pencil-square"></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="ruoloDelete(${ruolo.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
 			 	`;
 			}
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
 			listTarget.innerHTML = s;
 		});
 }
@@ -617,44 +585,39 @@ function visualizzazioniList() {
 		.then(res => res.json())
 		.then(listaVisual => {
 			console.log(listaVisual);
+			i = 0;
 			s = `
-				<div class="row">
-   					<div class="col">
-						<h5>Data</h5>
-    				</div>
-    				<div class="col">
-						<h5>Numero</h5>
-    				</div>
-    				<div class="col">
-						<h5>Film</h5>
-    				</div>
-    				<div class="col">
-						<h5>Utente</h5>
-    				</div>
-  				</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Data</th>
+						<th scope="col">Numero</th>
+						<th scope="col">Film</th>
+						<th scope="col">Utente</th>
+						<th scope="col">Modifica</th>
+						<th scope="col">Cancella</th>
+					</tr>
+				</thead>
+				<tbody>
 			 	`;
 			for (visual of listaVisual) {
 				s += `
-  				<div class="row">
-   					<div class="col">
-						<p>${visual.data}</p>
-    				</div>
-    				<div class="col">
-						<p>${visual.numero}</p>
-    				</div>
-    				<div class="col">
-						<p>${visual.films}</p>
-    				</div>
-    				<div class="col">
-						<p>${visual.utenti}</p>
-    				</div>
-					<div class="d-flex justify-content-end position-absolute">
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneUpdate(${visual.id})">/</button>
-						<button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneDelete(${visual.id})">x</button>
-					</div>
-  				</div>
+				<tr>
+      				<th scope="row">${i}</th>
+      				<td>${visual.data}</td>
+      				<td>${visual.numero}</td>
+      				<td>${visual.films}</td>
+      				<td>${visual.utenti}</td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneUpdate(${visual.id})"><i class="bi bi-pencil-square"></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="visualizzazioneDelete(${visual.id})"><i class="bi bi-x"></i></button></td>
+    			</tr>
 			 	`;
 			}
+			s += `
+			 		</tbody>
+			 	</table>
+			 	`
 			listTarget.innerHTML = s;
 		});
 }
