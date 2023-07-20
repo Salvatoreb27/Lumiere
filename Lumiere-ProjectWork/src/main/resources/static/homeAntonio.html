@@ -17,7 +17,7 @@
 
 
 </head>
-<body class="bg-body-custom-dark" onload="visualizzaCarouselFilms()">
+<body class="bg-body-custom-dark" onload="visualizzaCarouselFilms(); generazioneDropdownGeneri();">
 
   
     <!-- Header / Navbar -->
@@ -47,8 +47,8 @@
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Generi
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
+                  <ul class="dropdown-menu" id="dropdownTarget">
+               <!--     <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
                     <li><a class="dropdown-item" href="#">Azione</a></li>
                     <li><a class="dropdown-item" href="#">Commedia</a></li>
                     <li><a class="dropdown-item" href="genereDrammatico.html">Drammatico</a></li>
@@ -58,7 +58,7 @@
                     <li><a class="dropdown-item" href="#">Romantico</a></li>
                     <li><a class="dropdown-item" href="#">Animazione</a></li>
                     <li>
-                    </li>
+                    </li>  -->
                   </ul>
                 </li>
               </ul>
@@ -73,7 +73,8 @@
 
       
 <!-- Main Carousel -->
-<main>
+<div id = "refreshComplete">
+<main id="refreshTarget">
   <div class="container">
   <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">  <!-- data-bs-ride="carousel" -->
     <div class="carousel-indicators">
@@ -109,10 +110,9 @@
 <div class="container">
   <div class="headerCards">Consigliati</div>
   <div id="carouselSecondary"></div>
-  <div id="pollo"></div>
 </div>
 
-<!-- Cards Carousel -->
+<!-- Cards Carousel
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active"> 
@@ -184,7 +184,7 @@
 
 
   </div>
-</div> <!-- end carousel item 1 -->  
+</div> <!-- end carousel item 1 
 
 <div class="carousel-item">
   <div class="row g-2">
@@ -253,7 +253,7 @@
 </div>
 
   </div>
-</div>  <!-- end carousel item 2  -->
+</div>  <!-- end carousel item 2
 
 <div class="carousel-item">
   <div class="row g-2">
@@ -322,7 +322,7 @@
 </div>
 
   </div>
-</div> <!-- end carousel item 3  -->
+</div> <!-- end carousel item 3
 
  </div> end carousel inner 
  <button class="carousel-control-prev" style="width: 12em;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -342,6 +342,7 @@
 
 
 </main>
+</div>
 
 <!-- Footer -->
 <div class="container">

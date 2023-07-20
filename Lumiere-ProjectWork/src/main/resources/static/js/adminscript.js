@@ -808,7 +808,7 @@ function filmUpdate(id) {
 		.then(res => res.json())
 		.then(listaGeneri => {
 		let a = "";
-			console.log(listaGeneri);	   		
+			console.log(listaGeneri);
     		for (genere of listaGeneri) {
 				
 		a +=`
@@ -835,6 +835,10 @@ function filmUpdate(id) {
 	<div class="mb-3">
 		<label for="locandina" class="form-label">Path Immagine</label>
 		<input type="text" class="form-control" id="locandina">
+	</div>
+	<div class="mb-3">
+		<label for="trailer" class="form-label">URL Trailer</label>
+		<input type="text" class="form-control" id="trailer">
 	</div>
     <div class="mb-3">
 		<label for="anno" class="form-label">Anno Di Produzione</label>
@@ -884,6 +888,7 @@ function filmUpdate(id) {
 		let titolo = document.getElementById('titolo');
 		let trama = document.getElementById('trama');
 		let locandina = document.getElementById('locandina');
+		let trailer = document.getElementById('trailer')
 		let anno = document.getElementById('anno');
 		let durata = document.getElementById('durata');
 		let regista = document.getElementById('regista');
@@ -894,10 +899,11 @@ function filmUpdate(id) {
 		console.log(typeof trama.value)
 		console.log(typeof locandina.value)
 		console.log(locandina.value)
+		console.log(typeof trailer.value)
+		console.log(trailer.value)
 		console.log(typeof anno.value)
 		console.log(anno.value)
 		console.log(typeof durata.value)
-		console.log(durata.value)
 		console.log(typeof regista.value)
 		console.log(typeof paese.value)
 		console.log(typeof lingua.value)
@@ -908,6 +914,7 @@ function filmUpdate(id) {
 			"titolo": titolo.value,
 			"trama": trama.value,
 			"locandina": locandina.value,
+			"trailer": trailer.value,
 			"anno": anno.value,
 			"durata": durata.value,
 			"regista": regista.value,

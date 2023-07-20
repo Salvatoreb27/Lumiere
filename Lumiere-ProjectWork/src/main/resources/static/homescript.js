@@ -36,7 +36,7 @@ function visualizzaCarouselFilms() {
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" onclick="dettaglioFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
@@ -149,6 +149,7 @@ function ricercaPerGenere(nome) {
 				g = ""
 				s = `
 				<main id="refreshTarget">
+					<div id="pietro"
 				`
 				
 				for (film of listaFilms) {
@@ -169,7 +170,7 @@ function ricercaPerGenere(nome) {
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
            							<div class="d-grid gap-2 col-12 mx-">
-										<button type="button" class="btn btn-sm btn-warning">Guarda</button>
+										<button type="button" onclick="dettaglioFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
       						</div>
@@ -178,6 +179,7 @@ function ricercaPerGenere(nome) {
 				}
 				
 				s += `
+				</div>
 				</main>
 				`
 				console.log(s)
@@ -196,6 +198,11 @@ function dettaglioFilm(id) {
 		.then(res => res.json())
 		.then(film => {
 			console.log("film al dettaglio");
+			
+			s = "";
+			a = "";
+			g = "";
+			
 			
 			let generi =JSON.parse(JSON.stringify(film.generi));
 					
@@ -264,6 +271,8 @@ function dettaglioFilm(id) {
 			refreshComplete.innerHTML = s;
 			});
 }
+
+// __________________________________________________________
 
   function redirectToPage() {
     window.location.href = "HomeXGenere.html";
