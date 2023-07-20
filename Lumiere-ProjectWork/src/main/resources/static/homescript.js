@@ -233,7 +233,7 @@ function dettaglioFilm(id) {
 			<main id="refreshTarget">
 				<div class = "row">
 					<div class = "col-6">
-					<img src = "${film.locandina}" alt = "Immagine del film">
+					<img src = "imagesAntonio/locandine/${film.locandina}" alt = "Immagine del film">
 					<h2>${film.titolo}</h2>
 					</div>
 					<div class = "col-6">
