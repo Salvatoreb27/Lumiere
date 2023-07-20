@@ -14,7 +14,7 @@ public interface FilmRepository extends JpaRepository <Film, Long> {
 
 List <Film> FindFilmByNameOfGenre (String nome); 
 
-@Query(value= "SELECT F.* FROM film F, attori A, film_attore FA WHERE F.id_film = FA.id_film AND FA.id_genere = A.id_genere AND A.nome = ?1", nativeQuery = true)
+@Query(value= "SELECT F.* FROM film F, attori A, film_attore FA WHERE F.id_film = FA.id_film AND FA.id_attore = A.id_attore AND A.nome = ?1", nativeQuery = true)
 
 List <Film> FindFilmByNameOfActor (String nome); 
 	
