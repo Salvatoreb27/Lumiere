@@ -17,6 +17,7 @@ public class FilmDTO {
 	private String titolo;
 	private String trama;
 	private String locandina;
+	private String trailer;
 	private Date anno;
 	private Integer durata;
 	private String regista;
