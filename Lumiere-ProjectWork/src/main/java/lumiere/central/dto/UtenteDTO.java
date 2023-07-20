@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 public class UtenteDTO {
-	
-	private Long Id;
+
 	private String nickname;
 	private String nome;
 	private String cognome;
@@ -15,5 +14,4 @@ public class UtenteDTO {
 	private String email;
 	private String password;
 	private String telefono;
-	private boolean attivo;
 }

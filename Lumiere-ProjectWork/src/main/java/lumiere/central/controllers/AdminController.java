@@ -173,7 +173,6 @@ public class AdminController {
 		List <UtenteDTO> utentiDTO = new ArrayList <>();
 		for (Utente utente: utenti) {
 			UtenteDTO utenteDTO = new UtenteDTO();
-			utenteDTO.setId(utente.getId());
 			utenteDTO.setNickname(utente.getNickname());
 			utenteDTO.setNome(utente.getNome());
 			utenteDTO.setCognome(utente.getCognome());
@@ -181,14 +180,22 @@ public class AdminController {
 			utenteDTO.setEmail(utente.getEmail());
 			utenteDTO.setPassword(utente.getPassword());
 			utenteDTO.setTelefono(utente.getTelefono());
-			utenteDTO.setAttivo(utente.isAttivo());
 			utentiDTO.add(utenteDTO);
 		}
 		return utentiDTO;
 	}
+	
 	@PostMapping("/utente/addUtente") 
-	public Long saveUtente(@RequestBody Utente utente) {
-		Long idUtente = utenteService.addUtente(utente);
+	public Long saveUtente(@RequestBody UtenteDTO utente) {
+		Utente u = new Utente();
+		u.setNickname(u.getNickname());
+		u.setNome(u.getNome());
+		u.setCognome(u.getCognome());
+		u.setDataDiNascita(u.getDataDiNascita());
+		u.setEmail(u.getEmail());
+		u.setPassword(u.getPassword());
+		u.setTelefono(u.getTelefono());
+		Long idUtente = utenteService.addUtente(u);
 		return idUtente;
 	}
 	
