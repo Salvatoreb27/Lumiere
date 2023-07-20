@@ -178,6 +178,8 @@ function ricercaPerGenere(nome) {
       						</div>
     					</div>
 				`
+				
+				g = "";
 				}
 				
 				s += `
