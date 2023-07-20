@@ -475,6 +475,8 @@ function filmList() {
 		   		</div>
 			 	`;
 			 	
+			 	a = "";
+			 	g = "";
 			}
 			listTarget.innerHTML = s;
 		});
