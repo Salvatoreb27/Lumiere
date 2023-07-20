@@ -151,7 +151,7 @@ function ricercaPerGenere(nome) {
 				g = ""
 				s = `
 				<main id="refreshTarget">
-					<div id="pietro"
+					<div id="pietro" class="d-flex justify-content-around flex-wrap">
 				`
 				
 				for (film of listaFilms) {
@@ -191,6 +191,67 @@ function ricercaPerGenere(nome) {
 			});
 	
 }
+	
+	
+	let formina = document.getElementById("forma");
+	formina.addEventListener("submit", (e) => {
+	e.preventDefault();
+	
+	nome = document.getElementById('searchItem').value;
+	
+	console.log(nome);
+	console.log(typeof(nome));
+	let n = document.getElementById("refreshTarget");	
+	n.remove();
+	
+	console.log("visualizzazione");
+	fetch("http://localhost:8080/api/v1/lumiere/films/titolo/" + nome)
+		.then(res => res.json())
+		.then(listaFilms => {
+				console.log("listaFilmFiltrati");
+				g = ""
+				s = `
+				<main id="refreshTarget">
+					<div id="pietro" class="d-flex justify-content-around flex-wrap">
+				`
+				
+				for (film of listaFilms) {
+				let generi =JSON.parse(JSON.stringify(film.generi));
+					
+					for (gen of generi) {
+					g += `${gen.nome} `
+					console.log(g);
+				}
+				
+				
+				s += `
+				<div class="card" style="width: 16em;">
+       						<img src="imagesAntonio/locandine/${film.locandina}" class="card-img-top" alt="Locandina del film">
+        					<div class="card-body">
+          						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
+          						<p class="card-text mb-2 fs-6">${g} </p>
+           						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
+           						<div class="card-footer pb-0">
+           							<div class="d-grid gap-2 col-12 mx-">
+										<button type="button" onclick="paginaFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
+         							</div>
+        						</div>
+      						</div>
+    					</div>
+				`
+				
+				g = "";
+				}
+				
+				s += `
+				</div>
+				</main>
+				`
+				console.log(s)
+				refreshComplete.innerHTML = s;
+			});
+	})
+
 
 function paginaFilm(id) {
 	sessionStorage.filmId = id;
@@ -276,7 +337,6 @@ function dettaglioFilm(id) {
 				</div>
 			</main>
 			`
-			console.log(s)
 			refreshComplete.innerHTML = s;
 			});
 }
