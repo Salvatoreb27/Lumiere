@@ -27,15 +27,15 @@ function visualizzaCarouselFilms() {
 				}
 				
 				a += `
-					<div class="col col-md-6 col-lg-3">
-						<div class="card" style="width: 16em;">
-       						<img src="${film.locandina}" alt="...">
+					<div class="col col-md-6 col-lg-3 mb-3">
+						<div class="card h-100" style="width: 16em;">
+       						<img src="imagesAntonio/locandine/${film.locandina}" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
            						<p class="card-text mb-0 fs-6">Minuti ${film.durata}</p>
            						<div class="card-footer pb-0">
-           							<div class="d-grid gap-2 col-12 mx-">
+           							<div class="d-grid gap-2 col-12" >
 										<button type="button" onclick="paginaFilm('${film.id}')" class="btn btn-sm btn-warning">Guarda</button>
          							</div>
         						</div>
@@ -165,7 +165,7 @@ function ricercaPerGenere(nome) {
 				
 				s += `
 				<div class="card" style="width: 16em;">
-       						<img src="${film.locandina}" class="card-img-top" alt="Locandina del film">
+       						<img src="imagesAntonio/locandine/${film.locandina}" class="card-img-top" alt="Locandina del film">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>

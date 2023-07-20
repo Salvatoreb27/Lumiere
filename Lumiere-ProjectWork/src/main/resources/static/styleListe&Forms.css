@@ -1,0 +1,21 @@
+.listStyle{
+    margin-bottom: 4em;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color:#2a313c;
+    border: solid 0.3px;
+    border-color: #FFD369;
+    border-radius: 1%;
+    padding: 2em;
+
+  }
+    .formStyle{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color:#2a313c;
+    border: solid 0.3px;
+    border-color: #FFD369;
+    border-radius: 1%;
+    padding: 2em;
+    
+  }

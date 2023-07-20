@@ -103,14 +103,14 @@ public class AdminController {
 		return f;
 	}
 	
-	//Dashboard dell'admin
+	/*Dashboard dell'admin
 	@GetMapping("/dashboard")
 	public String showAdminDashboard(Model model) {
 		if (SessionUtils.isAdmin()) {
 			return "adminDashboard";
 		}
 		return "error";
-	}
+	}*/
 	
 	//Aggiunta di attori al db --->Admin
 	@PostMapping("/attore/addAttore") 
