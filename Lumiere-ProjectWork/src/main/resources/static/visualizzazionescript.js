@@ -10,6 +10,7 @@ function generazioneVisualizzazione() {
 			a = "";
 			g = "";
 			attoriList = "";
+			trailer = "";
 			
 			
 			

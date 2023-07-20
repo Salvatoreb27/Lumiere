@@ -458,7 +458,10 @@ function filmList() {
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmUpdate(${film.id})"><i class="bi bi-pencil-square"></i></button></td>
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmDelete(${film.id})"><i class="bi bi-x"></i></button></td>
     			</tr>
-			 	`;	
+			 	`;
+			 	a="";
+			 	g="";
+			 		
 			}
 			
 			s += `
