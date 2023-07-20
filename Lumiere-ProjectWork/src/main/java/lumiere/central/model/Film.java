@@ -34,7 +34,7 @@ public class Film implements Serializable {
 	@Column(name = "titolo", length = 100, nullable = false)
 	private String titolo;
 	
-	@Column(name = "trama", length = 500, nullable = true)
+	@Column(name = "trama", length = 700, nullable = true)
 	private String trama;
 	
 	@Column(name = "locandina", length = 100, nullable = true)
