@@ -29,7 +29,7 @@ function visualizzaCarouselFilms() {
 				a += `
 					<div class="col col-md-6 col-lg-3">
 						<div class="card" style="width: 16em;">
-       						<img src="${film.locandina}" alt="...">
+       						<img src="imagesAntonio/locandine/${film.locandina}" alt="...">
         					<div class="card-body">
           						<h5 class="card-title mb-2 fs-6">${film.titolo}</h5>
           						<p class="card-text mb-2 fs-6">${g} </p>
