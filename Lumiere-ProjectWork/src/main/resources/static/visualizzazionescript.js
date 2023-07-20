@@ -9,9 +9,15 @@ function generazioneVisualizzazione() {
 			s = "";
 			a = "";
 			g = "";
+			att = "";
+			gen = "";
 			attoriList = "";
+			trailer = "";
 			
 			
+			console.log(film.trailer);
+			let url = film.trailer.replace("watch?v=", "embed/");
+			console.log(url)
 			
 			
 			
@@ -40,37 +46,37 @@ function generazioneVisualizzazione() {
 					};
 			
 			s = `
-			<img id="immaginefilm" src="${film.locandina}" alt="Immagine film" class="mr-3" width="100" height="100">
+			<img id="immaginefilm" src="imagesAntonio/locandine/${film.locandina}" alt="Immagine film" class="mr-3" style="width:18rem" >
+				<div class="media-body">
+                	<h1 class="display-4">${film.titolo}</h1>
+					<p>${film.trama}</p>
+				</div>
 			`;
-			document.getElementById("immagineTarget").innerHTML = s;
-			
-			
-			a = `
-			<h1 class="display-4">${film.titolo}</h1>
-			<p class="lead">Un film diretto da ${film.regista}</p>
-			`;
-			console.log(a);
-			document.getElementById("dettagliTarget").innerHTML = a;
+			console.log(s);
+			document.getElementById("mediaTarget").innerHTML = s;
 			
 			g = `
-			<h2>Trama</h2>
-			<p>${film.trama}</p>
-			`
-			document.getElementById("tramaTarget").innerHTML = g;
+			<h2>Un film diretto da</h2>
+			<p class="lead">${film.regista}</p>
+			`;
+			console.log(g);
+			document.getElementById("registaTarget").innerHTML += g;
 			
 			attoriList = `
 			<h2>Cast</h2>
 			<ul>
 			  ${att}
 			</ul>
-			`
-			document.getElementById("attoriTarget").innerHTML = attoriList;
+			`;
+			console.log(attoriList);
+			document.getElementById("attoriTarget").innerHTML += attoriList;
 			
-			trailer = `
+			trailerView = `
 			<h2>Trailer</h2>
-			<iframe width="560" height="315" src="${film.trailer}" frameborder="0"
+			<iframe width="560" height="315" src="${url}" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			`
-			document.getElementById("trailerTarget").innerHTML = trailer;
+			`;
+			console.log(trailer);
+			document.getElementById("trailerTarget").innerHTML += trailerView;
 			});
 }

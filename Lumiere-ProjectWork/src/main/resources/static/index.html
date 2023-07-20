@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,118 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
+    
     <a href="homeAntonio.html" class="btn btn-primary">Antonio Home</a>
     <a href="AdminPage.html" class="btn btn-primary">Form Test</a>
-    <a href="visualizzazioneFilm.html" class="btn btn-primary">Dettaglio Film</a>
   
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styleHomeAntonio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<script src="homescript.js" defer></script>
+
+
+</head>
+<body class="bg-body-custom-dark" onload="visualizzaCarouselFilms(); generazioneDropdownGeneri();">
+  
+    <!-- Header / Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./homeAntonio.html" id="titolo-logo"> <img src="./imagesAntonio/lumiere-logo2.png" alt="logo" height="70" id="img-logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menù</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="homeAntonio.html">Home</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="regLog.html">Registrati</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="pricing.html">GetPremium</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="AdminPage.html">Gestione</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Generi
+                  </a>
+                  <ul class="dropdown-menu" id="dropdownTarget">
+               <!--     <li><a class="dropdown-item" onclick="" href="#">Avventura</a></li>
+                    <li><a class="dropdown-item" href="#">Azione</a></li>
+                    <li><a class="dropdown-item" href="#">Commedia</a></li>
+                    <li><a class="dropdown-item" href="genereDrammatico.html">Drammatico</a></li>
+                    <li><a class="dropdown-item" href="#">Thriller</a></li>
+                    <li><a class="dropdown-item" href="genereHorror.html">Horror</a></li>
+                    <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                    <li><a class="dropdown-item" href="#">Romantico</a></li>
+                    <li><a class="dropdown-item" href="#">Animazione</a></li>
+                    <li>
+                    </li>  -->
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3 mt-lg-0" role="search">
+                <input class="form-control me-2" type="search" placeholder="Inserisci titolo..." aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Cerca</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container text-center">
+       
+      
+ 
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom" style="color: white; ">Benvenuto nella Web App Lumiere</h2>
+        </div>
+        <div>
+            <img src="https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg" alt="" width="1000px">
+        </div>
+<!-- Footer -->
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-custom-light">About</a></li>
+    </ul>
+    <p class="text-center text-body-custom-light">© 2023 WatchMen, Inc</p>
+   
+  </footer>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </html>
