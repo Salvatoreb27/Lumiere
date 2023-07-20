@@ -187,3 +187,6 @@ div.album.py-5.bg-body-custom-light{
     font-size:1rem;
 }
 
+.carousel-control-next,.carousel-control-prev{
+  width:auto!important;
+}

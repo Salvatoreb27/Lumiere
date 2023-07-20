@@ -2,13 +2,13 @@ function genereForm() {
 	s = "";
 
 	s = `
-    <h3>Form Genere</h3>
+    <h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Form Genere</h2>
 	<form id="forma">
 	<div class="mb-3">
 		<label for="genere" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="genere">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary"  style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -45,13 +45,13 @@ function attoreForm() {
 	s = "";
 
 	s = `
-    <h3>Form Attore</h3>
+	<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Form Attore</h2>	
 	<form id="forma">
 	<div class="mb-3">
 		<label for="attore" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="attore">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -170,8 +170,7 @@ function utenteForm() {
 	s = "";
 
 	s = `
-    <h3>Registrazione Utente</h3>
-	<form id="forma">
+	<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Registrazione Utente</h2>	<form id="forma">
 	<div class="mb-3">
 		<label for="nickname" class="form-label">Nickname</label>
 		<input type="text" class="form-control" id="nickname">
@@ -200,7 +199,7 @@ function utenteForm() {
 		<label for="telefono" class="form-label">Telefono</label>
 		<input type="text" class="form-control" id="telefono">
 	</div>
-	<button type="submit" class="btn btn-primary  style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
+	<button type="submit" class="btn btn-primary"  style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
 	</form>
 		`;
 
@@ -260,13 +259,12 @@ function ruoloForm() {
 	s = "";
 
 	s = `
-    <h3>Form Ruolo</h3>
-	<form id="forma">
+	<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Form Ruolo</h2>	<form id="forma">
 	<div class="mb-3">
 		<label for="ruolo" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="ruolo">
 	</div>
-	<button type="submit" class="btn btn-primary style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;" ">Submit</button>
 	</form>
 		`;
 
@@ -310,6 +308,8 @@ function attoriList() {
 			console.log(listaAttori);
 			i = 0;
 			s = `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Attori</h3>
+
 				<table class="table">
 				<thead>
 					<tr>
@@ -327,8 +327,8 @@ function attoriList() {
   				<tr>
       				<th scope="row">${i}</th>
       				<td>${attore.nome}</td>
-      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreUpdate(${attore.id})"><i class="bi bi-pencil-square"></button></td>
-      				<td><button class="btn btn-sm ms-1 pt-0 bg-light" onclick="attoreDelete(${attore.id})"><i class="bi bi-x"></i></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="attoreUpdate(${attore.id})"><i class="bi bi-pencil-square"></i></button></td>
+      				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="attoreDelete(${attore.id})"><i class="bi bi-x"></i></button></td>
     			</tr>
 			 	`;
 			}
@@ -349,6 +349,8 @@ function generiList() {
 			console.log(listaGeneri);
 			i = 0;
 			s = `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Generi</h3>
+
 				<table class="table">
 				<thead>
 					<tr>
@@ -455,8 +457,7 @@ function filmList() {
       				<td>${g}</td>
       				<td>${film.locandina}</td>
       				<td>${film.trailer}</td>
-					  <td class="overflow-auto!important" style="overflow-y: scroll;">${film.trama}</td>
-
+					  <td style="overflow-y:scroll">${film.trama}</td>
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmUpdate(${film.id})"><i class="bi bi-pencil-square"></i></button></td>
       				<td><button class="btn btn-sm ms-1 pt-0" style="background-color: #FFD369!important; color: #222831; border-color: #393E46; onclick="filmDelete(${film.id})"><i class="bi bi-x"></i></button></td>
     			</tr>
@@ -470,6 +471,7 @@ function filmList() {
 			 		</tbody>
 			 	</table>
 				</div>
+				
 			 	`
 			
 			listTarget.innerHTML = s;
@@ -485,6 +487,8 @@ function utentiList() {
 			console.log(listaUtenti);
 			i = 0;
 			s = `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Utenti</h3>
+
 			<table class="table">
 				<thead>
 					<tr>
@@ -553,6 +557,8 @@ function ruoliList() {
 			console.log(listaRuoli);
 			i = 0;
 			s = `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Ruoli</h3>
+
 				<table class="table">
 				<thead>
 					<tr>
@@ -592,6 +598,8 @@ function visualizzazioniList() {
 			console.log(listaVisual);
 			i = 0;
 			s = `
+			<h2 style ="font-weight:bold; margin-bottom: 1em; color: #FFD369"; >Lista Visualizzazioni</h3>
+
 			<table class="table">
 				<thead>
 					<tr>
@@ -698,7 +706,7 @@ function genereUpdate(id) {
 		<label for="genere" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="genere">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary"  style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -741,7 +749,7 @@ function attoreUpdate(id) {
 		<label for="attore" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="attore">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary"  style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -847,7 +855,7 @@ function filmUpdate(id) {
 	</div>
 	
 		
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -940,7 +948,7 @@ function utenteUpdate(id) {
 		<label for="telefono" class="form-label">Telefono</label>
 		<input type="text" class="form-control" id="telefono">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary"  style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -1005,7 +1013,7 @@ function ruoloUpdate(id) {
 		<label for="ruolo" class="form-label">Nome</label>
 		<input type="text" class="form-control" id="ruolo">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 
@@ -1050,7 +1058,7 @@ function visualizzazioneUpdate(id) {
 		<label for="numero" class="form-label">Numero</label>
 		<input type="text" class="form-control" id="numero">
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" style="background-color: #FFD369; color: #222831; border-color: #393E46;">Submit</button>
 	</form>
 		`;
 

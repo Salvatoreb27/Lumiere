@@ -56,7 +56,7 @@ function generazioneVisualizzazione() {
 			document.getElementById("mediaTarget").innerHTML = s;
 			
 			g = `
-			<h2>Un film diretto da</h2>
+			<h2>Regista</h2>
 			<p class="lead">${film.regista}</p>
 			`;
 			console.log(g);

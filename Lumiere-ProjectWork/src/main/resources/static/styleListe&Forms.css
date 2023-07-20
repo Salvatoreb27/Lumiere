@@ -1,6 +1,7 @@
-.listStyle{
+ .listStyle{
     margin-bottom: 4em;
-   
+    margin-left: 2%;
+    margin-right: 2%;
     background-color:#2a313c;
     border: solid 0.3px;
     border-color: #FFD369;
@@ -17,4 +18,10 @@
     border-radius: 1%;
     padding: 2em;
     
+  }
+
+  .table>:not(caption)>*>*{
+    background-color: #f1f2f4;
+    color: #2a313c;
+
   }
