@@ -376,34 +376,37 @@ function filmList() {
 			<div class="row">
 				<div class="col">
 					 <h5>Titolo Film</h5>
-				 </div>
+				</div>
 				<div class="col">
 					 <h5>Data Di Uscita</h5>
-				 </div>
-				 <div class="col">
+				</div>
+				<div class="col">
 					 <h5>Durata Del Film</h5>
-				 </div>
+				</div>
 				<div class="col">
 					 <h5>Regista</h5>
-				 </div>
-				 <div class="col">
+				</div>
+				<div class="col">
 					 <h5>Paese Di Produzione</h5>
-				 </div>
+				</div>
 				<div class="col">
 					 <h5>Lingue</h5>
-				 </div>
-				 <div class="col">
+				</div>
+				<div class="col">
 					 <h5>Attori</h5>
-				 </div>
+				</div>
 				<div class="col">
 					 <h5>Generi</h5>
-				 </div>
+				</div>
 				<div class="col">
-				 <h5>Locandina</h5>
-				 </div>
-				 <div class="col">
-					 <h5>Trama</h5>
-				 </div>
+				 	<h5>Locandina</h5>
+				</div>
+				<div class="col">
+					<h5>Trailer</h5>
+				</div>
+				<div class="col">
+					<h5>Trama</h5>
+				</div>
 			   </div>
 			 `;
 			for (film of listaFilms) {
@@ -461,6 +464,9 @@ function filmList() {
 				 	</div>
 					<div class="col">
 					 <p>${film.locandina}</p>
+				 	</div>
+				 	<div class="col">
+					 <p>${film.trailer}</p>
 				 	</div>
 				 	<div class="col">
 					 	<p>${film.trama}</p>
