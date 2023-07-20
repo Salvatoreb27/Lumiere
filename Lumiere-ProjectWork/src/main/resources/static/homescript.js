@@ -210,21 +210,33 @@ function ricercaPerGenere(nome) {
 		fetch("http://localhost:8080/api/v1/lumiere/films/attore/" + nome).then(res => res.json())
 	])
 	//	.then(res => res.json()) 
-	 	.then(listaFilms => {
+	 	.then(allResponses => {
+			const response1 = allResponses[0]
+  			const response2 = allResponses[1]
+  			
+  				if (response1.length != 0) {
+					response = response1;
+				} else
+				if (response2.lenght != 0){
+					response = response2;
+				};
+			 
+			 let lista = JSON.parse(JSON.stringify(response));
+
 				console.log("listaFilmFiltrati");
 				g = ""
 				s = `
 				<main id="refreshTarget">
 					<div id="pietro" class="d-flex justify-content-around flex-wrap">
-				`
+				`	
 				
-				for (film of listaFilms) {
+				for (film of lista) {
 				let generi = JSON.parse(JSON.stringify(film.generi));
 					
 					for (gen of generi) {
 					g += `${gen.nome} `
 					console.log(g);
-				}
+				}	
 				
 				
 				s += `
@@ -250,7 +262,7 @@ function ricercaPerGenere(nome) {
 				</div>
 				</main>
 				`
-				console.log(s)
+				
 				refreshComplete.innerHTML = s;
 			});
 	})
