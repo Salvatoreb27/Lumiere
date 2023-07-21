@@ -81,7 +81,7 @@ form .form-control {
 
 .form-control input:is(:focus, :valid) {
     padding: 16px 20px 0;
-    background: #ffe896;
+    background: #a7a7a7;
 }
 
 .form-control label {
@@ -202,22 +202,4 @@ form .form-help :where(label, a) {
         justify-content: center;
         align-items: center;
     }
-
-    /*div.album.py-5.bg-body-custom-light {
-        padding-top: 0px !important;
-        --bs-bg-opacity: 1 I !important;
-        background-color: #393E46 !important;
-    }
-
-    .bg-body-custom-dark {
-        --bs-bg-opacity: 1;
-        background-color: #222831 !important;
-    }
-
-    .text-body-custom-light {
-        --bs-bg-opacity: 1;
-        color: #EEEEEE !important;
-    }*/
-
-    
-    }
+}
